@@ -1,4 +1,4 @@
-// src/pages/powtube/{powTubeOemBed.id}.js
+// src/pages/powtube/{pugNode.id}.js
 import React from "react";
 import { graphql } from "gatsby";
 
