@@ -1,17 +1,23 @@
-// gatsby-node.js
-const ID_GiGGLES = `UGq8cnNTbwI`;
+// POW!-site/gatsby-node.js
+const ID_GiGGLES = `eRTJPIa39a4`;
+const axios = require("axios");
 
 async function prepPugNode({actions, createNodeId, createContentDigest}) {
-actions.createNode({
-    id: createNodeId(`pug-${ID_GiGGLES}`),
-    internal: {
-        contentDigest: createContentDigest(ID_GiGGLES),
-        type: `pugNode`
-    }
-})
-    console.log('⛵💀 Yo-Ho Yo-Ho a PiRATEs-pugNode for me 💰');
+    const { data } = await axios.get("https://www.youtube.com/oembed",
+        {params: {
+        url: `https://youtu.be/${ID_GiGGLES}`,
+        maxwidth: 356
+    }});
+    actions.createNode({
+        ...data,
+        id: createNodeId(`pug-${ID_GiGGLES}`),
+        internal: {
+            contentDigest: createContentDigest(ID_GiGGLES),
+            type: `pugNode`
+        }
+    })
 };
 
 exports.sourceNodes = async (params) => {
-    prepPugNode(params);
+    await Promise.all([prepPugNode(params)]);
 };
