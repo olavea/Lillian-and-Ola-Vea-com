@@ -10,7 +10,7 @@ export default function VideoLayout({ title, html, author_name }) {
           className="video-container"
           dangerouslySetInnerHTML={{ __html: html }}
         />
-        <h2 className="mark">Made with 💜 by: {author_name} 👑 </h2>
+
         <p>
           Click fullscreen on the video. The tiny frame in the bottom right
           coner. To the right to of "YOUTUBE".

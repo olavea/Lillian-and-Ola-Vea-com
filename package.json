@@ -15,6 +15,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@sindresorhus/slugify": "^2.1.0",
     "axios": "^0.25.0",
     "gatsby": "^4.5.3",
     "gatsby-plugin-image": "^2.5.2",
