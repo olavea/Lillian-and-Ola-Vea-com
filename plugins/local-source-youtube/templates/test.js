@@ -19,7 +19,7 @@ const ComponentName = ({ data }) => {
         <h2>
           <span>{treasureNode.oEmbed.title}</span>
         </h2>
-        <Link to={`/local-source-youtube-test/${slugify(treasureNode.id)}/`}>
+        <Link to={`/ahoy/${slugify(treasureNode.id)}/`}>
           <GatsbyImage image={gatsbyImage} alt={treasureNode.oEmbed.title} />
         </Link>
       </article>

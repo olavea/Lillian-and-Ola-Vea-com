@@ -35,11 +35,11 @@ module.exports = {
       resolve: "local-source-youtube",
       options: {
         youTubeIdRedStringTreasure: [
-          "UGq8cnNTbwI",
-          "Bk1jonYPFD4",
-          "TzJfepDjpzM",
+          // "UGq8cnNTbwI",
+          // "Bk1jonYPFD4",
+          // "TzJfepDjpzM",
           "eRTJPIa39a4",
-          "UGq8cnNTbwI",
+          //  "UGq8cnNTbwI",
         ],
       },
     },

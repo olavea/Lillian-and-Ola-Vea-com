@@ -1,7 +1,7 @@
 // POW!-website plugins / local - source - youtube / gatsby - node.js;
 const path = require("path");
 const { createRemoteFileNode } = require(`gatsby-source-filesystem`);
-const IS_PROD = process.env.NODE_ENV === "production";
+// const IS_PROD = process.env.NODE_ENV === "production";
 
 const axios = require("axios");
 
@@ -24,7 +24,7 @@ async function prepYouTubeNode(
   const embedData = await fetchEmbed(id);
   //   console.log(embedData);
   const youTubeNodeId = createNodeId(`you-tube-${id}`);
-  //https://i.ytimg.com/vi/Bk1jonYPFD4/hqdefault.jpg
+
   const imageFile = await createRemoteFileNode({
     url: embedData.thumbnail_url,
     parentNodeId: youTubeNodeId,
@@ -32,6 +32,7 @@ async function prepYouTubeNode(
     createNode,
     createNodeId,
   });
+
   createNode({
     oEmbed: embedData,
     thumnail___NODE: imageFile.id,
@@ -51,10 +52,16 @@ exports.sourceNodes = async (params, options) => {
 };
 
 exports.createPages = ({ actions: { createPage } }) => {
-  if (IS_PROD) return;
-  const testTemplate = path.resolve(__dirname, `templates/test.js`);
+  //  if (IS_PROD) return;
+  const bakingSong = path.resolve(__dirname, `templates/test.js`);
   createPage({
-    path: "local-source-youtube-test",
-    component: testTemplate,
+    // A. Ahoy video!
+    path: "ahoy",
+    // B. bakingSong
+    component: bakingSong,
+    // C.
+    // context:
+    // D.
+    // defer:
   });
 };
