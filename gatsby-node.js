@@ -4,16 +4,15 @@
 //                 Baking pages
 //                 with Cap'n Granny Sharksby's
 //                 createPages hook
-async function bakeGingerNodesIntoGoodies({ graphql, actions }) {
-  console.log("Captain Granny Sharksbys createPages hook💀");
+async function bakeMarkdownNodesIntoGoodies({ graphql, actions }) {
+  // console.log("Captain Granny Sharksbys createPages hook💀");
   //              1. bakingSong = Troya Goatsby and Lizabeth Catsby sings
   //                 the bakingSong by Cap'n Granny Sharksby 🦢
   const bakingSong = require.resolve("./src/templates/bakingSong.js");
-
-  //              2. supplies: data
+  //              2. supplies: allMarkdownRemark
   const { data } = await graphql(`
     {
-      supplies: allYouTube {
+      supplies: allMarkdownRemark {
         nodes {
           id
         }
@@ -21,14 +20,13 @@ async function bakeGingerNodesIntoGoodies({ graphql, actions }) {
     }
   `);
   //             3. Loop over the nodes and for each create a page
-
   data.supplies.nodes.forEach((ahoyGoodie) => {
     //                  console.log('🎩', ahoyGoodie.id);
-    // // //              A. – B. – C. – DSG 🎩
+    // // //              A. – B. – C. – (minus DSG 🎩)
     actions.createPage({
       // //              A. «Ahoy! Goodie?!»
       // //                 Cap'n Foxby shouts and embarks. 🦊
-      path: `/ahoy/${ahoyGoodie.id}`,
+      path: `/md/${ahoyGoodie.id}`,
       // //              B. Troya Goatsby sings badly
       // //                 and bakes baby sharks. 🦈
       component: bakingSong,
@@ -53,50 +51,5 @@ async function bakeGingerNodesIntoGoodies({ graphql, actions }) {
 exports.createPages = async (params) => {
   // create pages dynamically from any data source like for example see below:
   // wait for all promises to be resolved before finishing this function
-  await Promise.all([bakeGingerNodesIntoGoodies(params)]);
+  await Promise.all([bakeMarkdownNodesIntoGoodies(params)]);
 };
-
-// const ID_GiGGLES = `Bk1jonYPFD4`;
-// //youTubeIds: ["Bk1jonYPFD4", "TzJfepDjpzM"],
-// const axios = require("axios");
-
-// async function prepPugNode({ actions, createNodeId, createContentDigest }) {
-//   const { data } = await axios.get("https://www.youtube.com/oembed", {
-//     params: {
-//       url: `https://youtu.be/${ID_GiGGLES}`,
-//       maxwidth: 356,
-//     },
-//   });
-//   actions.createNode({
-//     ...data,
-//     id: createNodeId(`pug-${ID_GiGGLES}`),
-//     internal: {
-//       contentDigest: createContentDigest(ID_GiGGLES),
-//       type: `pugNode`,
-//     },
-//   });
-// }
-
-// exports.sourceNodes = async (params) => {
-//   await Promise.all([prepPugNode(params)]);
-// };
-
-// const prepNode = async ({
-//   actions: { createNode },
-//   createNodeId,
-//   createContentDigest,
-// }) => {
-//   // //              G. Get embedData later with local plugin
-//   // //              I. I prep a Ginger node
-//   createNode({
-//     id: createNodeId(`pug-node-${ID_GiGGLES}`),
-//     internal: {
-//       type: `gingerNode`,
-//       contentDigest: createContentDigest(ID_GiGGLES),
-//     },
-//   });
-// };
-
-// exports.sourceNodes = async (params) => {
-//   await Promise.all([prepNode(params)]);
-// };
