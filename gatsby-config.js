@@ -12,7 +12,6 @@ module.exports = {
         icon: "src/images/icon.png",
       },
     },
-    "gatsby-transformer-remark",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
@@ -42,6 +41,18 @@ module.exports = {
           //  "UGq8cnNTbwI",
         ],
       },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `content`,
+        path: `${__dirname}/content/`,
+      },
+      __key: "content",
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {},
     },
   ],
 };
