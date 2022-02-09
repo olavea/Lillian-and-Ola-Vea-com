@@ -1,5 +1,5 @@
 ---
-title: About Skill-Builder POW! Pirates!
+title: About POW! Pirates!
 
 ---
 
