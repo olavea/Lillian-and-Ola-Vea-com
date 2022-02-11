@@ -12,10 +12,14 @@ const ComponentName = ({ data }) => {
         {(sections || []).map((section) => {
           const { title } = section;
           const { html } = section.body.childMarkdownRemark;
+          const { label } = section.cta;
+          const { path } = section.cta;
+
           return (
             <section>
               <h2>{title}</h2>
               <div dangerouslySetInnerHTML={{ __html: html }} />
+              <a href={path}>{label}</a>
             </section>
           );
         })}
