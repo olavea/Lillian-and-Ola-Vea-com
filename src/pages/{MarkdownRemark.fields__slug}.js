@@ -1,9 +1,11 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 
 const ComponentName = ({ data }) => {
   const { frontmatter, html } = data.markdownRemark;
   const { title, sections } = frontmatter;
+  //const signup = section.cta ? <Link to={path}>{label}</Link> : null;
+
   return (
     <>
       <div className="container">
@@ -12,14 +14,12 @@ const ComponentName = ({ data }) => {
         {(sections || []).map((section) => {
           const { title } = section;
           const { html } = section.body.childMarkdownRemark;
-          const { label } = section.cta;
-          const { path } = section.cta;
-
+          const { path, label } = section.cta;
           return (
             <section>
               <h2>{title}</h2>
               <div dangerouslySetInnerHTML={{ __html: html }} />
-              <a href={path}>{label}</a>
+              <Link to={path}>{label}</Link>
             </section>
           );
         })}
@@ -35,15 +35,15 @@ export const query = graphql`
       frontmatter {
         title
         sections {
+          cta {
+            path
+            label
+          }
           title
           body {
             childMarkdownRemark {
               html
             }
-          }
-          cta {
-            path
-            label
           }
         }
       }
