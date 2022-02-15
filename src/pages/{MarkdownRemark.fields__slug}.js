@@ -13,13 +13,13 @@ const ComponentName = ({ data }) => {
         <div dangerouslySetInnerHTML={{ __html: html }} />
         {(sections || []).map((section) => {
           const { title } = section;
-          const { html } = section.body.childMarkdownRemark;
-          const { path, label } = section.cta;
+          const { html } = section.body.childMarkdownRemark || [];
+          const { path, label } = section.cta || [];
           return (
             <section>
               <h2>{title}</h2>
-              <div dangerouslySetInnerHTML={{ __html: html }} />
-              <Link to={path}>{label}</Link>
+              {html && <div dangerouslySetInnerHTML={{ __html: html }} />}
+              {path && <Link to={path}>{label}</Link>}
             </section>
           );
         })}
