@@ -53,7 +53,7 @@ exports.sourceNodes = async (params, options) => {
 
 exports.createPages = ({ actions: { createPage } }) => {
   //  if (IS_PROD) return;
-  const bakingSong = path.resolve(__dirname, `templates/test.js`);
+  const bakingSong = path.resolve(__dirname, `templates/video-archive.js`);
   createPage({
     // A. Ahoy video!
     path: "ahoy",
