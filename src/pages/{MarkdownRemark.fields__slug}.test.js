@@ -103,6 +103,12 @@ describe("Markdown Page", () => {
         };
 
         expect(checkForCtaInSection2).toThrow();
+
+        const checkForCtaInSection3 = () => {
+          sections[3].findByType("a");
+        };
+
+        expect(checkForCtaInSection3).toThrow();
       });
     });
   });
