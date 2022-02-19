@@ -5,22 +5,22 @@ sections:
     body: ./private-data.md
     cta:
       path: /signup
-      label: SIGN UP
+      label: Sign up
   - title: Your private data
     body: ./your-private-data.md
     cta:
       path: /signup
-      label: YES TO PRIVACY
+      label: Yes to privacy
   - title: Your own words
     body: ./own-words.md
     cta:
       path: /signup
-      label: YES TO YOUR OWN WORDS
+      label: Yes to your own words
   - title: Your personal cycle
     body: ./personal-cycle.md
     cta:
       path: /signup
-      label: TAKE CHARGE
+      label: Take charge
 
 ---
 
