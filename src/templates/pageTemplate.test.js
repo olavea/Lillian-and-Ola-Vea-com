@@ -1,6 +1,6 @@
 import React from "react";
 import { create } from "react-test-renderer";
-import Page from "./{MarkdownRemark.fields__slug}";
+import Page from "./pageTemplate";
 
 describe("Markdown Page", () => {
   describe("without data", () => {
