@@ -63,7 +63,7 @@ async function bakeMarkdownNodesIntoPages({ graphql, actions }) {
 }
 
 exports.onCreateNode = async (gatsbyUtils) => {
-  await Promise.all([slugifyMarkdownRemarkNode(gatsbyUtils)]);
+  slugifyMarkdownRemarkNode(gatsbyUtils);
 };
 
 // 1.2.3 – A.B.C. – Gingerbread house
@@ -76,5 +76,5 @@ exports.onCreateNode = async (gatsbyUtils) => {
 // B. BakingSong is a component
 // C. Catsby node.id is context
 exports.createPages = async (gatsbyUtils) => {
-  await Promise.all([bakeMarkdownNodesIntoPages(gatsbyUtils)]);
+  bakeMarkdownNodesIntoPages(gatsbyUtils);
 };
