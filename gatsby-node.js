@@ -13,14 +13,11 @@ async function slugifyMarkdownRemarkNode({ actions, node, getNode }) {
 }
 
 // POW!-website/gatsby-node.js
-// I will delete all these comments and rename everything after my
-// livestream on Thursday Feb 24.
-// badly baked GingerBreadPages 🏠
-// Only bake pages for markdown pages 📄 and not sections. ㊙️ 📟
-// 0. Only index.md 📄
+
+// 1.2.3 – A.B.C. – Gingerbread house
+// 0. gatsbyUtils 🔧
 async function bakeMarkdownNodesIntoPages({ graphql, actions }) {
-  // 1. filter ☕
-  //    supplies: not allMarkdownRemark.nodes 💰
+  // 1. filter ☕ first
   const { data } = await graphql(`
     {
       supplies: allMarkdownRemark(
@@ -28,6 +25,7 @@ async function bakeMarkdownNodesIntoPages({ graphql, actions }) {
       ) {
         nodes {
           id
+          fileAbsolutePath
           fields {
             slug
           }
@@ -35,25 +33,22 @@ async function bakeMarkdownNodesIntoPages({ graphql, actions }) {
       }
     }
   `);
-  console.log(data.supplies.nodes);
-
-  // 2. bakingsong 🎵 🙀
+  // 2. bakingSong 🎵 🦢
   const bakingSong = require.resolve("./src/templates/pageTemplate.js");
-  // 3. aromaNode 🍰
-  // Loop over the supplies.nodes and forEach((aromaNode and bake a page
+  // 3. aromaNode 🍰💰
+  // Loop over the supplies.nodes and
+  // forEach((aromaNode
+  // bake a page
+  // I forgot the supplies
   data.supplies.nodes.forEach((aromaNode) => {
-    console.log(aromaNode.fields.slug, "💀📄");
-
+    // console.log(aromaNode.fields.slug, "💀📄");
     const aromaNodePath =
       aromaNode.fields.slug === "/index/" ? "/" : aromaNode.fields.slug;
-
     actions.createPage({
       // A. aromaNodePath 🍰.🍓.🐛
       path: aromaNodePath,
-
       // B. bakingSong 🎵 🙀
       component: bakingSong,
-
       // C. catsbyId 😼🆔
       context: {
         catsbyId: aromaNode.id,
@@ -63,18 +58,9 @@ async function bakeMarkdownNodesIntoPages({ graphql, actions }) {
 }
 
 exports.onCreateNode = async (gatsbyUtils) => {
-  slugifyMarkdownRemarkNode(gatsbyUtils);
+  await slugifyMarkdownRemarkNode(gatsbyUtils);
 };
 
-// 1.2.3 – A.B.C. – Gingerbread house
-
-// 1. Supplies: allMarkdownRemark.node
-// 2. Bakingsong = bakingSong.js
-// 3. Loop over the supply node and create a page
-
-// A. Ahoy! Aroma path!
-// B. BakingSong is a component
-// C. Catsby node.id is context
 exports.createPages = async (gatsbyUtils) => {
-  bakeMarkdownNodesIntoPages(gatsbyUtils);
+  await bakeMarkdownNodesIntoPages(gatsbyUtils);
 };
