@@ -10,8 +10,8 @@ export default function PageTemplate({ data = {} }) {
         <h1>{title}</h1>
         <div dangerouslySetInnerHTML={{ __html: html }} />
         {(sections || []).map((section) => {
-          const { title } = section || {};
-          const { html } = section.body.childMarkdownRemark || {};
+          const { title, body } = section || {};
+          const { html } = body?.childMarkdownRemark || {};
           const { path, label } = section.cta || {};
           return (
             <section>
@@ -27,7 +27,7 @@ export default function PageTemplate({ data = {} }) {
 }
 
 export const query = graphql`
-  query($catsbyId: String) {
+  query ($catsbyId: String) {
     markdownRemark(id: { eq: $catsbyId }) {
       html
       frontmatter {
