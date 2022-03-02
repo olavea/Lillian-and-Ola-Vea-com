@@ -14,16 +14,17 @@ export default function PageTemplate({ data = {} }) {
         <h1>{title}</h1>
         <div dangerouslySetInnerHTML={{ __html: html }} />
         {(sections || []).map((section) => {
-          const { title, body } = section || {};
+          const { title, subtitle, body } = section || {};
           const { html } = body?.childMarkdownRemark || {};
           const { path, label } = section.cta || {};
-          const { subtitle, form } = section || {};
+          const { form } = section || {};
           return (
             <section>
               {title && <h2>{title}</h2>}
+              {subtitle && <h2>{subtitle}</h2>}
               {html && <div dangerouslySetInnerHTML={{ __html: html }} />}
               {path && label && <Link to={path}>{label}</Link>}
-              {subtitle && form && (
+              {form && (
                 <form
                   onSubmit={createEmail}
                   action="https://forms.userlist.com/b199b263-3262-435f-a9bc-96a12aa9955d/submissions"
@@ -38,7 +39,6 @@ export default function PageTemplate({ data = {} }) {
                       name="fields[first_name]"
                     />
                   </fieldset>
-
                   <fieldset>
                     <label htmlFor="fields_email">Email </label>
                     <input
@@ -48,7 +48,6 @@ export default function PageTemplate({ data = {} }) {
                       required
                     />
                   </fieldset>
-
                   <button type="submit">Submit</button>
                 </form>
               )}
