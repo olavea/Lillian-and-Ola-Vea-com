@@ -6,9 +6,6 @@ sections:
     cta:
       path: /signup
       label: Sign up
-  - title: Join the newsletter for emails about Privacy, Menstrual Health and POW!
-    subtitle: No menstruation experience needed ;)
-    form: newsletter
   - title: Your private data
     body: ./your-private-data.md
     cta:

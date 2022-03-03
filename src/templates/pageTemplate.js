@@ -21,7 +21,7 @@ export default function PageTemplate({ data = {} }) {
           return (
             <section>
               {title && <h2>{title}</h2>}
-              {subtitle && <h2>{subtitle}</h2>}
+              {subtitle && <h3>{subtitle}</h3>}
               {html && <div dangerouslySetInnerHTML={{ __html: html }} />}
               {path && label && <Link to={path}>{label}</Link>}
               {form && (
@@ -32,7 +32,7 @@ export default function PageTemplate({ data = {} }) {
                   acceptCharset="UTF-8"
                 >
                   <fieldset>
-                    <label htmlFor="fields_first_name">First name </label>
+                    <label htmlFor="fields_first_name">Your first name </label>
                     <input
                       type="text"
                       id="fields_first_name"
@@ -40,7 +40,7 @@ export default function PageTemplate({ data = {} }) {
                     />
                   </fieldset>
                   <fieldset>
-                    <label htmlFor="fields_email">Email </label>
+                    <label htmlFor="fields_email">Your email address </label>
                     <input
                       type="text"
                       id="fields_email"
@@ -48,7 +48,9 @@ export default function PageTemplate({ data = {} }) {
                       required
                     />
                   </fieldset>
-                  <button type="submit">Submit</button>
+                  <button type="submit">
+                    Subscribe to the POW! Newsletter
+                  </button>
                 </form>
               )}
             </section>
