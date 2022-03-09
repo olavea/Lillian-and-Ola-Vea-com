@@ -11,6 +11,11 @@ export default function PageTemplate({ data = {} }) {
   return (
     <>
       <div className="container">
+        <header>
+          <h1>POW!</h1>
+          <Link to="../signup">Sign Up</Link>
+          <Link to="../log-in">Log In</Link>
+        </header>
         <h1>{title}</h1>
         <div dangerouslySetInnerHTML={{ __html: html }} />
         {(sections || []).map((section) => {
@@ -56,6 +61,16 @@ export default function PageTemplate({ data = {} }) {
             </section>
           );
         })}
+        <footer>
+          <p>
+            Made with{" "}
+            <span role="img" aria-label="heart emoji">
+              💜
+            </span>
+            by @raae and family. hello@usepow.app Tromsøgata 26, 0565 Oslo,
+            Norway
+          </p>
+        </footer>
       </div>
     </>
   );
