@@ -2,7 +2,7 @@
 title: POW! — the privacy-first menstrual cycle journal
 sections:
   - title: Take charge of your menstrual cycle!
-    body: ./private-data.md
+    body: ./intro.md
     cta:
       path: /signup
       label: Sign up
@@ -21,7 +21,4 @@ sections:
     cta:
       path: /signup
       label: Take charge
-
 ---
-
-

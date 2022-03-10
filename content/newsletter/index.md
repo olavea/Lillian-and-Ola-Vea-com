@@ -1,8 +1,7 @@
 ---
-title: Join the POW! newsletter for updates about
+title: POW! Newsletter
 sections:
-  - title: Privacy, Menstrual Health and POW!
+  - title: Learn more about Privacy, Menstrual Health and POW!
     subtitle: No menstruation experience needed ;)
     form: newsletter
 ---
-
