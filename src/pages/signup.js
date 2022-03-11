@@ -1,46 +1,26 @@
-import {
-  AppBar,
-  Container,
-  InputAdornment,
-  Toolbar,
-  Typography,
-} from "@mui/material";
-import { Box } from "@mui/system";
 import React from "react";
+import { Link } from "gatsby";
+import { Link as MuiLink, Typography } from "@mui/material";
+
 import SignUp from "../components/SignUp";
+import SiteHeader from "../components/site-header";
 
-// <main>
-// <Box>
-//   <Container>
-//     <Typography>
-//       <InputAdornment />
-//     </Typography>
-//   </Container>
-// </Box>
-// </main>
-
-export default function Signup() {
+const SignUpPage = () => {
   return (
     <>
-      <div className="container">
-        <AppBar>
-          <Container maxWidth="lg">
-            <Toolbar disableGutters>
-              <Typography
-                sx={{
-                  fontWeight: 900,
-                  transform: "scale(1.3)",
-                }}
-              >
-                POW!
-              </Typography>
-            </Toolbar>
-          </Container>
-        </AppBar>
-        <div>
-          <SignUp />
-        </div>
-      </div>
+      <SiteHeader>
+        <Typography variant="body2" sx={{ ml: "auto" }}>
+          Already have an account?{" "}
+          <MuiLink component={Link} to="login">
+            Login
+          </MuiLink>
+        </Typography>
+      </SiteHeader>
+      <main>
+        <SignUp />
+      </main>
     </>
   );
-}
+};
+
+export default SignUpPage;
