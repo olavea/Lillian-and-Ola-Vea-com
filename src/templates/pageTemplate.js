@@ -1,7 +1,6 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
 import {
-  AppBar,
   Toolbar,
   Button,
   Container,
@@ -10,6 +9,7 @@ import {
 } from "@mui/material";
 
 import { Box } from "@mui/system";
+import SiteHeader from "../components/site-header";
 
 export default function PageTemplate({ data = {} }) {
   const { frontmatter, html } = data.markdownRemark || {};
@@ -21,38 +21,24 @@ export default function PageTemplate({ data = {} }) {
   return (
     <>
       <div className="container">
-        <AppBar>
-          <Container maxWidth="lg">
-            <Toolbar disableGutters>
-              <Button component={Link} to="/" edge="start">
-                <Typography
-                  sx={{
-                    fontWeight: 900,
-                    transform: "scale(1.3)",
-                  }}
-                >
-                  POW!
-                </Typography>
-              </Button>
-              <Button
-                variant="outlined"
-                href="my.usepow.app"
-                sx={{ ml: "auto", mr: 2 }}
-              >
-                Log In
-              </Button>
-              <Button
-                color="primary"
-                variant="contained"
-                component={Link}
-                to="/signup"
-                edge="end"
-              >
-                Get started
-              </Button>
-            </Toolbar>
-          </Container>
-        </AppBar>
+        <SiteHeader>
+          <Button
+            variant="outlined"
+            href="my.usepow.app"
+            sx={{ ml: "auto", mr: 2 }}
+          >
+            Log In
+          </Button>
+          <Button
+            color="primary"
+            variant="contained"
+            component={Link}
+            to="/signup"
+            edge="end"
+          >
+            Get started
+          </Button>
+        </SiteHeader>
 
         <main>
           <Box sx={{ pt: 16 }} component="header">
