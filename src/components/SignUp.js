@@ -14,7 +14,15 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import { IconButton, InputAdornment, OutlinedInput } from "@mui/material";
+import {
+  FaceIcon,
+  DraftsIcon,
+  IconButton,
+  InputAdornment,
+  OutlinedInput,
+} from "@mui/material";
+// import DraftsIcon from '@material-ui/icons/Drafts';
+// import FaceIcon from '@material-ui/icons/Face';
 
 function Copyright(props) {
   return (
@@ -26,7 +34,7 @@ function Copyright(props) {
     >
       {"Copyright © "}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        POW!
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -96,7 +104,15 @@ export default function SignUp() {
                   required
                   fullWidth
                   id="userName"
-                  label="Usernsame"
+                  label="Username"
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="end">
+                        <FaceIcon />
+                      </InputAdornment>
+                    ),
+                  }}
+                  variant="standard"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -107,6 +123,14 @@ export default function SignUp() {
                   label="Email Address"
                   name="email"
                   autoComplete="email"
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="end">
+                        <FaceIcon />
+                      </InputAdornment>
+                    ),
+                  }}
+                  variant="standard"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -118,13 +142,13 @@ export default function SignUp() {
                   required
                   fullWidth
                   name="password"
-                  label="Password"
                   autoComplete="new-password"
                   endAdornment={
                     <InputAdornment position="end">
                       <IconButton
                         aria-label="toggle password visibility"
                         onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword}
                         edge="end"
                       >
                         {values.showPassword ? (
@@ -135,6 +159,7 @@ export default function SignUp() {
                       </IconButton>
                     </InputAdornment>
                   }
+                  label="Password"
                 />
               </Grid>
               <Grid item xs={12}>
