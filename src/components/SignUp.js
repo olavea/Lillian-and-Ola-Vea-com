@@ -14,15 +14,15 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import { IconButton, InputAdornment, OutlinedInput } from "@mui/material";
 import {
   FaceIcon,
-  DraftsIcon,
-  IconButton,
-  InputAdornment,
-  OutlinedInput,
-} from "@mui/material";
-// import DraftsIcon from '@material-ui/icons/Drafts';
-// import FaceIcon from '@material-ui/icons/Face';
+  FaceRetouchingNaturalOutlined,
+  FaceRetouchingNaturalSharp,
+} from "@mui/icons-material";
+// import DraftsIcon from "@material-ui/icons/Drafts";
+// import FaceIcon from "@material-ui/icons/Face";
+//import FaceIcon from "@mui/icons-material/FaceIcon";
 
 function Copyright(props) {
   return (
@@ -105,69 +105,56 @@ export default function SignUp() {
                   fullWidth
                   id="userName"
                   label="Username"
-                  InputProps={{
-                    startAdornment: (
-                      <InputAdornment position="end">
-                        <FaceIcon />
-                      </InputAdornment>
-                    ),
-                  }}
-                  variant="standard"
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  required
                   fullWidth
                   id="email"
-                  label="Email Address"
+                  label="Your Best Email Address"
                   name="email"
                   autoComplete="email"
-                  InputProps={{
-                    startAdornment: (
-                      <InputAdornment position="end">
-                        <FaceIcon />
-                      </InputAdornment>
-                    ),
-                  }}
-                  variant="standard"
                 />
               </Grid>
               <Grid item xs={12}>
-                <OutlinedInput
-                  id="outlined-adornment-password"
-                  type={values.showPassword ? "text" : "password"}
-                  value={values.password}
-                  onChange={handleChange("password")}
-                  required
-                  fullWidth
-                  name="password"
-                  autoComplete="new-password"
-                  endAdornment={
-                    <InputAdornment position="end">
-                      <IconButton
-                        aria-label="toggle password visibility"
-                        onClick={handleClickShowPassword}
-                        onMouseDown={handleMouseDownPassword}
-                        edge="end"
-                      >
-                        {values.showPassword ? (
-                          <VisibilityOff />
-                        ) : (
-                          <Visibility />
-                        )}
-                      </IconButton>
-                    </InputAdornment>
-                  }
-                  label="Password"
-                />
+                <label>
+                  {" "}
+                  Password
+                  <OutlinedInput
+                    id="outlined-adornment-password"
+                    label="Password"
+                    type={values.showPassword ? "text" : "password"}
+                    value={values.password}
+                    onChange={handleChange("password")}
+                    required
+                    fullWidth
+                    name="password"
+                    autoComplete="new-password"
+                    endAdornment={
+                      <InputAdornment position="end">
+                        <IconButton
+                          aria-label="toggle password visibility"
+                          onClick={handleClickShowPassword}
+                          onMouseDown={handleMouseDownPassword}
+                          edge="end"
+                        >
+                          {values.showPassword ? (
+                            <VisibilityOff />
+                          ) : (
+                            <Visibility />
+                          )}
+                        </IconButton>
+                      </InputAdornment>
+                    }
+                  />
+                </label>
               </Grid>
               <Grid item xs={12}>
                 <FormControlLabel
                   control={
                     <Checkbox value="allowExtraEmails" color="primary" />
                   }
-                  label="I want to receive inspiration, marketing promotions and updates via email."
+                  label="I want POW! emails. No spam."
                 />
               </Grid>
             </Grid>
