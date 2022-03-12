@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import { Link as MuiLink, Typography } from "@mui/material";
 
-import SignUp from "../components/SignUp";
+import SignUp from "../components/SignUpForm";
 import SiteHeader from "../components/site-header";
 
 const SignUpPage = () => {

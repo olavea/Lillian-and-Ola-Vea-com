@@ -121,15 +121,20 @@ export default function SignUp() {
                   {" "}
                   Password
                   <OutlinedInput
-                    id="outlined-adornment-password"
-                    label="Password"
-                    type={values.showPassword ? "text" : "password"}
                     value={values.password}
                     onChange={handleChange("password")}
+                    // disabled={disabled}
+                    id="outlined-adornment-password"
+                    variant="outlined"
+                    margin="normal"
+                    name="password"
+                    // label="Password"
+                    type={values.showPassword ? "text" : "password"}
+                    autoComplete="new-password"
+                    placeholder="glitter-rainbow-butterfly-kitty"
+                    //InputLabelProps={{ shrink: true }}
                     required
                     fullWidth
-                    name="password"
-                    autoComplete="new-password"
                     endAdornment={
                       <InputAdornment position="end">
                         <IconButton
