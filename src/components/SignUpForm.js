@@ -88,7 +88,7 @@ export default function SignUp() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign up
+            Get started for free
           </Typography>
           <Box
             component="form"
@@ -154,12 +154,13 @@ export default function SignUp() {
                   />
                 </label>
               </Grid>
+
               <Grid item xs={12}>
                 <FormControlLabel
                   control={
                     <Checkbox value="allowExtraEmails" color="primary" />
                   }
-                  label="I want POW! emails. No spam."
+                  label="I want POW! emails."
                 />
               </Grid>
             </Grid>
