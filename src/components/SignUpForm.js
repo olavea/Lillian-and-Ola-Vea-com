@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -15,14 +16,6 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { IconButton, InputAdornment, OutlinedInput } from "@mui/material";
-import {
-  FaceIcon,
-  FaceRetouchingNaturalOutlined,
-  FaceRetouchingNaturalSharp,
-} from "@mui/icons-material";
-// import DraftsIcon from "@material-ui/icons/Drafts";
-// import FaceIcon from "@material-ui/icons/Face";
-//import FaceIcon from "@mui/icons-material/FaceIcon";
 
 function Copyright(props) {
   return (
@@ -45,14 +38,35 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignUp() {
+  const [isPending, setIsPending] = useState();
+  const [error, setError] = useState();
+  const [rememberMe, setRememberMe] = useState("local");
+
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    setIsPending(true);
+    setError(null);
+
     const data = new FormData(event.currentTarget);
     // eslint-disable-next-line no-console
     console.log({
       email: data.get("email"),
+      username: data.get("userName"),
       password: data.get("password"),
     });
+    // if (result.error) {
+    //   setIsPending(false);
+    //   setError(result.error);
+    // } else {
+    //   if (onSubmitFulfilled) {
+    //     onSubmitFulfilled();
+    //   } else {
+    //     navigate("/timeline/");
+    //   }
+
+    //   setIsPending(false);
+    //}
   };
   const [values, setValues] = React.useState({
     showPassword: false,
@@ -72,6 +86,8 @@ export default function SignUp() {
     event.preventDefault();
   };
 
+  const disabled = isPending;
+
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
@@ -88,7 +104,7 @@ export default function SignUp() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Get started for free
+            Get started for $45 a year
           </Typography>
           <Box
             component="form"
@@ -99,21 +115,23 @@ export default function SignUp() {
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
-                  autoComplete="user-name"
+                  disabled={disabled}
                   name="userName"
-                  required
-                  fullWidth
                   id="userName"
                   label="Username"
+                  autoComplete="user-name"
+                  required
+                  fullWidth
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  fullWidth
+                  disabled={disabled}
                   id="email"
                   label="Your Best Email Address"
                   name="email"
                   autoComplete="email"
+                  fullWidth
                 />
               </Grid>
               <Grid item xs={12}>
@@ -121,6 +139,7 @@ export default function SignUp() {
                   {" "}
                   Password
                   <OutlinedInput
+                    disabled={disabled}
                     value={values.password}
                     onChange={handleChange("password")}
                     // disabled={disabled}
@@ -157,6 +176,7 @@ export default function SignUp() {
 
               <Grid item xs={12}>
                 <FormControlLabel
+                  disabled={disabled}
                   control={
                     <Checkbox value="allowExtraEmails" color="primary" />
                   }
@@ -165,12 +185,13 @@ export default function SignUp() {
               </Grid>
             </Grid>
             <Button
+              disabled={disabled}
               type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign Up
+              Create account
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
