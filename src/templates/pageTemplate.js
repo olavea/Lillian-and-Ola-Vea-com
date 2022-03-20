@@ -21,7 +21,7 @@ export default function PageTemplate({ data = {} }) {
     <>
       <div className="container">
         <SiteHeader>
-          <MuiLink href="my.usepow.app" sx={{ ml: "auto", mr: 3 }}>
+          <MuiLink component={Link} to="/login" sx={{ ml: "auto", mr: 3 }}>
             Log In
           </MuiLink>
           <Button
@@ -36,7 +36,7 @@ export default function PageTemplate({ data = {} }) {
         </SiteHeader>
 
         <main>
-          <Box sx={{ pt: 16 }} component="header">
+          <Box sx={{ pt: 12 }} component="header">
             <Container maxWidth="content">
               <Typography variant="overline" component="h1">
                 {title}
@@ -66,7 +66,12 @@ export default function PageTemplate({ data = {} }) {
                   )}
                   {html && <Prose html={html} />}
                   {path && label && (
-                    <Button variant="contained" to={path} sx={{ my: 2 }}>
+                    <Button
+                      variant="contained"
+                      component={Link}
+                      to={path}
+                      sx={{ my: 2 }}
+                    >
                       {label}
                     </Button>
                   )}
