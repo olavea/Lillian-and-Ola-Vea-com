@@ -5,7 +5,7 @@ sections:
     body: ./intro.md
     cta:
       path: /signup
-      label: Sign up
+      label: Get started
   - title: Your private data
     body: ./your-private-data.md
     cta:

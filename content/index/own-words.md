@@ -1,9 +1,9 @@
-Am I anxious, angry or sad? Am I tired, exhausted or sleepy? Did I bleed one drop, two drops, or three drops?
+Are you anxious, angry or sad? Are you tired, exhausted or sleepy? Did you bleed one drop, two drops, or three drops?
 
-Do you also feel overwhelmed when trying to track your cycle? It's often so very detailed and clinical.
+Do you feel overwhelmed when trying to name things in your cycle? It's often so very detailed and clinical.
 
-I have this mood I call #mollefonk. There is never an option for that. I never remember if I logged it as anxious or PMS...
+Our founder (@raae) has this mood she calls **#mollefonk**. There is never an option for that. So inevitably she never remembers if she logged it as anxious, PMS, angry or...you get the point.
 
-Wouldn't it be nice to use words and terminology familiar to you?
+_Wouldn't it be nice to use words and terminology familiar to you?_
 
-POW! Solves this by letting you hashtag whatever cycle "thing" is important to you. It can be a made-up word like #mollefonk, or a more typical one like #pms.
+**POW!** Solves this by letting you hashtag whatever cycle "thing" is important to you. It can be a made-up word like #mollefonk, or a more typical one like #pms.
