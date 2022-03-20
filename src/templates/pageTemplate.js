@@ -1,17 +1,17 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
 import {
-  Toolbar,
   Button,
+  Box,
   Container,
   Typography,
   Link as MuiLink,
 } from "@mui/material";
-import { Box } from "@mui/system";
-import { Prose } from "../components/prose";
 
+import { Prose } from "../components/prose";
 import { SiteHeader } from "../components/site-header";
 import { NewsletterForm } from "../components/newsletter-form";
+import { SiteFooter } from "../components/site-footer";
 
 export default function PageTemplate({ data = {} }) {
   const { frontmatter, html } = data.markdownRemark || {};
@@ -76,31 +76,7 @@ export default function PageTemplate({ data = {} }) {
             );
           })}
         </main>
-        <Box component="footer" sx={{ py: 6 }}>
-          <Container
-            maxWidth="lg"
-            sx={{
-              display: "flex",
-              gap: 3,
-              justifyContent: "space-between",
-              flexDirection: { xs: "column", sm: "row" },
-            }}
-          >
-            <Typography textAlign="left">
-              Made with ❤️ <br />
-              by <MuiLink href="https://twitter.com/raae">@raae</MuiLink> and
-              family.
-            </Typography>
-
-            <Box sx={{ textAlign: { sm: "right" } }}>
-              <MuiLink href="mailto://hello@usepow.app">
-                hello@usepow.app
-              </MuiLink>
-
-              <Typography>Tromsøgata 26, 0565 Oslo, Norway</Typography>
-            </Box>
-          </Container>
-        </Box>
+        <SiteFooter />
       </div>
     </>
   );

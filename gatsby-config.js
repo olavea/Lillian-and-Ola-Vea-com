@@ -1,7 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Use POW!`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: `POW! — the privacy-first menstrual cycle journal`,
+    siteUrl: `https://usepow.app`,
+    contact: {
+      email: `hello@usepow.app`,
+      address: `Tromsøgata 26, 0565 Oslo, Norway`,
+    },
+    greeting: `Made with ❤ <br/>by <a href="https://twitter.com/raae">@raae</a> and family.`,
   },
   plugins: [
     "gatsby-plugin-image",
