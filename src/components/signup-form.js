@@ -46,7 +46,7 @@ export const SignUpForm = () => {
     //   setIsPending(false);
     //}
   };
-  const [values, setValues] = React.useState({
+  const [values, setValues] = useState({
     showPassword: false,
   });
 
@@ -76,10 +76,9 @@ export const SignUpForm = () => {
     >
       <TextField
         disabled={disabled}
-        name="username"
-        id="username"
         label="Username"
-        autoComplete="user-name"
+        type="text"
+        autoComplete="username"
         sx={{ mb: 3 }}
         required
         fullWidth
@@ -87,9 +86,8 @@ export const SignUpForm = () => {
 
       <TextField
         disabled={disabled}
-        id="email"
-        label="Your best email address"
-        name="email"
+        label="Email address"
+        type="email"
         autoComplete="email"
         sx={{ mb: 3 }}
         required
@@ -98,14 +96,14 @@ export const SignUpForm = () => {
 
       <TextField
         disabled={disabled}
-        id="email"
         label="Password"
-        name="email"
-        autoComplete="email"
+        type={values.showPassword ? "text" : "password"}
+        autoComplete="new-password"
         placeholder="glitter-rainbow-butterfly-kitty"
-        required
-        fullWidth
-        InputAdornment={{
+        value={values.password}
+        onChange={handleChange("password")}
+        sx={{ mb: 2 }}
+        InputProps={{
           endAdornment: (
             <InputAdornment position="end">
               <IconButton
@@ -123,6 +121,8 @@ export const SignUpForm = () => {
             </InputAdornment>
           ),
         }}
+        required
+        fullWidth
       />
 
       <FormControlLabel

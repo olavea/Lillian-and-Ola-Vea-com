@@ -2,14 +2,16 @@ const themeAppBar = (theme) => {
   return {
     MuiAppBar: {
       defaultProps: {
-        color: "transparent",
         elevation: 0,
-        border: true,
+        position: "sticky",
+        color: "transparent",
       },
       styleOverrides: {
         colorTransparent: {
-          backgroundColor: "#fffaf0b3",
+          backgroundColor: "#ffffffb3",
           backdropFilter: "blur(20px)",
+          borderBottom: "thin",
+          borderColorBottom: "#fff",
         },
       },
     },

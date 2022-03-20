@@ -16,7 +16,7 @@ const SignUpPage = () => {
   return (
     <>
       <SiteHeader>
-        <Typography variant="body2" sx={{ ml: "auto" }}>
+        <Typography sx={{ ml: "auto" }}>
           Already have an account?{" "}
           <MuiLink component={Link} to="login">
             Login
@@ -24,7 +24,7 @@ const SignUpPage = () => {
         </Typography>
       </SiteHeader>
       <main>
-        <Box sx={{ pt: 16 }} component="header">
+        <Box sx={{ pt: 12 }} component="header">
           <Container
             maxWidth="sm"
             sx={{
@@ -33,11 +33,11 @@ const SignUpPage = () => {
               alignItems: "center",
             }}
           >
-            <Avatar sx={{ mb: 2, bgcolor: "secondary.main" }}>
+            <Avatar sx={{ mb: 3, bgcolor: "primary.main" }}>
               <LockIcon />
             </Avatar>
-            <Typography component="h1" variant="h5">
-              Get started for $45 a year
+            <Typography component="h1" variant="h4">
+              Create your POW! Account
             </Typography>
           </Container>
         </Box>

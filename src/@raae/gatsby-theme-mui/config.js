@@ -1,37 +1,38 @@
-import { red } from "@mui/material/colors";
+import { purple, red } from "@mui/material/colors";
 
-const config = {
-  palette: {
-    primary: {
-      main: red.A700,
-    },
-  },
+const themeConfig = {
   typography: {
-    fontSize: 18,
+    fontFamily: [
+      "-apple-system",
+      "BlinkMacSystemFont",
+      '"Segoe UI"',
+      "Roboto",
+      '"Helvetica Neue"',
+      "Arial",
+      "sans-serif",
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(","),
+    fontWeightRegular: 400,
+    fontWeightExtraBold: 900,
   },
-  components: {
-    // Name of the component
-    MuiAppBar: {
-      defaultProps: {
-        elevation: 0,
-        position: "sticky",
-        color: "transparent",
-      },
-      styleOverrides: {
-        colorTransparent: {
-          backgroundColor: "#ffffffb3",
-          backdropFilter: "blur(20px)",
-          borderBottom: "thin",
-          borderColorBottom: "#fff",
-        },
-      },
+  breakpoints: {
+    keys: ["xs", "sm", "md", "lg", "xl", "content"],
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
+      content: 700,
     },
-    MuiButton: {
-      defaultProps: {
-        disableElevation: true,
-      },
-    },
+  },
+  palette: {
+    brand: red["A700"],
+    primary: { main: red["A700"] },
+    secondary: { main: purple["600"] },
   },
 };
 
-export default config;
+export default themeConfig;

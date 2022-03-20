@@ -8,27 +8,22 @@ import {
   Link as MuiLink,
 } from "@mui/material";
 import { Box } from "@mui/system";
+import { Prose } from "../components/prose";
 
 import { SiteHeader } from "../components/site-header";
+import { NewsletterForm } from "../components/newsletter-form";
 
 export default function PageTemplate({ data = {} }) {
   const { frontmatter, html } = data.markdownRemark || {};
   const { title, sections } = frontmatter || {};
-  function createEmail(event) {
-    event.preventDefault();
-    alert("POW! You've got mail 📧 📫");
-  }
+
   return (
     <>
       <div className="container">
         <SiteHeader>
-          <Button
-            variant="outlined"
-            href="my.usepow.app"
-            sx={{ ml: "auto", mr: 2 }}
-          >
+          <MuiLink href="my.usepow.app" sx={{ ml: "auto", mr: 3 }}>
             Log In
-          </Button>
+          </MuiLink>
           <Button
             color="primary"
             variant="contained"
@@ -42,14 +37,15 @@ export default function PageTemplate({ data = {} }) {
 
         <main>
           <Box sx={{ pt: 16 }} component="header">
-            <Container maxWidth="md">
+            <Container maxWidth="content">
               <Typography variant="overline" component="h1">
                 {title}
               </Typography>
             </Container>
           </Box>
 
-          <div dangerouslySetInnerHTML={{ __html: html }} />
+          <Prose html={html} />
+
           {(sections || []).map((section) => {
             const { title, subtitle, body } = section || {};
             const { html } = body?.childMarkdownRemark || {};
@@ -57,52 +53,24 @@ export default function PageTemplate({ data = {} }) {
             const { form } = section || {};
             return (
               <Box component="section" sx={{ py: 6 }}>
-                <Container maxWidth="md">
+                <Container maxWidth="content">
                   {title && (
-                    <Typography variant="h2" gutterBottom>
+                    <Typography component="h2" variant="h1" gutterBottom>
                       {title}
                     </Typography>
                   )}
-                  {subtitle && <Typography variant="h3">{subtitle}</Typography>}
-                  {html && <div dangerouslySetInnerHTML={{ __html: html }} />}
+                  {subtitle && (
+                    <Typography component="h3" variant="h2" gutterBottom>
+                      {subtitle}
+                    </Typography>
+                  )}
+                  {html && <Prose html={html} />}
                   {path && label && (
                     <Button variant="contained" to={path} sx={{ my: 2 }}>
                       {label}
                     </Button>
                   )}
-                  {form && (
-                    <form
-                      onSubmit={createEmail}
-                      action="https://forms.userlist.com/b199b263-3262-435f-a9bc-96a12aa9955d/submissions"
-                      method="POST"
-                      acceptCharset="UTF-8"
-                    >
-                      <fieldset>
-                        <label htmlFor="fields_first_name">
-                          Your first name{" "}
-                        </label>
-                        <input
-                          type="text"
-                          id="fields_first_name"
-                          name="fields[first_name]"
-                        />
-                      </fieldset>
-                      <fieldset>
-                        <label htmlFor="fields_email">
-                          Your email address{" "}
-                        </label>
-                        <input
-                          type="text"
-                          id="fields_email"
-                          name="fields[email]"
-                          required
-                        />
-                      </fieldset>
-                      <Button type="submit" variant="contained">
-                        Subscribe to the POW! Newsletter
-                      </Button>
-                    </form>
-                  )}
+                  {form === "newsletter" && <NewsletterForm sx={{ mt: 5 }} />}
                 </Container>
               </Box>
             );

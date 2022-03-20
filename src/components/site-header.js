@@ -5,7 +5,7 @@ import { AppBar, Toolbar, Button, Container, Typography } from "@mui/material";
 export const SiteHeader = ({ children }) => {
   return (
     <AppBar>
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Button component={Link} to="/" edge="start">
             <Typography

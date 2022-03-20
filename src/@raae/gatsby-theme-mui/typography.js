@@ -23,36 +23,31 @@ const themeTypography = (theme) => {
     h1: {
       letterSpacing: "-0.025em",
       lineHeight: 1,
-      fontSize: "2.75rem",
+      fontSize: "3.15rem",
       fontWeight: theme.typography.fontWeightExtraBold,
     },
     subtitle1: {
-      fontSize: "1.25rem",
+      fontSize: "1.125rem",
       lineHeight: 1.35,
       fontWeight: theme.typography.fontWeightBold,
     },
     subtitle2: {
-      fontSize: "1.25rem",
+      fontSize: "1rem",
       lineHeight: 1.35,
       fontWeight: theme.typography.fontWeightMedium,
     },
     overline: {
+      fontSize: "1rem",
       lineHeight: 1.35,
     },
-    // caption: {
-    //   fontSize: "0.75rem",
-    //   fontWeight: 400,
-    // },
-    // body1: {
-    //   fontSize: "0.875rem",
-    //   fontWeight: 400,
-    //   lineHeight: "1.334em",
-    // },
-    // body2: {
-    //   letterSpacing: "0em",
-    //   fontWeight: 400,
-    //   lineHeight: "1.5em",
-    // },
+    overline: {
+      fontSize: "1rem",
+      lineHeight: 1.35,
+    },
+    body2: {
+      fontSize: "1.25rem",
+      fontWeight: theme.typography.fontWeightLight,
+    },
   };
 };
 
