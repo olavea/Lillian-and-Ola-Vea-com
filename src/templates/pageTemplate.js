@@ -60,7 +60,7 @@ export default function PageTemplate({ data = {} }) {
                     </Typography>
                   )}
                   {subtitle && (
-                    <Typography component="h3" variant="h2" gutterBottom>
+                    <Typography variant="body2" gutterBottom>
                       {subtitle}
                     </Typography>
                   )}
@@ -81,7 +81,7 @@ export default function PageTemplate({ data = {} }) {
             );
           })}
         </main>
-        <SiteFooter />
+        <SiteFooter sx={{ pt: 12, pb: 4 }} />
       </div>
     </>
   );

@@ -37,13 +37,13 @@ export const NewsletterForm = ({ sx, action = ACTION, ...props }) => {
         id="fields_email"
         name="fields[email]"
         autoComplete="email"
-        sx={{ mb: 2 }}
+        sx={{ mb: 3 }}
         required
         fullWidth
       />
 
-      <Button type="submit" variant="contained">
-        Subscribe to the POW! Newsletter
+      <Button type="submit" variant="contained" fullWidth>
+        Subscribe
       </Button>
     </Box>
   );

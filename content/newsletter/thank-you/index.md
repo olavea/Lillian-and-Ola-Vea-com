@@ -1,10 +1,6 @@
 ---
-title: Your in!
+title: Thank You
 sections:
-  - title: Thank you for subscribing.
+  - title: Remember to confirm your subscription
+    subtitle: Find the email from hello@usepow.app and make sure you click-tap-press-or-something on the "Confirm Subscription"-link!
 ---
-
-For more day-to-day behind the scenes
-you may [follow me on Twitter](https://twitter.com/raae).
-
-— Benedicte [(@raae)](https://twitter.com/raae)

@@ -1,10 +1,10 @@
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql, Link } from "gatsby";
 
 import { Container, Typography, Link as MuiLink } from "@mui/material";
 import { Box } from "@mui/system";
 
-export const SiteFooter = () => {
+export const SiteFooter = ({ ...props }) => {
   const { site } = useStaticQuery(graphql`
     {
       site {
@@ -24,7 +24,7 @@ export const SiteFooter = () => {
   const address = site?.footer?.contact?.address;
 
   return (
-    <Box component="footer" sx={{ py: 6 }}>
+    <Box component="footer" {...props}>
       <Container
         maxWidth="lg"
         sx={{
@@ -32,15 +32,28 @@ export const SiteFooter = () => {
           gap: 3,
           justifyContent: "space-between",
           flexDirection: { xs: "column", sm: "row" },
+          "> *": {
+            width: "33.3%",
+          },
         }}
       >
         <Typography
           textAlign="left"
           dangerouslySetInnerHTML={{ __html: greeting }}
+          sx={{ a: { color: "inherit" } }}
         />
 
+        <Box sx={{ textAlign: { sm: "center" } }}>
+          <Typography>Sign up for the</Typography>
+          <MuiLink component={Link} to="/newsletter">
+            POW! Newsletter
+          </MuiLink>
+        </Box>
+
         <Box sx={{ textAlign: { sm: "right" } }}>
-          <MuiLink href={`mailto://${email}`}>{email}</MuiLink>
+          <MuiLink href={`mailto://${email}`} color="inherit">
+            {email}
+          </MuiLink>
           <Typography>{address}</Typography>
         </Box>
       </Container>
