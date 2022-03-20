@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import { AppBar, Toolbar, Button, Container, Typography } from "@mui/material";
 
-const SiteHeader = ({ children }) => {
+export const SiteHeader = ({ children }) => {
   return (
     <AppBar>
       <Container maxWidth="lg">
@@ -23,5 +23,3 @@ const SiteHeader = ({ children }) => {
     </AppBar>
   );
 };
-
-export default SiteHeader;

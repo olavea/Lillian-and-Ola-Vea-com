@@ -7,9 +7,9 @@ import {
   Typography,
   Link as MuiLink,
 } from "@mui/material";
-
 import { Box } from "@mui/system";
-import SiteHeader from "../components/site-header";
+
+import { SiteHeader } from "../components/site-header";
 
 export default function PageTemplate({ data = {} }) {
   const { frontmatter, html } = data.markdownRemark || {};

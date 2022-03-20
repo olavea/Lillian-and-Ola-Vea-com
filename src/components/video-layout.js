@@ -1,7 +1,6 @@
-// POW!-site/src/components/video-layout.js
 import React from "react";
 
-export default function VideoLayout({ title, html, author_name }) {
+export const VideoLayout = ({ title, html, author_name }) => {
   return (
     <>
       <article>
@@ -19,4 +18,4 @@ export default function VideoLayout({ title, html, author_name }) {
       <div></div>
     </>
   );
-}
+};
