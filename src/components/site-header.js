@@ -1,21 +1,16 @@
 import React from "react";
 import { Link } from "gatsby";
-import { AppBar, Toolbar, Button, Container, Typography } from "@mui/material";
+import { AppBar, Toolbar, Button, Container } from "@mui/material";
+
+import { Logo } from "./logo";
 
 export const SiteHeader = ({ children }) => {
   return (
-    <AppBar>
+    <AppBar sx={{ pt: 1, pb: 0.5 }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Button component={Link} to="/" edge="start">
-            <Typography
-              sx={{
-                fontWeight: 900,
-                transform: "scale(1.3)",
-              }}
-            >
-              POW!
-            </Typography>
+          <Button component={Link} to="/" sx={{ ml: -1.5 }}>
+            <Logo height="2.5rem" />
           </Button>
           {children}
         </Toolbar>
