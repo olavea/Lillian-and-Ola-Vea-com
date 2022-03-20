@@ -1,21 +1,15 @@
 import { createTheme } from "@mui/material/styles";
 
 import themeConfig from "./config";
-import themeButton from "./button";
-import themeAppBar from "./app-bar";
+import themeComponents from "./components";
 import themeTypography from "./typography";
-import themeInput from "./input";
 
 // A custom theme for this app
 let theme = createTheme(themeConfig);
 
 const options = {
   typography: themeTypography(theme),
-  components: {
-    ...themeAppBar(theme),
-    ...themeButton(theme),
-    ...themeInput(theme),
-  },
+  components: themeComponents(theme),
 };
 
 theme = createTheme(theme, options);
