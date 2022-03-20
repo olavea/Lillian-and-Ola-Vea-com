@@ -21,4 +21,9 @@ sections:
     cta:
       path: /signup
       label: Take charge
+  - title: Plans & Pricing
+    body: ./plans-pricing.md
+    cta:
+      path: /signup
+      label: Get started
 ---
