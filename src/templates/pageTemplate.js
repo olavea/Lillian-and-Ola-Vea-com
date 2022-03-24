@@ -44,7 +44,9 @@ export default function PageTemplate({ data = {} }) {
             </Container>
           </Box>
 
-          <Prose html={html} />
+          <Container maxWidth="content">
+            <Prose html={html} />
+          </Container>
 
           {(sections || []).map((section) => {
             const { title, subtitle, body } = section || {};
