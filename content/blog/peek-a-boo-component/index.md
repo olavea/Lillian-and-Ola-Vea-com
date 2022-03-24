@@ -1,10 +1,12 @@
 ---
-title: Password Peek-a-boo Component for login
+title: How to create a Password Peek-a-boo Component
+author: olavea
+date: 2022-03-20
 ---
 
 ## My Skill Builder Session:
 
-Today I made a Password Peek-a-boo component for the login page on our POW!-website.
+Today I made a Password Peek-a-boo component for the login page on our POW!-website, keep reading or watch my live [skill-builder session on YouTube](https://youtu.be/_MqchVYIaH0).
 
 ## What did I do?
 
@@ -13,189 +15,200 @@ POW! Password Peek-a-boo
 
 ## Why did I do it?
 
-We want our POW! customer to be able to choose to see her pasSword. So she knows it is the right pasSword when she copy-pastes it from 1Password or types from memory.
+We want you to be able to choose to see your pasSword. So you know if it is the correct pasSword when you copy-paste it from 1Password or type it from memory. Or maybe even more important when you create your account. Since there is no password recovery in an end-to-end encrypted application, making sure you create the pasSword you intended to is crucial.
 
 ## How did I do it?
 
-Here is the finished component
+Here is the finished component:
 
 ```js
-import React, { useState } from "react"
+import React, { useState } from "react";
 
 const PasSwordField = () => {
   const [values, setValues] = useState({
     showPasSword: false,
-  })
+  });
   const handlePeekABoo = () => {
     setValues({
       showPasSword: !values.showPasSword,
-    })
-  }
+    });
+  };
   return (
-    <div>
+    <>
       <input
         id="pasSwordPeekABooInput"
         type={values.showPasSword ? "text" : "password"}
       />
-      <br />
-      <br />
       <button onClick={handlePeekABoo}>
         {values.showPasSword ? "🎩⚔️" : "👁️‍🗨️⚔️"}
       </button>
-    </div>
-  )
-}
+    </>
+  );
+};
 
-export default PasSwordField
+export default PasSwordField;
 ```
 
-My steps are P. E. E. K. - A. - B. O. O,
+My steps are P. E. E. K. - A. - B. O. O:
 
-### P. PasSwordField component
+### P. PasSword Input
 
 ```js
-import React, { useState } from "react"
+import React, { useState } from "react";
 
 const PasSwordField = () => {
-
   return (
-    <div>
-      <input
-        id="pasSwordPeekABooInput"
-        type="password"
-      />
-      <br />
-      <br />
+    <>
+      <input id="pasSwordPeekABooInput" type="password" />
+    </>
+  );
+};
 
-    </div>
-  )
-}
-
-export default PasSwordField
+export default PasSwordField;
 ```
 
 ### E. Eye button 👁️‍🗨️⚔️
 
-
 ```js
+import React, { useState } from "react";
+
+const PasSwordField = () => {
+  return (
+    <>
+      <input id="pasSwordPeekABooInput" type="password" />
       <button>👁️‍🗨️⚔️</button>
+    </>
+  );
+};
+
+export default PasSwordField;
 ```
 
 ### E. EekABoo handler
 
 ```js
-import React, { useState } from "react"
+import React, { useState } from "react";
 
 const PasSwordField = () => {
-
-  const handlePeekABoo = () => {
-
-  }
+  const handlePeekABoo = () => {};
   return (
-    ....
-      <button onClick={handlePeekABoo}>
-        👁️‍🗨️⚔️
-      </button>
-  )
-}
+    <>
+      <input id="pasSwordPeekABooInput" type="password" />
+      <button onClick={handlePeekABoo}>👁️‍🗨️⚔️</button>
+    </>
+  );
+};
 
-export default PasSwordField
+export default PasSwordField;
 ```
 
-### K. Keep hiding your face you false showPasSword you!
+### K. Keep hiding your face, you false showPasSword you!
 
 ```js
-import React, { useState } from "react"
+import React, { useState } from "react";
 
 const PasSwordField = () => {
   const [values, setValues] = useState({
     showPasSword: false,
-  })
-  const handlePeekABoo = () => {
-
-  }
+  });
+  const handlePeekABoo = () => {};
   return (
-    ....
-      <button onClick={handlePeekABoo}>
-        👁️‍🗨️⚔️
-      </button>
-  )
-}
+    <>
+      <input id="pasSwordPeekABooInput" type="password" />
+      <button onClick={handlePeekABoo}>👁️‍🗨️⚔️</button>
+    </>
+  );
+};
 
-export default PasSwordField
+export default PasSwordField;
 ```
+
 ### A. Am NOT false! I am a true showPasSword
+
 ```js
-import React, { useState } from "react"
+import React, { useState } from "react";
 
 const PasSwordField = () => {
   const [values, setValues] = useState({
     showPasSword: false,
-  })
+  });
   const handlePeekABoo = () => {
     setValues({
       showPasSword: !values.showPasSword,
-    })
-  }
+    });
+  };
   return (
-    ....
-      <button onClick={handlePeekABoo}>
-        👁️‍🗨️⚔️
-      </button>
-  )
-}
+    <>
+      <input id="pasSwordPeekABooInput" type="password" />
+      <button onClick={handlePeekABoo}>👁️‍🗨️⚔️</button>
+    </>
+  );
+};
 
-export default PasSwordField
+export default PasSwordField;
 ```
 
 ### B. Button with both "🎩⚔️" and "👁️‍🗨️⚔️"
 
 ```js
-import React, { useState } from "react"
+import React, { useState } from "react";
 
 const PasSwordField = () => {
-  ....
   return (
-    ....
+    <>
+      <input id="pasSwordPeekABooInput" type="password" />
       <button onClick={handlePeekABoo}>
         {values.showPasSword ? "🎩⚔️" : "👁️‍🗨️⚔️"}
       </button>
-  )
-}
+    </>
+  );
+};
 
-export default PasSwordField
+export default PasSwordField;
 ```
+
 ### O. Open the 👁️‍🗨️ to see the pasSword as "text"
+
 ```js
-....
+import React, { useState } from "react";
+
+const PasSwordField = () => {
+  return (
+    <>
       <input
         id="pasSwordPeekABooInput"
         type={values.showPasSword ? "text" : "password"}
       />
-....
+      <button onClick={handlePeekABoo}>
+        {values.showPasSword ? "🎩⚔️" : "👁️‍🗨️⚔️"}
+      </button>
+    </>
+  );
+};
+
+export default PasSwordField;
 ```
 
 ### O. Or click the 🎩 to hide the pasSword as "password"
 
 ```js
+import React, { useState } from "react";
 
-....
+const PasSwordField = () => {
+  return (
+    <>
       <input
         id="pasSwordPeekABooInput"
         type={values.showPasSword ? "text" : "password"}
       />
-....
+      <button onClick={handlePeekABoo}>
+        {values.showPasSword ? "🎩⚔️" : "👁️‍🗨️⚔️"}
+      </button>
+    </>
+  );
+};
 
+export default PasSwordField;
 ```
 
-
-For the live version of my skill-builder session: watch [Sunday's OlaCast on YouTube](https://youtu.be/_MqchVYIaH0)
-
-&nbsp;
-💪😺👍
-Keep your skill-building-ship afloat this week!
-⛵🔧🏴‍☠️
-
-&nbsp;
-Ola Vea
-Cap'n of his own skill-builder-ship
+And there you have it: a Password Peek-a-boo Component.
