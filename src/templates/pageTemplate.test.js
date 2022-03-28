@@ -1,6 +1,7 @@
 import React from "react";
 import { create } from "react-test-renderer";
 import Page from "./pageTemplate";
+import { Button } from "@mui/material";
 
 describe("Markdown Page", () => {
   describe("without data", () => {
@@ -74,19 +75,13 @@ describe("Markdown Page", () => {
       });
 
       it("adds link for section cta", () => {
-        const section0cta = sections[0].findByType("a");
+        const section0cta = sections[0].findByType(Button);
+
+        console.log(section0cta.props);
 
         expect(section0cta).toBeDefined();
         expect(section0cta.props.children).toBe("Label");
-        expect(section0cta.props.href).toBe("/path");
-      });
-
-      it("has no empty div for missing section body", () => {
-        const checkForBodyInSection1 = () => {
-          sections[1].findByType("div");
-        };
-
-        expect(checkForBodyInSection1).toThrow();
+        expect(section0cta.props.to).toBe("/path");
       });
 
       it("has no empty link for missing section cta", () => {
