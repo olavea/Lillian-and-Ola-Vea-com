@@ -18,6 +18,7 @@
   "dependencies": {
     "@mui/icons-material": "^5.5.1",
     "@mui/material": "5.5.0",
+    "@raae/gatsby-source-youtube-oembed": "0.3.1",
     "@raae/gatsby-theme-mui": "0.1.1",
     "@sindresorhus/slugify": "^2.1.0",
     "axios": "^0.25.0",

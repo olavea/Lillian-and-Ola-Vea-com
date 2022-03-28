@@ -36,13 +36,13 @@ module.exports = {
       __key: "pages",
     },
     {
-      resolve: "local-source-youtube",
+      resolve: "@raae/gatsby-source-youtube-oembed",
       options: {
-        youTubeIdRedStringTreasure: [
+        youTubeIds: [
           // "UGq8cnNTbwI",
           // "Bk1jonYPFD4",
           // "TzJfepDjpzM",
-          "eRTJPIa39a4",
+          "eRTJPIa39a4", // Why make POW!
           //  "UGq8cnNTbwI",
         ],
       },
