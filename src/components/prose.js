@@ -59,11 +59,20 @@ const Root = styled("div")(({ theme }) => ({
     },
   },
   ol: {
-    listStyle: "inside",
+    listStyle: "none",
+    listStylePosition: "inside",
     padding: 0,
-
-    "& li": {
+    counterReset: "prose-counter",
+    li: {
+      counterIncrement: "prose-counter",
       margin: "0.25rem 0",
+      "&:before": {
+        content: "counter(prose-counter) '.'",
+        display: "inline-block",
+        marginRight: "0.5rem",
+        color: theme.palette.secondary.main,
+        fontWeight: theme.typography.fontWeightBold,
+      },
     },
   },
   code: {
