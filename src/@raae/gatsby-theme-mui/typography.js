@@ -40,10 +40,6 @@ const themeTypography = (theme) => {
       fontSize: "1rem",
       lineHeight: 1.35,
     },
-    overline: {
-      fontSize: "1rem",
-      lineHeight: 1.35,
-    },
     body2: {
       fontSize: "1.25rem",
       fontWeight: theme.typography.fontWeightLight,
