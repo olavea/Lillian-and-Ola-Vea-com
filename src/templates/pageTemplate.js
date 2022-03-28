@@ -12,6 +12,7 @@ import { Prose } from "../components/prose";
 import { SiteHeader } from "../components/site-header";
 import { NewsletterForm } from "../components/newsletter-form";
 import { SiteFooter } from "../components/site-footer";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 export default function PageTemplate({ data = {} }) {
   const { frontmatter, html } = data.markdownRemark || {};
@@ -50,9 +51,13 @@ export default function PageTemplate({ data = {} }) {
 
           {(sections || []).map((section) => {
             const { title, subtitle, body } = section || {};
-            const { html } = body?.childMarkdownRemark || {};
-            const { path, label } = section.cta || {};
+            const { image, imageAlt } = section || {};
             const { form } = section || {};
+            const { html } = body?.childMarkdownRemark || {};
+            const gatsbyImage = getImage(
+              image?.childImageSharp?.gatsbyImageData
+            );
+            const { path, label } = section.cta || {};
             return (
               <Box component="section" sx={{ py: 6 }}>
                 <Container maxWidth="content">
@@ -77,7 +82,14 @@ export default function PageTemplate({ data = {} }) {
                       {label}
                     </Button>
                   )}
-                  {form === "newsletter" && <NewsletterForm sx={{ mt: 5 }} />}
+                  {form === "newsletter" && (
+                    <NewsletterForm sx={{ "&:not(:first-child)": { mt: 5 } }} />
+                  )}
+                  {gatsbyImage && (
+                    <Box sx={{ "&:not(:first-child)": { mt: 5, mx: -2 } }}>
+                      <GatsbyImage alt={imageAlt} image={gatsbyImage} />
+                    </Box>
+                  )}
                 </Container>
               </Box>
             );
@@ -104,6 +116,12 @@ export const query = graphql`
               html
             }
           }
+          image {
+            childImageSharp {
+              gatsbyImageData(width: 1200)
+            }
+          }
+          imageAlt
           cta {
             path
             label
