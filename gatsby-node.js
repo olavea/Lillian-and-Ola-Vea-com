@@ -64,6 +64,16 @@ async function bakeMarkdownNodesIntoPages(gatsbyUtils) {
   });
 }
 
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  const typeDefs = `
+    type MarkdownRemarkFrontmatterSectionsVideos implements Node {
+      childYouTube: YouTube @link(from: "id" by: "youTubeId")
+    }
+  `;
+  createTypes(typeDefs);
+};
+
 exports.onCreateNode = async (gatsbyUtils) => {
   await slugifyMarkdownRemarkNode(gatsbyUtils);
 };

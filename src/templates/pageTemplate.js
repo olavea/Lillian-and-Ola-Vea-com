@@ -6,7 +6,11 @@ import {
   Container,
   Typography,
   Link as MuiLink,
+  ImageList,
+  ImageListItem,
+  ImageListItemBar,
 } from "@mui/material";
+import { PlayArrowRounded as PlayIcon } from "@mui/icons-material";
 
 import { Prose } from "../components/prose";
 import { SiteHeader } from "../components/site-header";
@@ -53,6 +57,7 @@ export default function PageTemplate({ data = {} }) {
             const { title, subtitle, body } = section || {};
             const { image, imageAlt } = section || {};
             const { form } = section || {};
+            const { videos } = section || {};
             const { html } = body?.childMarkdownRemark || {};
             const gatsbyImage = getImage(
               image?.childImageSharp?.gatsbyImageData
@@ -62,7 +67,7 @@ export default function PageTemplate({ data = {} }) {
               <Box component="section" sx={{ py: 6 }}>
                 <Container maxWidth="content">
                   {title && (
-                    <Typography component="h2" variant="h1" gutterBottom>
+                    <Typography component="h2" variant="h1" sx={{ mb: 5 }}>
                       {title}
                     </Typography>
                   )}
@@ -71,7 +76,9 @@ export default function PageTemplate({ data = {} }) {
                       {subtitle}
                     </Typography>
                   )}
+
                   {html && <Prose html={html} />}
+
                   {path && label && (
                     <Button
                       variant="contained"
@@ -82,9 +89,54 @@ export default function PageTemplate({ data = {} }) {
                       {label}
                     </Button>
                   )}
+
                   {form === "newsletter" && (
                     <NewsletterForm sx={{ "&:not(:first-child)": { mt: 5 } }} />
                   )}
+
+                  {videos && (
+                    <ImageList
+                      cols={2}
+                      sx={{ "&:not(:first-child)": { m: 0, mt: 5, mx: -2 } }}
+                      gap={10}
+                    >
+                      {videos.map((video, index, { length }) => {
+                        const { action, childYouTube } = video;
+                        const { title, url } = childYouTube.oEmbed || {};
+                        const { gatsbyImage } = childYouTube.thumbnail || {};
+                        return (
+                          <ImageListItem
+                            key={url}
+                            cols={
+                              index === length - 1 && index % 2 === 0 ? 2 : 1
+                            }
+                            sx={{ overflow: "hidden" }}
+                          >
+                            <GatsbyImage image={gatsbyImage} alt={title} />
+                            <Button
+                              sx={{
+                                textTransform: "none",
+                                position: "absolute",
+                                bottom: 0,
+                                right: 0,
+                                borderRadius: 0,
+                                borderTopLeftRadius: (theme) =>
+                                  theme.shape.borderRadius,
+                              }}
+                              size="small"
+                              variant="contained"
+                              aria-label={`Play ${title}`}
+                              href={url}
+                              endIcon={<PlayIcon />}
+                            >
+                              {action || "Watch on YouTube"}
+                            </Button>
+                          </ImageListItem>
+                        );
+                      })}
+                    </ImageList>
+                  )}
+
                   {gatsbyImage && (
                     <Box sx={{ "&:not(:first-child)": { mt: 5, mx: -2 } }}>
                       <GatsbyImage alt={imageAlt} image={gatsbyImage} />
@@ -125,6 +177,23 @@ export const query = graphql`
           cta {
             path
             label
+          }
+          videos {
+            childYouTube {
+              oEmbed {
+                title
+                url
+              }
+              thumbnail {
+                gatsbyImage(
+                  width: 480
+                  height: 270
+                  fit: COVER
+                  cropFocus: CENTER
+                )
+              }
+            }
+            action
           }
         }
       }

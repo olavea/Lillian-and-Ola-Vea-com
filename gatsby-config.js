@@ -39,11 +39,10 @@ module.exports = {
       resolve: "@raae/gatsby-source-youtube-oembed",
       options: {
         youTubeIds: [
-          // "UGq8cnNTbwI",
-          // "Bk1jonYPFD4",
-          // "TzJfepDjpzM",
           "eRTJPIa39a4", // Why make POW!
-          //  "UGq8cnNTbwI",
+          "Bk1jonYPFD4", // Celebrating POW!
+          "TzJfepDjpzM", // POW! Focus Friday
+          "nS36D2zUkvA", // JSConf Budapest
         ],
       },
     },
