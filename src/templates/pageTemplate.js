@@ -8,7 +8,6 @@ import {
   Link as MuiLink,
   ImageList,
   ImageListItem,
-  ImageListItemBar,
 } from "@mui/material";
 import { PlayArrowRounded as PlayIcon } from "@mui/icons-material";
 
@@ -97,7 +96,13 @@ export default function PageTemplate({ data = {} }) {
                   {videos && (
                     <ImageList
                       cols={2}
-                      sx={{ "&:not(:first-child)": { m: 0, mt: 5, mx: -2 } }}
+                      sx={{
+                        m: 0,
+                        mx: -2,
+                        "&:not(:first-child)": {
+                          mt: 5,
+                        },
+                      }}
                       gap={10}
                     >
                       {videos.map((video, index, { length }) => {
@@ -138,7 +143,7 @@ export default function PageTemplate({ data = {} }) {
                   )}
 
                   {gatsbyImage && (
-                    <Box sx={{ "&:not(:first-child)": { mt: 5, mx: -2 } }}>
+                    <Box sx={{ mx: -2, "&:not(:first-child)": { mt: 5 } }}>
                       <GatsbyImage alt={imageAlt} image={gatsbyImage} />
                     </Box>
                   )}
