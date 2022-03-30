@@ -1,5 +1,6 @@
 ---
-title: Thank You
+title: Thank you for signing up for the POW! Newsletter
+robots: "noindex"
 sections:
   - title: While you wait...
     videos:

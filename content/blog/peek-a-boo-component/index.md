@@ -1,6 +1,6 @@
 ---
 title: How to create a Password Peek-a-boo Component
-author: olavea
+author: "@OlaHolstVea"
 date: 2022-03-20
 ---
 

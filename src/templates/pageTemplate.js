@@ -16,13 +16,15 @@ import { SiteHeader } from "../components/site-header";
 import { NewsletterForm } from "../components/newsletter-form";
 import { SiteFooter } from "../components/site-footer";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import Seo from "../components/seo";
 
-export default function PageTemplate({ data = {} }) {
+export default function PageTemplate({ data = {}, ...props }) {
   const { frontmatter, html } = data.markdownRemark || {};
   const { title, sections } = frontmatter || {};
 
   return (
     <>
+      <Seo {...props} {...frontmatter} />
       <div className="container">
         <SiteHeader>
           <MuiLink component={Link} to="/login" sx={{ ml: "auto", mr: 3 }}>
@@ -164,6 +166,8 @@ export const query = graphql`
       html
       frontmatter {
         title
+        description
+        robots
         sections {
           title
           subtitle

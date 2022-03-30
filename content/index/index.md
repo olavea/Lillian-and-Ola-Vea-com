@@ -1,5 +1,7 @@
 ---
-title: POW! — the privacy-first menstrual cycle journal
+title: POW! - the privacy-first menstrual cycle journal
+description: Take charge of your menstrual cycle! Get to know your cycle, using your own words, in private 🔐
+
 sections:
   - title: Take charge of your menstrual cycle!
     subtitle: Get to know your cycle, using your own words without worrying that the data will end up in the hands of Facebook.

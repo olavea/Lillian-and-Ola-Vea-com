@@ -6,7 +6,7 @@ const IMAGE_WIDTH = 1200;
 const IMAGE_HEIGHT = 628;
 
 const allowUrl = (url = "") => {
-  const allowedPrefixes = [process.env.DEPLOY_URL, "https://usepow.app"];
+  const allowedPrefixes = [process.env.DEPLOY_PRIME_URL, "https://usepow.app"];
   return allowedPrefixes.some((prefix) => url.startsWith(prefix));
 };
 

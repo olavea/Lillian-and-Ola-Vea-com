@@ -1,7 +1,15 @@
+const deployUrl =
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:8000"
+    : "http://localhost:9000";
+
 module.exports = {
   siteMetadata: {
-    title: `POW! — the privacy-first menstrual cycle journal`,
-    siteUrl: `https://usepow.app`,
+    name: "POW!",
+    url: process.env.DEPLOY_PRIME_URL || deployUrl,
+    canonicalUrl: "https://usepow.app",
+    twitterCreator: "@raae",
+    twitterSite: "",
     contact: {
       email: `hello@usepow.app`,
       address: `Tromsøgata 26, 0565 Oslo, Norway`,
