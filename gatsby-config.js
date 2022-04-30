@@ -6,8 +6,8 @@ const deployUrl =
 module.exports = {
   siteMetadata: {
     name: "Lillian and Ola Vea .com",
-    url: process.env.DEPLOY_PRIME_URL || deployUrl,
-    canonicalUrl: "https://olavea.com",
+    url: "https://olavea.gtsb.io/",
+    canonicalUrl: "https://olavea.gtsb.io/",
     twitterCreator: "@olaholstvea",
     twitterSite: "",
     siteDescription: `We show Gatsby devs how to get the most out of Learning By Doing through consulting, rum-fueled treasure hunts in the sharky waters around the Gatsby islands and more!`,

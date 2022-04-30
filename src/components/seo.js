@@ -36,13 +36,13 @@ const Seo = ({
   const siteName = siteMetadata.name;
   const pageLang = lang || "en";
   const pageRobots = robots || "index";
-  const socialTitle = title;
+  // const socialTitle = title;
   const socialType = type || "website";
-  const socialImage = `${siteMetadata.url}/.netlify/functions/social-image/?url=${url}`;
+  // const socialImage = `${siteMetadata.url}/.netlify/functions/social-image/?url=${url}`;
   const socialDescription = description;
   const twitterSite = siteMetadata.twitterSite;
   const twitterCreator = author || siteMetadata.twitterCreator;
-  const twitterCard = "summary";
+  // const twitterCard = "summary";
 
   return (
     <Helmet>
@@ -57,17 +57,10 @@ const Seo = ({
       <meta property="og:url" content={canonical} />
       <meta property="og:site_name" content={siteName} />
       <meta property="og:type" content={socialType} />
-      <meta property="og:title" content={socialTitle} />
       <meta property="og:description" content={socialDescription} />
-      <meta property="og:image" content={socialImage} />
-
-      <meta name="twitter:card" content={twitterCard} />
       <meta name="twitter:site" content={twitterSite} />
       <meta name="twitter:creator" content={twitterCreator} />
-      <meta name="twitter:title" content={socialTitle} />
       <meta name="twitter:description" content={socialDescription} />
-      <meta name="twitter:image:src" content={socialImage} />
-
       <meta name="robots" content={pageRobots} />
 
       {children}
