@@ -5,16 +5,17 @@ const deployUrl =
 
 module.exports = {
   siteMetadata: {
-    name: "POW!",
+    name: "Lillian and Ola Vea .com",
     url: process.env.DEPLOY_PRIME_URL || deployUrl,
-    canonicalUrl: "https://usepow.app",
-    twitterCreator: "@raae",
-    twitterSite: "",
+    canonicalUrl: "https://olavea.com",
+    twitterCreator: "@olaholstvea",
+    siteDescription: `We show Gatsby devs how to get the most out of Learning By Doing through consulting, rum-fueled treasure hunts in the sharky waters around the Gatsby islands and more!`,
+    siteLang: `en`,
     contact: {
-      email: `hello@usepow.app`,
+      email: `ola@olavea.com`,
       address: `Tromsøgata 26, 0565 Oslo, Norway`,
     },
-    greeting: `Made with ❤ <br/>by <a href="https://twitter.com/raae">@raae</a> and family.`,
+    greeting: `Made with ❤ <br/>by <a href="https://twitter.com/olaholstvea">@olaholstvea</a> and family.`,
   },
   plugins: [
     "gatsby-plugin-image",
