@@ -1,9 +1,9 @@
 ---
-title: POW! - the privacy-first menstrual cycle journal
-description: Take charge of your menstrual cycle! Get to know your cycle, using your own words, in private 🔐
+title: Your Gatsby Plugin Workbook - For a Gatsby Plugin Pirate-Dev and a Dev Rel at a CMS
+description: We show web devs how to get the most out of Learning By Doing through Gatsby and rum-fueled treasure hunts in the sharky waters around the Gatsby islands. For a more piraty dev-life!`,
 
 sections:
-  - title: Take charge of your menstrual cycle!
+  - title: Take ownership of your Learning By Doing!
     subtitle: Get to know your cycle, using your own words without worrying that the data will end up in the hands of Facebook.
     cta:
       path: /signup
