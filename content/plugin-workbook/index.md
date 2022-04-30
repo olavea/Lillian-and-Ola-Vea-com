@@ -1,7 +1,7 @@
 ---
 title: Gatsby-plugin-workbook
 author: "@OlaHolstVea"
-date: 2022-03-20
+date: 2022-04-30
 ---
 
 ## GATSBY IMAGE CDN
@@ -128,7 +128,7 @@ actions.createNodeField(
 actions.createTypes(
 ```
 
-![g4](./g4.png)
+![g4](./g4.jpg)
 
 
 ### Inside which const do you put Tobbie's roof?
