@@ -175,3 +175,205 @@ addRemoteFilePiratyInterface(
 "gatsby-utils/polyfill-remote-file"
 "gatsby-plugin-timeship/polyfill-remote-file"
 ```
+
+
+
+
+source [https://www.gatsbyjs.com/docs/how-to/plugins-and-themes/creating-a-source-plugin/#enabling-image-cdn-support](https://www.gatsbyjs.com/docs/how-to/plugins-and-themes/creating-a-source-plugin/#enabling-image-cdn-support)
+
+[https://ia601302.us.archive.org/18/items/suppliantmaidens_1512_librivox/suppliants_01_aeschylus_64kb.mp3](https://ia601302.us.archive.org/18/items/suppliantmaidens_1512_librivox/suppliants_01_aeschylus_64kb.mp3)
+
+draft:
+
+### Guess the name of our new friend the uniDonkey
+
+```js
+const uniAssNode
+const assetNode
+const assetObject
+const
+
+```
+
+![](./.jpg)
+
+
+### Guess the "actions...." to "create" our uniDonkey
+
+```js
+actions.createAssetNode(
+actions.createNode(
+actions.createNodeField(
+actions.createAssetObject(
+```
+
+![g4](./g4.jpg)
+
+
+### Inside which `const ....` do you put our uniDonkey's roof?
+
+```js
+const createYouTubeNode = async (gatsbyUtils, pluginOptions, youTubeId) => {
+const fetchEmbed = async (id) => {
+const createYouTubeThumbnailNode = (gatsbyUtils) => {
+const createYouTubeTypes = (gatsbyUtils) => {
+```
+
+
+### Inside which "exports...." do you call our uniDonkey?
+
+```js
+exports.pluginOptionsSchema = ({ Joi }) => {
+exports.createSchemaCustomization = (gatsbyUtils) => {
+exports.sourceNodes = async (gatsbyUtils, pluginOptions) => {
+exports.onCreateNode = (gatsbyUtils) => {
+```
+
+
+### Guess the `height: node....` to add to our 🍓 fields
+
+```js
+node.thumbnail.height,
+node.oEmbed.height,
+node.oEmbed.thumbnail_height,
+node.oEmbed.html,
+```
+
+
+### Guess the `url: node....` to add to our 🍓 fields
+
+```js
+node.thumbnail.publicUrl,,
+node.oEmbed.thumbnail_url,
+node.oEmbed.url,
+node.oEmbed.provider_url
+```
+
+### Guess the `mimeType: node....` to add to our 🍓 fields
+
+```js
+node.file.contentType,
+"image/jpeg",
+node.thumbnail.mimeType;
+node.thumbnail.internal.mediaType;
+```
+
+
+### Guess the `parent: node....` to add to our 🍓 fields
+
+```js
+node.oEmbed.id,
+node.thumbnail.id,
+node.parent,
+node.id,
+```
+
+### Guess the `width: node....` to add to our 🍓 fields
+
+```js
+node.oEmbed.thumbnail_width,
+node.oEmbed.width,
+node.thumbnail.width,
+node.thumbnail.resize.width,
+```
+
+
+### Guess the `contentDigest: node....` to add to our 🍓 fields
+
+```js
+node.thumbnail.internal.contentDigest,
+node.internal.contentDigest,
+node.internal.content,
+node.thumbnail.internal.content,
+```
+
+### Guess the `filename: node....` to add to our 🍓 fields
+
+```js
+node.id + ".jpg",
+node.youTubeId + ".jpg",
+node.oEmbed.id + ".jpg",
+node.oEmbed.author_name + ".jpg",
+```
+
+### Guess the `id: node....` to add to our 🍓 fields
+
+```js
+node.youTubeId
+node.oEmbed.id
+youTubeThumbnailNodeId,
+node.id
+```
+
+
+O
+onCreateDevServer
+
+
+
+### Must I `........ImageServiceDevRoutes,` to ....?
+
+```js
+filePlayImageServiceDevRoutes,
+filePolyImageServiceDevRoutes,
+filePollyImageServiceDevRoutes,
+polyfillImageServiceDevRoutes,
+
+```
+
+### Must we require ….
+
+```js
+"gatsby-plugin-tools/polyfill-remote-file"
+"gatsby-plugin-utils/polyfill-remote-file"
+"gatsby-utils/polyfill-remote-file"
+"gatsby-plugin-timeship/polyfill-remote-file"
+```
+
+
+
+C
+createNodeId(
+
+```js
+node.youTubeId
+node.oEmbed.id
+youTubeThumbnailNodeId,
+node.id
+```
+
+
+```js
+  const youTubeThumbnailNodeId = createNodeId(
+    `${YOUTUBE_THUMBNAIL_TYPE} >>> ${node.youTubeId}`
+  );
+```
+
+
+D
+Dating YouTubeThumbnail
+```js
+@link(
+    from: "youTubeId"
+    by: "youTubeId")
+
+```
+
+```js
+"youTubeId"
+"youTubeThumbnailNodeId"
+"youTubeNodeId"
+"youTubeIds"
+
+```
+
+```js
+  actions.createTypes([
+    `
+    type YouTube implements Node {
+      thumbnail: YouTubeThumbnail @link(from: "youTubeId" by: "youTubeId")
+    }
+  `,
+
+
+```
