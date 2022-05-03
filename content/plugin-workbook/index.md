@@ -188,5 +188,5 @@ addRemoteFilePiratyInterface(
 
 Ola Vea is a Gatsby-plugin-Dev who also helps Gatsby-Devs waste less time on unsticky dev-learning. Dev at POW! — the private menstrual cycle journal (usepow.app) 👑 @raae You can reach him at: ola@lillylabs
 
-source [https://www.gatsbyjs.com/docs/how-to/plugins-and-themes/creating-a-source-plugin/#enabling-image-cdn-support](https://www.gatsbyjs.com/docs/how-to/plugins-and-themes/creating-a-source-plugin/#enabling-image-cdn-support)
+source [docs/creating-a-source-plugin/#enabling-image-cdn-support](https://www.gatsbyjs.com/docs/how-to/plugins-and-themes/creating-a-source-plugin/#enabling-image-cdn-support)
 
