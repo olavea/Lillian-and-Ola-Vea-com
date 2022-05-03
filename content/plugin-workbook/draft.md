@@ -1,3 +1,31 @@
+
+Ola Vea is a Gatsby-plugin-Dev who also helps Gatsby-Devs waste less time on unsticky dev-learning. Dev at POW! — the private menstrual cycle journal (usepow.app) 👑 @raae You can reach him at: ola@lillylabs
+
+twiter
+
+Ola Vea😺🏴‍☠️ is writing a Gatsby-plugin workbook
+
+
+A Gatsby-plugin-Dev who also helps Gatsby-Devs waste less time on unsticky dev-learning. Dev at POW! — the private menstrual cycle journal (usepow.app) 👑 @raae
+
+
+https://olavea.gatsbyjs.io/plugin-workbook/
+
+
+`FULL_NAME` is a `DISCIPLINE` who helps `TARGET_MARKET` with `EXPENSIVE_PROBLEM`. You can reach `HIM/HER` at: `EMAIL_ADDRESS`
+
+
+
+
+a Gatsby-plugin-Dev and consultant who helps Gatsby-Developers stop wasting time on unsticky dev-learning.
+
+A Gatsby-plugin-Dev who also helps Gatsby-Devs waste less time on unsticky dev-learning.
+
+On a mission to rid the Jamstack of Half-Ass-Structured Skill-Builder-Sessions.
+@GatsbyJS
+-dev at POW! — the private menstrual cycle journal (http://usepow.app) 👑
+@raae
+
 [https://ia601302.us.archive.org/18/items/suppliantmaidens_1512_librivox/suppliants_01_aeschylus_64kb.mp3](https://ia601302.us.archive.org/18/items/suppliantmaidens_1512_librivox/suppliants_01_aeschylus_64kb.mp3)
 
 draft:

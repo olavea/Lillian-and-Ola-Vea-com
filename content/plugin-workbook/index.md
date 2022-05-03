@@ -6,20 +6,13 @@ date: 2022-04-30
 
 ## GATSBY IMAGE CDN
 
-### AGAIN && AGAIN!
+A time-saving print-out.
 
-A print-out Gatsby-plugin-workbook
-
-- For a Gatsby-Plugin Pirate-Dev or
+- For a Gatsby-Developer or
 - For a Dev Rel at a headless CMS
 
-Chapter 1
+![cdn](./cdn.jpg)
 
-### Learning
-### By Doing
-### Through
-### A Gatsby-Plugin
-### Quickstart
 
 
 ### Before diving deep down into IMAGE CDN
@@ -28,35 +21,41 @@ Let’s talk about:
 - how you can automate in your dev-brain that ONE dev-task by doing it again && again. On and on.
 
 
-What is it like?
+#### What is it like?
 Doing your dev-task again && again is a little like playing Happy Birthday on a piano until the melody sticks to your fingers.
 
-Why do we devs so seldom do our dev-tasks again && again?
+So why do we devs so seldom do our dev-tasks again && again?
 
 Because….
 
 But wait! Since I am a plugin-pirate captain I can say «Let’s skip ahead to my next question!»
 
-**What can you do to find out if a thing is actually doable?**
+What can you **do** to find out **if a thing is actually doable?**
 
 Or more specifically….
 
 
-Will DOING a dev-ask again && again help you automate it in your dev-brain?
+#### Will DOING a dev-ask again && again
+
+Help you automate it in your dev-brain?
+
 “The best way to find out? DOING it!”  – Captain Ola Vea senior.
+
+![again](./again.jpg)
+
 
 ## IMAGE CDN
 
-### Gatsby-Plugin Upgrade
+### Gatsby-source-youtube-oembed Plugin Upgrade
 
 Your dev-task: the WHAT, the WHY and the How.
 
-- WHAT you’re DOING is IMAGE CDN on gatsby-source-youtube-oembed. And
-- WHY is faster builds.
+- WHAT: you’re DOING an IMAGE CDN upgrade on 👑 Queen @raae's gatsby-source-youtube-oembed. And
+- WHY: is faster builds.
 
 «Nothing piraty about WHAT and WHY.» You say? Maybe not, but look at HOW....
 
-- HOW is guessing, not coding. (Piraty, right❓ 😺 🏴‍☠️ But there's more....)
+- HOW: is guessing, not coding. (Piraty, right❓ 😺 🏴‍☠️ But there's more....)
 
 ## How: You’ll only do the first third of your dev-task
 
@@ -74,7 +73,7 @@ Your first sub-task:
 
 ## G. A new GraphQL _ _ _ _ _ _ type
 
-(page shift)
+Guess. Guess. Guess. And guess.
 
 ### Guess her type
 
@@ -187,6 +186,7 @@ addRemoteFilePiratyInterface(
 - M. Must I `addRemoteFile........Interface(`?
 
 
+Ola Vea is a Gatsby-plugin-Dev who also helps Gatsby-Devs waste less time on unsticky dev-learning. Dev at POW! — the private menstrual cycle journal (usepow.app) 👑 @raae You can reach him at: ola@lillylabs
 
 source [https://www.gatsbyjs.com/docs/how-to/plugins-and-themes/creating-a-source-plugin/#enabling-image-cdn-support](https://www.gatsbyjs.com/docs/how-to/plugins-and-themes/creating-a-source-plugin/#enabling-image-cdn-support)
 
