@@ -13,16 +13,16 @@ A print-out Gatsby-plugin-workbook
 - For a Gatsby-Plugin Pirate-Dev or
 - For a Dev Rel at a headless CMS
 
-Chapter 1 of 33
+Chapter 1
 
-Learning
-By Doing
-through
-Gatsby-
-Plugins
-quickstart
+### Learning
+### By Doing
+### Through
+### A Gatsby-Plugin
+### Quickstart
 
-Before diving deep down into IMAGE CDN
+
+### Before diving deep down into IMAGE CDN
 Let’s talk about:
 - what doing ONE dev-task again && again is like. And
 - how you can automate in your dev-brain that ONE dev-task by doing it again && again. On and on.
@@ -45,37 +45,36 @@ Or more specifically….
 Will DOING a dev-ask again && again help you automate it in your dev-brain?
 “The best way to find out? DOING it!”  – Captain Ola Vea senior.
 
-**Here we go!**
-
-Yo-Ho!
-Yo-Ho!
-A pirate’s life for me!
-
 ## IMAGE CDN
 
 ### Gatsby-Plugin Upgrade
 
-- Is WHAT you’re DOING. And
-- WHY is faster builds ++
+Your dev-task: the WHAT, the WHY and the How.
 
-«Nothing weirdly piraty about our WHAT and WHY.» You say?
-No, but our HOW will be slightly more piraty than you’re used to.
+- WHAT you’re DOING is IMAGE CDN on gatsby-source-youtube-oembed. And
+- WHY is faster builds.
 
-Firstly you’ll not be coding the first few times, you’ll be guessing.
-Secondly you’ll not even TRY to finish the whole IMAGE CDN Upgrade, you’ll only do the first third of the dev-task.
+«Nothing piraty about WHAT and WHY.» You say? Maybe not, but look at HOW....
 
-## How: You’ll only do
+- HOW is guessing, not coding. (Piraty, right❓ 😺 🏴‍☠️ But there's more....)
 
-### The first 3 sub-tasks today:
+## How: You’ll only do the first third of your dev-task
 
-#### G. A new GraphQL _ _ _ _ _ _ type
+- Firstly you’ll not be coding the first few times, you’ll be guessing. As I mentioned, but also.
+- Secondly you’ll be guessing again && again, even if it is too easy for your dev-brain.
+- Thirdly you’ll not even TRY to finish the whole IMAGE CDN upgrade on gatsby-source-youtube-oembed, you’ll only do the first third of the dev-task.
 
-#### I. Inside?
+**Here you go!**
 
-#### M. Must I?
+### Yo-HOW!
+### Yo-HOW!
+### A pirate’s life for you!
 
+Your first sub-task:
 
 ## G. A new GraphQL _ _ _ _ _ _ type
+
+(page shift)
 
 ### Guess her type
 
@@ -93,14 +92,11 @@ GraphQL object type
 
 ```js
         interfaces: [`Node`, `RemoteFile`],
-
         name: `....`,
         fields: {
           youTubeId: "String!",
         },
-
       schema
-
                   .buildObjectType({
 ```
 
@@ -131,6 +127,8 @@ actions.createTypes(
 ![g4](./g4.jpg)
 
 
+## I. Is your next sub-task:
+
 ### Inside which const do you put Tobbie's roof?
 
 ```js
@@ -158,6 +156,9 @@ exports.sourceNodes = async (gatsbyUtils, pluginOptions) => {
 exports.onCreateNode = (gatsbyUtils) => {
 ```
 
+
+## M. Is your last sub-task:
+
 ### Must I `addRemoteFile........Interface(` to Tobbie?
 
 ```js
@@ -175,3 +176,17 @@ addRemoteFilePiratyInterface(
 "gatsby-utils/polyfill-remote-file"
 "gatsby-plugin-timeship/polyfill-remote-file"
 ```
+## You DID it! 💪 😺 🏴‍☠️
+
+### You've done these sub-tasks:
+
+- G. A new GraphQL _ _ _ _ _ _ type
+
+- I. Inside which "exports...." do we call this code?
+
+- M. Must I `addRemoteFile........Interface(`?
+
+
+
+source [https://www.gatsbyjs.com/docs/how-to/plugins-and-themes/creating-a-source-plugin/#enabling-image-cdn-support](https://www.gatsbyjs.com/docs/how-to/plugins-and-themes/creating-a-source-plugin/#enabling-image-cdn-support)
+
