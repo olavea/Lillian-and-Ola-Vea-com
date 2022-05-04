@@ -11,7 +11,7 @@ A time-saving print-out.
 - For a Gatsby-Developer or
 - For a Dev Rel at a headless CMS
 
-![cdn](./cdn.jpg)
+
 
 
 
