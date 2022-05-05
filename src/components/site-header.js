@@ -11,6 +11,7 @@ export const SiteHeader = ({ children }) => {
         <Toolbar disableGutters>
           <Button component={Link} to="/" sx={{ ml: -1.5 }}>
             <Logo height="2.5rem" />
+            -Plugin -Pirates
           </Button>
           {children}
         </Toolbar>
