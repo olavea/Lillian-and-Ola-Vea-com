@@ -53,7 +53,7 @@ Help you automate it in your dev-brain?
 Your dev-task: the WHAT, the WHY and the How.
 
 - WHAT: you’re DOING an IMAGE CDN upgrade on 👑 Queen @raae's gatsby-source-youtube-oembed. And
-- WHY: is faster builds.
+- WHY: faster builds.
 
 «Nothing piraty about WHAT and WHY.» You say? Maybe not, but look at HOW....
 
@@ -61,21 +61,12 @@ Your dev-task: the WHAT, the WHY and the How.
 
 ## How: You’ll only do the first third of your dev-task
 
-- Firstly you’ll not be coding the first few times, you’ll be guessing. As I mentioned, but also.
-- Secondly you’ll be guessing again && again, even if it is too easy for your dev-brain.
-- Thirdly you’ll not even TRY to finish the whole IMAGE CDN upgrade on gatsby-source-youtube-oembed, you’ll only do the first third of the dev-task.
+- Firstly you’ll not be coding the first few times, you’ll be **guessing**. As I mentioned, but also.
+- Secondly you’ll be guessing **again && again**, even if it feels too easy for your dev-brain.
+- Thirdly you’ll **not even TRY to finish the whole IMAGE CDN upgrade** on gatsby-source-youtube-oembed, you’ll only do the first third of the dev-task. Why so tiny a task? We'll get into that in the emails you'll get later.
 
-**Here you go!**
+**Yo-HOW! Yo-HOW! A pirate’s life for you!**
 
-### Yo-HOW!
-### Yo-HOW!
-### A pirate’s life for you!
-
-Your first sub-task:
-
-## G. A new GraphQL _ _ _ _ _ _ type
-
-Guess. Guess. Guess. And guess.
 
 ### Guess her type
 
