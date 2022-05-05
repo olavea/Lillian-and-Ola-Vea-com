@@ -4,13 +4,15 @@ author: "@OlaHolstVea"
 date: 2022-04-30
 ---
 
+#### Chapter i.
+
 ## GATSBY IMAGE CDN
 
 A time-saving print-out.
 
 - For a Gatsby-Developer or
 - For a Dev Rel at a headless CMS
-
+- For a Plugin Pirate Princess between 7 and 11 years
 
 
 
