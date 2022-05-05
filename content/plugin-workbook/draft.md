@@ -1,4 +1,11 @@
 
+Your first sub-task:
+
+## G. A new GraphQL _ _ _ _ _ _ type
+
+Guess. Guess. Guess. And guess.
+
+
 Ola Vea is a Gatsby-plugin-Dev who also helps Gatsby-Devs waste less time on unsticky dev-learning. Dev at POW! — the private menstrual cycle journal (usepow.app) 👑 @raae You can reach him at: ola@lillylabs
 
 twiter
