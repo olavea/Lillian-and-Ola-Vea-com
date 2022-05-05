@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 const deployUrl =
   process.env.NODE_ENV === "development"
     ? "http://localhost:8000"
@@ -86,6 +90,16 @@ module.exports = {
     },
     {
       resolve: `@raae/gatsby-theme-mui`,
+    },
+
+    {
+      resolve: "gatsby-transformer-cloudinary",
+      options: {
+        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+        apiKey: process.env.CLOUDINARY_API_KEY,
+        apiSecret: process.env.CLOUDINARY_API_SECRET,
+        uploadFolder: "gatsby-cloudinary",
+      },
     },
   ],
 };
