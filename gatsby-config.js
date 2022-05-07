@@ -101,5 +101,16 @@ module.exports = {
         uploadFolder: "gatsby-cloudinary",
       },
     },
+    {
+      resolve: `gatsby-source-cloudinary`,
+      options: {
+        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+        apiKey: process.env.CLOUDINARY_API_KEY,
+        apiSecret: process.env.CLOUDINARY_API_SECRET,
+        resourceType: `image`,
+        // type: `type Value`,
+        // prefix: `abc-xyz/`,
+      },
+    },
   ],
 };
