@@ -1,0 +1,22 @@
+{
+  "name": "gatsby-starter-plugin",
+  "version": "1.0.0",
+  "description": "A minimal boilerplate for the essential files Gatsby looks for in a plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo \"No build script setup\""
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin"
+  ],
+  "author": "Kyle Gill <kyle.robert.gill@gmail.com>",
+  "license": "0BSD",
+  "dependencies": {
+    "@apollo/client": "^3.6.2",
+    "graphql": "^16.4.0",
+    "subscriptions-transport-ws": "^0.11.0",
+    "ws": "^8.6.0"
+  }
+}
