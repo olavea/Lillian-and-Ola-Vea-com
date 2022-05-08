@@ -6,78 +6,58 @@
  */
 exports.onPreInit = () => console.log("Loaded gatsby-starter-plugin");
 
-const {
-  ApolloClient,
-  InMemoryCache,
-  gql,
-  split,
-  HttpLink,
-} = require("@apollo/client");
-const { WebSocketLink } = require("@apollo/client/link/ws");
-const { getMainDefinition } = require("@apollo/client/utilities");
-const WebSocket = require("ws");
-const fetch = require("node-fetch");
-
-// constants for your GraphQL Post and Author types
-const POST_NODE_TYPE = `Post`;
-
-const client = new ApolloClient({
-  link: split(
-    ({ query }) => {
-      const definition = getMainDefinition(query);
-      return (
-        definition.kind === "OperationDefinition" &&
-        definition.operation === "subscription"
-      );
-    },
-    new WebSocketLink({
-      uri: `ws://localhost:4000`, // or `ws://gatsby-source-plugin-api.glitch.me/`
-      options: {
-        reconnect: true,
-      },
-      webSocketImpl: WebSocket,
-    }),
-    new HttpLink({
-      uri: "http://localhost:4000", // or `https://gatsby-source-plugin-api.glitch.me/`
-      fetch,
-    })
-  ),
-  cache: new InMemoryCache(),
-});
-
-exports.sourceNodes = async ({
-  actions,
-  createContentDigest,
-  createNodeId,
-  getNodesByType,
-}) => {
-  const { createNode, touchNode, deleteNode } = actions;
-
-  const { data } = await client.query({
-    query: gql`
-      query {
-        posts {
-          id
-          description
-        }
-      }
-    `,
-  });
-
-  // loop through data and create Gatsby nodes
-  data.posts.forEach((post) =>
-    createNode({
-      ...post,
-      id: createNodeId(`${POST_NODE_TYPE}-${post.id}`),
-      parent: null,
-      children: [],
-      internal: {
-        type: POST_NODE_TYPE,
-        content: JSON.stringify(post),
-        contentDigest: createContentDigest(post),
-      },
-    })
-  );
-
-  return;
+exports.sourceNodes = async (gatsbyUtils) => {
+  // Get 1 video ready to be sourced into our GraphQL-Gatsby-data river without sinking
+  await pugNode(gatsbyUtils);
 };
+
+async function pugNode(gatsbyUtils) {
+  const { actions, createContentDigest } = gatsbyUtils;
+  const POW_TUBE_ID = "UGq8cnNTbwI";
+  actions.createNode({
+    id: POW_TUBE_ID,
+    internal: {
+      type: "powTubeOemBed",
+      contentDigest: createContentDigest(id),
+    },
+  });
+  console.log("⛵💀 Yo-Ho Yo-Ho a PiRATEs nodeID 💰", nodeID);
+
+  //          i. internal, because it is NOT polite to have `contentDigest` and `type` under `id`
+}
+
+// // constants for your GraphQL Post and Author types
+// const POST_NODE_TYPE = `Post`;
+
+// exports.sourceNodes = async ({
+//   actions,
+//   createContentDigest,
+//   createNodeId,
+//   getNodesByType,
+// }) => {
+//   const { createNode } = actions;
+
+//   const data = {
+//     posts: [
+//       { id: 1, description: `Hello world!` },
+//       { id: 2, description: `Second post!` },
+//     ],
+//   };
+
+//   // loop through data and create Gatsby nodes
+//   data.posts.forEach((post) =>
+//     createNode({
+//       ...post,
+//       id: createNodeId(`${POST_NODE_TYPE}-${post.id}`),
+//       parent: null,
+//       children: [],
+//       internal: {
+//         type: POST_NODE_TYPE,
+//         content: JSON.stringify(post),
+//         contentDigest: createContentDigest(post),
+//       },
+//     })
+//   );
+
+//   return;
+// };
