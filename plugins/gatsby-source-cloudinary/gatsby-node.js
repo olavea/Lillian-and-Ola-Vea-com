@@ -1,6 +1,6 @@
 const { newCloudinary, getResourceOptions } = require("./utils");
 
-// Cap'n Ola is Using new type
+// Cap'n Ola is changing from old type to new type
 const type = `TobbieCloudinaryMedia`;
 
 // Cap'n Ola is deleting old type
@@ -82,3 +82,31 @@ exports.sourceNodes = (gatsby, options) => {
 
   return createCloudinaryNodes(gatsby, cloudinary, resourceOptions);
 };
+
+let coreSupportsOnPluginInit = "unstable" | "stable" | undefined;
+
+try {
+  const { isGatsbyNodeLifecycleSupported } = require(`gatsby-plugin-utils`);
+  if (isGatsbyNodeLifecycleSupported(`onPluginInit`)) {
+    coreSupportsOnPluginInit = "stable";
+  } else if (isGatsbyNodeLifecycleSupported(`unstable_onPluginInit`)) {
+    coreSupportsOnPluginInit = "unstable";
+  }
+} catch (error) {
+  console.error(
+    `Could not check if Gatsby supports onPluginInit lifecycle 🚴‍♀️  `
+  );
+}
+
+let globalPluginOptions = {};
+const initializeGlobalState = (_, pluginOptions) => {
+  globalPluginOptions = pluginOptions;
+};
+
+if (coreSupportsOnPluginInit === "stable") {
+  exports.onPluginInit = initializeGlobalState;
+} else if (coreSupportsOnPluginInit === "unstable") {
+  exports.unstable_onPluginInit = initializeGlobalState;
+} else {
+  exports.onPreBootstrap = initializeGlobalState;
+}
