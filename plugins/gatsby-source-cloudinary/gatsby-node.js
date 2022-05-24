@@ -29,10 +29,12 @@ const addTransformations = (resource, transformation, secure) => {
   return transformedURL;
 };
 
-const createCloudinaryNodes = (gatsby, cloudinary, options) => {
-  return cloudinary.api.resources(options, (error, result) => {
+// added async
+const createCloudinaryNodes = async (gatsby, cloudinary, options) => {
+  // added await
+  await cloudinary.api.resources(options, (error, result) => {
     const hasResources = result && result.resources && result.resources.length;
-
+    console.log("This is the result", result);
     if (error) {
       console.error(error);
       return;
