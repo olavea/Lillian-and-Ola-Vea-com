@@ -1,5 +1,10 @@
 const { newCloudinary, getResourceOptions } = require("./utils");
-const type = `CloudinaryMedia`;
+
+// Cap'n Ola is Using new type
+const type = `TobbieCloudinaryMedia`;
+
+// Cap'n Ola is deleting old type
+// const type = `CloudinaryMedia`;
 
 const getNodeData = (gatsby, media) => {
   return {
@@ -56,6 +61,19 @@ const createCloudinaryNodes = (gatsby, cloudinary, options) => {
       }`
     );
   });
+};
+
+// Cap'n Ola is creating new type
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+
+  createTypes(`
+    type TobbieCloudinaryMedia implements Node {
+      joinedAt: Date
+    }
+  `);
+  console.log("Cap Ola is creating a new type");
 };
 
 exports.sourceNodes = (gatsby, options) => {
