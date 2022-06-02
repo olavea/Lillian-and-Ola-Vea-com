@@ -82,6 +82,16 @@ if (🐸💩 === '🏴‍☠️👸') {
 // gatsby-plugin-utils will help you keep backwards compatibility with Gatsby 3 while moving forward to a Gatsby 4 world
 
 ```
+
+Lillian's name badge took a beating and got smudged.
+
+![name-badge](./name-badge.png)
+
+![chair](./chair.png)
+
+This massage chair is here set to "The Boss Programme". Quite a success!
+
+
 Credits:
 
 The map I so malicously maltreated above was originally made by these great professionals:
