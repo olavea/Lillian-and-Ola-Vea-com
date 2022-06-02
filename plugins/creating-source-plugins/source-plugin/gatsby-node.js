@@ -1,63 +1,145 @@
-/**
- * You can uncomment the following line to verify that
- * your plugin is being loaded in your site.
- *
- * See: https://www.gatsbyjs.com/docs/creating-a-local-plugin/#developing-a-local-plugin-that-is-outside-your-project
- */
-exports.onPreInit = () => console.log("Loaded gatsby-starter-plugin");
+const axios = require("axios");
+const {
+  polyfillImageServiceDevRoutes,
+  addRemoteFilePolyfillInterface,
+} = require("gatsby-plugin-utils/polyfill-remote-file");
 
-exports.sourceNodes = async (gatsbyUtils) => {
-  // Get 1 video ready to be sourced into our GraphQL-Gatsby-data river without sinking
-  await pugNode(gatsbyUtils);
+const IS_PROD = process.env.NODE_ENV === "production";
+const REFRESH_INTERVAL = IS_PROD ? 0 : 60000 * 5; // 60000 ms === 1 min
+const YOUTUBE_TYPE = "YouTube";
+const YOUTUBE_THUMBNAIL_TYPE = "YouTubeThumbnail";
+
+exports.pluginOptionsSchema = ({ Joi }) => {
+  return Joi.object({
+    youTubeIds: Joi.array().items(Joi.string()).required(),
+    refreshInterval: Joi.number().min(0).default(REFRESH_INTERVAL),
+  });
 };
 
-async function pugNode(gatsbyUtils) {
-  const { actions, createContentDigest } = gatsbyUtils;
-  const POW_TUBE_ID = "UGq8cnNTbwI";
-  actions.createNode({
-    id: POW_TUBE_ID,
-    internal: {
-      type: "powTubeOemBed",
-      contentDigest: createContentDigest(id),
+exports.onCreateDevServer = ({ app }) => {
+  polyfillImageServiceDevRoutes(app);
+};
+
+exports.createSchemaCustomization = (gatsbyUtils) => {
+  createYouTubeTypes(gatsbyUtils);
+};
+// G. Get data later, create node now
+exports.sourceNodes = async (gatsbyUtils, pluginOptions) => {
+  await createYouTubeNodes(gatsbyUtils, pluginOptions);
+};
+
+exports.onCreateNode = (gatsbyUtils) => {
+  const { node } = gatsbyUtils;
+
+  if (node.internal.type === YOUTUBE_TYPE) {
+    createYouTubeThumbnailNode(gatsbyUtils);
+  }
+};
+
+const createYouTubeNodes = async (gatsbyUtils, pluginOptions) => {
+  const { youTubeIds } = pluginOptions;
+  await Promise.all(
+    youTubeIds.map((id) => createYouTubeNode(gatsbyUtils, pluginOptions, id))
+  );
+};
+
+const createYouTubeNode = async (gatsbyUtils, pluginOptions, youTubeId) => {
+  const {
+    actions: { createNode, touchNode },
+    createNodeId,
+    createContentDigest,
+    reporter,
+    cache,
+    getNode,
+  } = gatsbyUtils;
+  const { refreshInterval = REFRESH_INTERVAL } = pluginOptions;
+
+  const youTubeNodeId = createNodeId(`${YOUTUBE_TYPE} >>> ${youTubeId}`);
+  const timestamp = await cache.get(youTubeNodeId);
+  const existingNode = getNode(youTubeNodeId);
+  const existingNodeAge = Date.now() - timestamp;
+
+  if (existingNode && existingNodeAge <= refreshInterval) {
+    // Node already exists, make sure it stays around
+    touchNode(existingNode);
+    reporter.info(`Touch YouTube Node for ${youTubeId}`);
+  } else {
+    // Fetch oEmbed data and create node
+    const embedData = await fetchEmbed(youTubeId);
+
+    createNode({
+      id: youTubeNodeId,
+      youTubeId: youTubeId,
+      oEmbed: embedData,
+      internal: {
+        type: YOUTUBE_TYPE,
+        contentDigest: createContentDigest(embedData),
+      },
+    });
+
+    await cache.set(youTubeNodeId, `${Date.now()}`);
+    reporter.info(`Create YouTube Node for ${youTubeId}`);
+  }
+};
+// G. Get data out of axios-river
+const fetchEmbed = async (id) => {
+  // // E. Earl and url
+  const youTubeUrl = `https://youtu.be/${id}`;
+  const { data } = await axios.get("https://www.youtube.com/oembed", {
+    params: {
+      url: youTubeUrl,
     },
   });
-  console.log("⛵💀 Yo-Ho Yo-Ho a PiRATEs nodeID 💰", nodeID);
+  return { ...data, url: youTubeUrl };
+};
 
-  //          i. internal, because it is NOT polite to have `contentDigest` and `type` under `id`
-}
+const createYouTubeThumbnailNode = (gatsbyUtils) => {
+  const { node, actions, reporter, createNodeId } = gatsbyUtils;
+  const { createNode } = actions;
 
-// // constants for your GraphQL Post and Author types
-// const POST_NODE_TYPE = `Post`;
+  const youTubeThumbnailNodeId = createNodeId(
+    `${YOUTUBE_THUMBNAIL_TYPE} >>> ${node.youTubeId}`
+  );
 
-// exports.sourceNodes = async ({
-//   actions,
-//   createContentDigest,
-//   createNodeId,
-//   getNodesByType,
-// }) => {
-//   const { createNode } = actions;
+  createNode({
+    id: youTubeThumbnailNodeId,
+    parent: node.id,
+    youTubeId: node.youTubeId,
+    url: node.oEmbed.thumbnail_url,
+    mimeType: "image/jpeg",
+    filename: node.youTubeId + ".jpg",
+    height: node.oEmbed.thumbnail_height,
+    width: node.oEmbed.thumbnail_width,
+    internal: {
+      type: YOUTUBE_THUMBNAIL_TYPE,
+      contentDigest: node.internal.contentDigest,
+    },
+  });
 
-//   const data = {
-//     posts: [
-//       { id: 1, description: `Hello world!` },
-//       { id: 2, description: `Second post!` },
-//     ],
-//   };
+  reporter.info(`Create YouTubeThumbnail Node for ${node.youTubeId}`);
+};
 
-//   // loop through data and create Gatsby nodes
-//   data.posts.forEach((post) =>
-//     createNode({
-//       ...post,
-//       id: createNodeId(`${POST_NODE_TYPE}-${post.id}`),
-//       parent: null,
-//       children: [],
-//       internal: {
-//         type: POST_NODE_TYPE,
-//         content: JSON.stringify(post),
-//         contentDigest: createContentDigest(post),
-//       },
-//     })
-//   );
+const createYouTubeTypes = (gatsbyUtils) => {
+  const { actions, schema } = gatsbyUtils;
 
-//   return;
-// };
+  actions.createTypes([
+    `
+    type YouTube implements Node {
+      thumbnail: YouTubeThumbnail @link(from: "youTubeId" by: "youTubeId")
+    }
+  `,
+    addRemoteFilePolyfillInterface(
+      schema.buildObjectType({
+        name: `YouTubeThumbnail`,
+        fields: {
+          youTubeId: "String!",
+        },
+        interfaces: [`Node`, `RemoteFile`],
+      }),
+      {
+        schema,
+        actions,
+      }
+    ),
+  ]);
+};

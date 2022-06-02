@@ -142,7 +142,7 @@ const createYouTubeTypes = (gatsbyUtils) => {
 ### Inside which "exports...." do we call Tobbie?
 
 ```js
-exports.pluginOptionsSchema = ({ Joi }) => {
+'exports.pluginOptionsSchema = ({ Joi }) => {'
 exports.createSchemaCustomization = (gatsbyUtils) => {
 exports.sourceNodes = async (gatsbyUtils, pluginOptions) => {
 exports.onCreateNode = (gatsbyUtils) => {

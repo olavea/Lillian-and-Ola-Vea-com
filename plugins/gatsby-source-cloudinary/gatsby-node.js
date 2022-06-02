@@ -1,10 +1,17 @@
 const { newCloudinary, getResourceOptions } = require("./utils");
 
-// Cap'n Ola is changing from old type to new type
+// Cap Ola is changing from old type to new type
 const type = `TobbieCloudinaryMedia`;
+// What is different from old type?
+// Looks like there is not much difference,
+//because it is mostly internal type maybe?
 
 // Cap'n Ola is deleting old type
-// const type = `CloudinaryMedia`;
+// But should I keep t?
+// How do I test if there is a diference?
+// How do I test if the `result.type` is working? Do I need to add images to cloudinary in a different way
+// Now I only get results for the `const DEFAULT_TYPE = "upload";`
+//const type = `CloudinaryMedia`;
 
 const getNodeData = (gatsby, media) => {
   return {
@@ -35,6 +42,7 @@ const createCloudinaryNodes = async (gatsby, cloudinary, options) => {
   await cloudinary.api.resources(options, (error, result) => {
     const hasResources = result && result.resources && result.resources.length;
     console.log("This is the result", result);
+    console.log("This is the type", result.type);
     if (error) {
       console.error(error);
       return;
@@ -99,10 +107,12 @@ try {
     `Could not check if Gatsby supports onPluginInit lifecycle 🚴‍♀️  `
   );
 }
+console.log(coreSupportsOnPluginInit);
 
 let globalPluginOptions = {};
 const initializeGlobalState = (_, pluginOptions) => {
   globalPluginOptions = pluginOptions;
+  console.log(globalPluginOptions.cloudName);
 };
 
 if (coreSupportsOnPluginInit === "stable") {
