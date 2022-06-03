@@ -87,5 +87,17 @@ module.exports = {
     {
       resolve: `@raae/gatsby-theme-mui`,
     },
+    {
+      // «This is the name of the plugin you are adding» Says Wes Bos
+      resolve: "gatsby-source-sanity",
+      options: {
+        projectId: "8g8wlo67",
+        // fr5nacyp
+        dataset: "production",
+        watchMode: true,
+        // 😺  Remember to change Environment variables in Gatsby Cloud
+        token: process.env.SANITY_TOKEN,
+      },
+    },
   ],
 };
