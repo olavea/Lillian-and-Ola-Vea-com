@@ -93,7 +93,25 @@ exports.sourceNodes = (gatsby, options) => {
   return createCloudinaryNodes(gatsby, cloudinary, resourceOptions);
 };
 
-let coreSupportsOnPluginInit = "unstable" | "stable" | undefined;
+// Here is step 3. Global State of our Gatsby v4 plugin upgrade code with emojis
+// yarn add gatsby-plugin-utils inside packages/gatsby-transformer-cloudinary
+// gatsby-plugin-utils will help you keep backwards compatibility with Gatsby 3 while moving forward to a Gatsby 4 world
+
+// let
+
+// 1. try {coreSupportsOnPluginInit = "🏴‍☠️👸" or "un🏴‍☠️👸"} catch
+
+// 2. require(`gatsby-plugin-utils`);
+
+// 3. else if
+
+// let
+
+// 4. const
+
+// 5. else if
+
+let coreSupportsOnPluginInit = undefined;
 
 try {
   const { isGatsbyNodeLifecycleSupported } = require(`gatsby-plugin-utils`);
@@ -103,16 +121,13 @@ try {
     coreSupportsOnPluginInit = "unstable";
   }
 } catch (error) {
-  console.error(
-    `Could not check if Gatsby supports onPluginInit lifecycle 🚴‍♀️  `
-  );
+  console.error(`cannot 🚴‍♀️`);
 }
-console.log(coreSupportsOnPluginInit);
 
 let globalPluginOptions = {};
-const initializeGlobalState = (_, pluginOptions) => {
-  globalPluginOptions = pluginOptions;
-  console.log(globalPluginOptions.cloudName);
+
+const initializeGlobalState = (_, luginOptions) => {
+  globalPluginOptions = luginOptions;
 };
 
 if (coreSupportsOnPluginInit === "stable") {
