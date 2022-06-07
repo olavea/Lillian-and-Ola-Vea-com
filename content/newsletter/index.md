@@ -1,10 +1,10 @@
 ---
-title: Sign up for the POW! Newsletter
-description: Learn more about Privacy, Menstrual Health and POW! No menstruation experience needed.
+title: Sign up for our Newsletter
+description: Learn more about dev-learning. No dev-learning experience needed.
 
 sections:
-  - title: Learn more about Privacy, Menstrual Health and POW!
-    subtitle: No menstruation experience needed ;)
+  - title: Learn more about dev-learning
+    subtitle: dev-learning experience needed ;)
     form: newsletter
   - image: ../assets/pow-key-lock.jpg
     imageAlt: "Raae plus two friends holding props: key, lock and logo"

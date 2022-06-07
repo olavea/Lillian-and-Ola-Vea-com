@@ -1,5 +1,5 @@
 ---
-title: How to add relationshipKey to the parent node in not-Old- Gatsby-Way: ___NODE #11
+title: How to add relationshipKey to the parent node in not-Old- Gatsby-Way ___NODE
 author: "@OlaHolstVea"
 date: 2022-05-08
 ---

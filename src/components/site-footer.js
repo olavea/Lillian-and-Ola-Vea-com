@@ -46,7 +46,7 @@ export const SiteFooter = ({ ...props }) => {
         <Box sx={{ textAlign: { sm: "center" } }}>
           <Typography>Sign up for the</Typography>
           <MuiLink component={Link} to="/newsletter">
-            POW! Newsletter
+            Our Newsletter
           </MuiLink>
         </Box>
 
