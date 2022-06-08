@@ -13,7 +13,7 @@ module.exports = {
     siteDescription: `We show Gatsby devs how to get the most out of Learning By Doing through consulting, rum-fueled treasure hunts in the sharky waters around the Gatsby islands and more!`,
     siteLang: `en`,
     contact: {
-      email: `ola@olavea.com`,
+      email: `ola@lillylabs.no`,
       address: `Tromsøgata 26, 0565 Oslo, Norway`,
     },
     greeting: `Made with ❤ <br/>by <a href="https://twitter.com/olaholstvea">@olaholstvea</a> and family.`,
