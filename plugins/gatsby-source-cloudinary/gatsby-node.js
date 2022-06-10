@@ -43,57 +43,30 @@ const createCloudinaryNodes = async (
   options,
   { limit }
 ) => {
+  const { reporter } = gatsby;
   let nextCursor = null;
 
   do {
     // added await
-    await cloudinary.api.resources(
-      options,
-      {
-        resource_type: "image",
-        max_results: limit < 10 ? limit : 10,
-        next_cursor: nextCursor,
-      },
-      (error, result) => {
-        const hasResources =
-          result && result.resources && result.resources.length;
-        console.log("This is the result", result);
-        console.log("This is the type", result.type);
-        if (error) {
-          console.error(error);
-          return;
-        }
-
-        if (!hasResources) {
-          console.warn(
-            "\n ~Yikes! No nodes created because no Cloudinary resources found. Try a different query?"
-          );
-          return;
-        }
-        reporter.info(
-          `Fetched Cloudinary Assets >>> ${result.resources.length} from ${nextCursor}`
-        );
-        result.resources.forEach((resource) => {
-          const transformations = "q_auto,f_auto"; // Default CL transformations, todo: fetch base transformations from config maybe.
-
-          resource.url = addTransformations(resource, transformations);
-          resource.secure_url = addTransformations(
-            resource,
-            transformations,
-            true
-          );
-
-          const nodeData = getNodeData(gatsby, resource);
-          gatsby.actions.createNode(nodeData);
-        });
-
-        console.info(
-          `Added ${hasResources} CloudinaryMedia ${
-            hasResources > 1 ? "nodes" : "node"
-          }`
-        );
-      }
+    const result = await cloudinary.api.resources({
+      resource_type: "image",
+      max_results: limit < 10 ? limit : 10,
+      next_cursor: nextCursor,
+    });
+    reporter.info(
+      `fetched 🌩️ Assets >>> ${result.resources.length} from ${nextCursor}`
     );
+
+    result.resources.forEach((resource) => {
+      const transformations = "q_auto,f_auto"; // Default CL transformations, todo: fetch base transformations from config maybe.
+
+      resource.url = addTransformations(resource, transformations);
+      resource.secure_url = addTransformations(resource, transformations, true);
+
+      const nodeData = getNodeData(gatsby, resource);
+      gatsby.actions.createNode(nodeData);
+    });
+
     nextCursor = result.next_cursor;
     limit = limit - 10;
   } while (nextCursor && limit > 0);
