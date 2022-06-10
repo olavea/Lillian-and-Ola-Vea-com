@@ -37,40 +37,66 @@ const addTransformations = (resource, transformation, secure) => {
 };
 
 // added async
-const createCloudinaryNodes = async (gatsby, cloudinary, options) => {
-  // added await
-  await cloudinary.api.resources(options, (error, result) => {
-    const hasResources = result && result.resources && result.resources.length;
-    console.log("This is the result", result);
-    console.log("This is the type", result.type);
-    if (error) {
-      console.error(error);
-      return;
-    }
+const createCloudinaryNodes = async (
+  gatsby,
+  cloudinary,
+  options,
+  { limit }
+) => {
+  let nextCursor = null;
 
-    if (!hasResources) {
-      console.warn(
-        "\n ~Yikes! No nodes created because no Cloudinary resources found. Try a different query?"
-      );
-      return;
-    }
+  do {
+    // added await
+    await cloudinary.api.resources(
+      options,
+      {
+        resource_type: "image",
+        max_results: limit < 10 ? limit : 10,
+        next_cursor: nextCursor,
+      },
+      (error, result) => {
+        const hasResources =
+          result && result.resources && result.resources.length;
+        console.log("This is the result", result);
+        console.log("This is the type", result.type);
+        if (error) {
+          console.error(error);
+          return;
+        }
 
-    result.resources.forEach((resource) => {
-      const transformations = "q_auto,f_auto"; // Default CL transformations, todo: fetch base transformations from config maybe.
+        if (!hasResources) {
+          console.warn(
+            "\n ~Yikes! No nodes created because no Cloudinary resources found. Try a different query?"
+          );
+          return;
+        }
+        reporter.info(
+          `Fetched Cloudinary Assets >>> ${result.resources.length} from ${nextCursor}`
+        );
+        result.resources.forEach((resource) => {
+          const transformations = "q_auto,f_auto"; // Default CL transformations, todo: fetch base transformations from config maybe.
 
-      resource.url = addTransformations(resource, transformations);
-      resource.secure_url = addTransformations(resource, transformations, true);
+          resource.url = addTransformations(resource, transformations);
+          resource.secure_url = addTransformations(
+            resource,
+            transformations,
+            true
+          );
 
-      const nodeData = getNodeData(gatsby, resource);
-      gatsby.actions.createNode(nodeData);
-    });
+          const nodeData = getNodeData(gatsby, resource);
+          gatsby.actions.createNode(nodeData);
+        });
 
-    console.info(
-      `Added ${hasResources} CloudinaryMedia ${
-        hasResources > 1 ? "nodes" : "node"
-      }`
+        console.info(
+          `Added ${hasResources} CloudinaryMedia ${
+            hasResources > 1 ? "nodes" : "node"
+          }`
+        );
+      }
     );
-  });
+    nextCursor = result.next_cursor;
+    limit = limit - 10;
+  } while (nextCursor && limit > 0);
 };
 
 // Cap'n Ola is creating new type
@@ -90,7 +116,9 @@ exports.sourceNodes = (gatsby, options) => {
   const cloudinary = newCloudinary(options);
   const resourceOptions = getResourceOptions(options);
 
-  return createCloudinaryNodes(gatsby, cloudinary, resourceOptions);
+  return createCloudinaryNodes(gatsby, cloudinary, resourceOptions, {
+    limit: 27,
+  });
 };
 
 // Here is step 3. Global State of our Gatsby v4 plugin upgrade code with emojis
@@ -98,42 +126,39 @@ exports.sourceNodes = (gatsby, options) => {
 // gatsby-plugin-utils will help you keep backwards compatibility with Gatsby 3 while moving forward to a Gatsby 4 world
 
 // let
-
-// 1. try {coreSupportsOnPluginInit = "🏴‍☠️👸" or "un🏴‍☠️👸"} catch
-
-// 2. require(`gatsby-plugin-utils`);
-
-// 3. else if
-
-// let
-
-// 4. const
-
-// 5. else if
-
 let coreSupportsOnPluginInit = undefined;
 
+// 1. try {coreSupportsOnPluginInit = "🏴‍☠️👸" or "un🏴‍☠️👸"} catch
 try {
+  // 2.
   const { isGatsbyNodeLifecycleSupported } = require(`gatsby-plugin-utils`);
-  if (isGatsbyNodeLifecycleSupported(`onPluginInit`)) {
+
+  // 3. else if
+  if (isGatsbyNodeLifecycleSupported(`onPlugInit`)) {
     coreSupportsOnPluginInit = "stable";
+    console.log(`💩🐸On🔌👸 = 🏴‍☠️👸`);
   } else if (isGatsbyNodeLifecycleSupported(`unstable_onPluginInit`)) {
     coreSupportsOnPluginInit = "unstable";
+    console.log(`💩🐸On🔌👸 = un🏴‍☠️👸`);
   }
 } catch (error) {
-  console.error(`cannot 🚴‍♀️`);
+  console.error(`Cannot check if Gatsby supports on🔌👸 🚴‍♀️`);
 }
 
-let globalPluginOptions = {};
+// let
+//const {} = newCloudinary(options);
 
-const initializeGlobalState = (_, luginOptions) => {
-  globalPluginOptions = luginOptions;
+// 4. const
+const initializaGlobalState = (options) => {
+  const cloudinary = newCloudinary(options);
+  const resourceOptions = getResourceOptions(options);
 };
 
+// 5. else if
 if (coreSupportsOnPluginInit === "stable") {
-  exports.onPluginInit = initializeGlobalState;
+  exports.onPluginInit = initializaGlobalState;
 } else if (coreSupportsOnPluginInit === "unstable") {
-  exports.unstable_onPluginInit = initializeGlobalState;
+  exports.unstable_onPluginInit = initializaGlobalState;
 } else {
-  exports.onPreBootstrap = initializeGlobalState;
+  exports.onPreInit = initializaGlobalState;
 }
