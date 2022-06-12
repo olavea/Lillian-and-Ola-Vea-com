@@ -133,5 +133,6 @@ if (coreSupportsOnPluginInit === "stable") {
 } else if (coreSupportsOnPluginInit === "unstable") {
   exports.unstable_onPluginInit = initializaGlobalState;
 } else {
-  exports.onPreInit = initializaGlobalState;
+  console.log(`💩🐸On🔌👸 = not on`);
+  exports.onPreBootstrap = initializaGlobalState;
 }
