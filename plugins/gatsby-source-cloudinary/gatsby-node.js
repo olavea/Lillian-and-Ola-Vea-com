@@ -13,6 +13,16 @@ const type = `TobbieCloudinaryMedia`;
 // Now I only get results for the `const DEFAULT_TYPE = "upload";`
 //const type = `CloudinaryMedia`;
 
+exports.pluginOptionsSchema = ({ Joi }) => {
+  return Joi.object({
+    optionA: Joi.boolean().required().description(`Enables optionA.`),
+    message: Joi.string()
+      .required()
+      .description(`The message logged to the console.`),
+    optionB: Joi.boolean().description(`Enables optionB.`),
+  });
+};
+
 const getNodeData = (gatsby, media) => {
   return {
     ...media,
