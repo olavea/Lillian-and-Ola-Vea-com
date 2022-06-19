@@ -13,6 +13,19 @@ const type = `TobbieCloudinaryMedia`;
 // Now I only get results for the `const DEFAULT_TYPE = "upload";`
 //const type = `CloudinaryMedia`;
 
+// 🤯. 🔌 ☑️ 🎶  = ({ 😹 }) => {
+exports.pluginOptionsSchema = ({ Joi }) => {
+  // return 😹.📖({})
+  return Joi.object({
+    //  😹.🧶().®️().💁(`Enables`),
+    cloudName: Joi.string().required().description(`Enobels `),
+    apiSecret: Joi.string().required().description(`Enobles `),
+    apiSecret: Joi.string().required().description(`Enobles `),
+    uploadFolder: Joi.string().required().description(`Enobles `),
+    allowedMediaTypes: Joi.string().required().description(`Enobles`),
+  });
+};
+
 // 3.0. npm i gatsby-plugin-utils
 
 // 3.1. 💩🐸On🔌👸 is undefined;
