@@ -27,6 +27,7 @@ async function bakeMarkdownNodesIntoPages(gatsbyUtils) {
     {
       supplies: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/index.md/" } }
+        sort: { fields: frontmatter___title, order: ASC }
       ) {
         nodes {
           id
@@ -44,7 +45,7 @@ async function bakeMarkdownNodesIntoPages(gatsbyUtils) {
   // 3. aromaNode 🍰💰
   // Loop over the supplies.nodes and
   // for each aromaNode bake a page
-  data.supplies.nodes.forEach((aromaNode) => {
+  data.supplies.nodes.forEach((aromaNode, index) => {
     // console.log(aromaNode.fields.slug, "💀📄");
     const aromaNodeSlug = aromaNode.fields.slug;
     const aromaNodePath = aromaNodeSlug === "/index/" ? "/" : aromaNodeSlug;
@@ -58,6 +59,7 @@ async function bakeMarkdownNodesIntoPages(gatsbyUtils) {
       context: {
         catsbyId: aromaNode.id,
       },
+      defer: index + 1 > 1,
     });
 
     reporter.info(`Created page for slug ${aromaNode.fields.slug}`);
