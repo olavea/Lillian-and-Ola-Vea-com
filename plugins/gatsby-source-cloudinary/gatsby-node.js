@@ -38,48 +38,30 @@ try {
 
   // 3.4. if 💩🐸On🔌👸 === "🏴‍☠️" or === "un🏴‍☠️"
   if (isGatsbyNodeLifecycleSupported(`onPluginInit`)) {
-    console.log(`onPluginInit 😬`);
-    coreSupportsOnPluginInit = "stable";
+    coreSupportsOnOluginInit = "stable";
   } else if (isGatsbyNodeLifecycleSupported(`unstable_onPluginInit`)) {
-    console.log(` un onPluginInit 😬`);
-    coreSupportsOnPluginInit = "unstable";
+    coreSupportsOnOluginInit = "unstable";
   }
 } catch (error) {
-  console.error(`could not check`);
+  console.error(`Could not ceck if Gatsby supports onPluginInit lifecycle 🚴‍♀️`);
 }
 
 // 3.5. const 🔌Options
-const pluginOptions = getResourceOptions();
-// 3.6. const
+let globalPluginOptions = {};
 
-// 3.7.  👸🌐🌀
-const initializeGlobalState = (options) => {
-  const cloudinary = newCloudinary(options);
-  const resourceOptions = pluginOptions(options);
+// 3.6.  👸🌐🌀
+const initializaGlobalState = ({ newCloudinary, getResourceOptions }) => {
+  globalPluginOptions = newCloudinary && getResourceOptions;
 };
 
-// 3.8 if (💩🐸On🔌👸 === 'stable') {} else if (💩🐸On🔌👸 === 'unstable') {} else {}
-
-if (coreSupportsOnPluginInit === "stable") {
-  console.log(`expo onPluginInit 😬`);
-  exports.onPluginInit = initializeGlobalState;
-} else if (coreSupportsOnPluginInit === "stable") {
-  console.log(`expo unst onPluginInit 😬`);
-  exports.unstable_onPluginInit = initializeGlobalState;
+// 3.7 if (💩🐸On🔌👸 === 'stable') {} else if (💩🐸On🔌👸 === 'unstable') {} else {}
+if (coreSupportsOnOluginInit === "stable") {
+  exports.onPluginInit = initializaGlobalState;
+} else if (coreSupportsOnOluginInit === "unstable") {
+  exports.unstable_onPluginInit = initializaGlobalState;
 } else {
-  console.log(`onPlreInit 😬`);
-  exports.onPreInit = initializeGlobalState;
+  exports.onPreBootstrap = initializaGlobalState;
 }
-
-let emojisRepresent = {
-  // swap out some of the emojis with code
-  "on🔌👸": onPluginInit,
-  "💩🐸On🔌👸": coreSupportsOnPluginInit,
-  "is💜NodeLife🚴‍♀️🐸": isGatsbyNodeLifecycleSupported,
-  "un🏴‍☠️": "unstable",
-  "🏴‍☠️": "stable",
-  "👸🌐🌀": initializeGlobalState,
-};
 
 const getNodeData = (gatsby, media) => {
   return {
@@ -140,17 +122,20 @@ const createCloudinaryNodes = async (
   } while (nextCursor && limit > 0);
 };
 
-// Cap'n Ola is creating new type
+// Cap'n Ola Vea is creating new type
 
+// 1.1 🤯.create🎶Customization = ({ actions }) => {
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
 
+  // 1.2 create🐙
+  // 1.3 🐙 TobbieCloudinaryMedia
   createTypes(`
     type TobbieCloudinaryMedia implements Node {
       joinedAt: Date
     }
   `);
-  console.log("Cap Ola is creating a new type");
+  // 1.4 console.log("Cap Ola is creating a new type 🐙 ");
 };
 
 exports.sourceNodes = (gatsby, options) => {
