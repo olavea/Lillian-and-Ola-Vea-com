@@ -5,6 +5,9 @@ date: 2022-05-08
 ---
 (Draft)
 
+What do "direct manipulation of a node" mean?
+
+Direct manipulation assigns properties to the node like it was a regular javascript object.
 
 
 ```js
@@ -38,6 +41,12 @@ date: 2022-05-08
 "gatsby-plugin-utils": "^3.9.0",
 
 ```
+
+
+Docs
+[2. Data mutations need to happen during sourceNodes or onCreateNode](https://www.gatsbyjs.com/docs/reference/release-notes/migrating-source-plugin-from-v3-to-v4/#2-data-mutations-need-to-happen-during-sourcenodes-or-oncreatenode)
+
+
 ```js
 
 // packages/gatsby-transformer-cloudinary/gatsby-node.js
