@@ -18,11 +18,15 @@ exports.pluginOptionsSchema = ({ Joi }) => {
   // return 😹.📖({})
   return Joi.object({
     //  😹.🧶().®️().💁(`Enables`),
-    cloudName: Joi.string().required().description(`Enobels `),
-    apiSecret: Joi.string().required().description(`Enobles `),
-    apiSecret: Joi.string().required().description(`Enobles `),
-    uploadFolder: Joi.string().required().description(`Enobles `),
-    allowedMediaTypes: Joi.string().required().description(`Enobles`),
+    cloudName: Joi.string().required(),
+    apiKey: Joi.string().required(),
+    apiSecret: Joi.string().required(),
+    resourceType: Joi.string().required(),
+    type: Joi.string().required(),
+    maxResults: Joi.integer().required(),
+    tags: Joi.boolean().required(),
+    prefix: Joi.string().required(),
+    context: Joi.boolean().required(),
   });
 };
 
@@ -39,8 +43,16 @@ try {
   // 3.4. if 💩🐸On🔌👸 === "🏴‍☠️" or === "un🏴‍☠️"
   if (isGatsbyNodeLifecycleSupported(`onPluginInit`)) {
     coreSupportsOnOluginInit = "stable";
+    reporter.info(
+      `${REPORTER_PREFIX}: 🚴‍♀️ ${coreSupportsOnOluginInit} "stable"`
+    );
+    console.log(`🚴‍♀️"on🔌👸"`);
   } else if (isGatsbyNodeLifecycleSupported(`unstable_onPluginInit`)) {
     coreSupportsOnOluginInit = "unstable";
+    reporter.info(
+      `${REPORTER_PREFIX}: 🚴‍♀️ ${coreSupportsOnOluginInit} "unstable"`
+    );
+    console.log(`🚴‍♀️"unstable_on🔌👸"`);
   }
 } catch (error) {
   console.error(`Could not ceck if Gatsby supports onPluginInit lifecycle 🚴‍♀️`);
@@ -50,16 +62,37 @@ try {
 let globalPluginOptions = {};
 
 // 3.6.  👸🌐🌀
-const initializaGlobalState = ({ newCloudinary, getResourceOptions }) => {
-  globalPluginOptions = newCloudinary && getResourceOptions;
+const initializaGlobalState = (
+  newCloudinary,
+  getResourceOptions,
+  pluginOptions,
+  gatsbyUtils
+) => {
+  const { reporter } = gatsbyUtils;
+
+  const cloudinary = newCloudinary(pluginOptions);
+  const resourceOptions = getResourceOptions(pluginOptions);
+
+  reporter.info(
+    `${REPORTER_PREFIX}: Added ${resourceOptions} ${cloudinary} options`
+  );
+
+  return createCloudinaryNodes(gatsbyUtils, cloudinary, resourceOptions);
+  // newCloudinary(options);
+  // getResourceOptions(options);
+  // //return globalPluginOptions();
+  //  globalPluginOptions = newCloudinary && getResourceOptions;
 };
 
 // 3.7 if (💩🐸On🔌👸 === 'stable') {} else if (💩🐸On🔌👸 === 'unstable') {} else {}
 if (coreSupportsOnOluginInit === "stable") {
+  console.log(`"on🔌👸": onPluginInit,`);
   exports.onPluginInit = initializaGlobalState;
 } else if (coreSupportsOnOluginInit === "unstable") {
+  console.log(`"un🏴‍☠️": "unstable","on🔌👸": onPluginInit,`);
   exports.unstable_onPluginInit = initializaGlobalState;
 } else {
+  console.log(`onPre👢strap`);
   exports.onPreBootstrap = initializaGlobalState;
 }
 
