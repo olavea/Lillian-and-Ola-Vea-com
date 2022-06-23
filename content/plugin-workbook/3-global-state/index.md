@@ -1,5 +1,5 @@
 ---
-title:
+title: 3 Global State 🧚‍♀️ Backwards compatible
 author: "@OlaHolstVea"
 date: 2022-06-20
 ---
@@ -11,22 +11,27 @@ date: 2022-06-20
 
 // 3.0. npm i gatsby-plugin-utils
 
-// 3.1. 💩🐸On🔌👸 is undefined;
+// 3.1. 💩🐸On🔌👸
 let coreSupportsOnOluginInit = undefined;
 
 // 3.2. try {} catch
 
   // 3.3. is💜NodeLife🚴‍♀️🐸 from npm i gatsby-plugin-utils
 
-  // 3.4. if 💩🐸On🔌👸 === "🏴‍☠️" or === "un🏴‍☠️"
+  // 3.4. if is💜NodeLife🚴‍♀️🐸(`on🔌👸`) {
+  //   💩🐸On🔌👸 === "🏴‍☠️"
+  // } else if (is💜NodeLife🚴‍♀️🐸(`un🏴‍☠️_on🔌👸`)) {
+  //   💩🐸On🔌👸 === "un🏴‍☠️"
+  // }
 
-// 3.5. const global🔌Options
+
+// 3.5.  🌐🔌Options
 
 
 // 3.6.  👸🌐🌀
 
 
-// 3.7 if (💩🐸On🔌👸 === 'stable') {} else if (💩🐸On🔌👸 === 'unstable') {} else {}
+// 3.7 if (💩🐸On🔌👸 === 'stable') {} else if (💩🐸On🔌👸 === 'unstable') {} else {🤯.onPre👻👢 = 👸🌐🌀}
 
 ```
 
@@ -56,7 +61,12 @@ try {
   // 3.3. is💜NodeLife🚴‍♀️🐸 from npm i gatsby-plugin-utils
   const { isGatsbyNodeLifecycleSupported } = require(`gatsby-plugin-utils`);
 
-  // 3.4. if 💩🐸On🔌👸 === "🏴‍☠️" or === "un🏴‍☠️"
+  // 3.4. if is💜NodeLife🚴‍♀️🐸(`on🔌👸`) {
+  //   💩🐸On🔌👸 === "🏴‍☠️"
+  // } else if (is💜NodeLife🚴‍♀️🐸(`un🏴‍☠️_on🔌👸`)) {
+  //   💩🐸On🔌👸 === "un🏴‍☠️"
+  // }
+
   if (isGatsbyNodeLifecycleSupported(`onPluginInit`)) {
     console.log(`onPluginInit 😬`);
     coreSupportsOnPluginInit = "stable";
@@ -68,7 +78,7 @@ try {
   console.error(`could not check`);
 }
 
-// 3.5. const 🔌Options
+// 3.5.  🌐🔌Options
 const pluginOptions = getPluginOptions();
 
 // 3.6.  👸🌐🌀
@@ -77,7 +87,7 @@ const initializaGlobalState = ({ reporter }, pluginOptions ) => {
 };
 
 
-// 3.7 if (💩🐸On🔌👸 === 'stable') {} else if (💩🐸On🔌👸 === 'unstable') {} else {}
+// 3.7 if (💩🐸On🔌👸 === 'stable') {} else if (💩🐸On🔌👸 === 'unstable') {} else {🤯.onPre👻👢 = 👸🌐🌀}
 if (coreSupportsOnPluginInit === "stable") {
   console.log(`expo onPluginInit 😬`);
   exports.onPluginInit = initializeGlobalState;
@@ -119,7 +129,12 @@ try {
   // 3.3. is💜NodeLife🚴‍♀️🐸 from npm i gatsby-plugin-utils
   const { isGatsbyNodeLifecycleSupported } = require(`gatsby-plugin-utils`);
 
-  // 3.4. if 💩🐸On🔌👸 === "🏴‍☠️" or === "un🏴‍☠️"
+  // 3.4. if is💜NodeLife🚴‍♀️🐸(`on🔌👸`) {
+  //   💩🐸On🔌👸 === "🏴‍☠️"
+  // } else if (is💜NodeLife🚴‍♀️🐸(`un🏴‍☠️_on🔌👸`)) {
+  //   💩🐸On🔌👸 === "un🏴‍☠️"
+  // }
+
   if (isGatsbyNodeLifecycleSupported(`onPluginInit`)) {
     console.log(`onPluginInit 😬`);
     coreSupportsOnPluginInit = "stable";
@@ -131,7 +146,7 @@ try {
   console.error(`could not check`);
 }
 
-// 3.5. const 🔌Options
+// 3.5.  🌐🔌Options
 let globalPluginOptions = {};
 
 // 3.6.  👸🌐🌀
@@ -144,7 +159,7 @@ const initializaGlobalState = ( newCloudinary, pluginOptions ) => {
   return globalPluginOptions(cloudinary, resourceOptions);
 };
 
-// 3.7 if (💩🐸On🔌👸 === 'stable') {} else if (💩🐸On🔌👸 === 'unstable') {} else {}
+// 3.7 if (💩🐸On🔌👸 === 'stable') {} else if (💩🐸On🔌👸 === 'unstable') {} else {🤯.onPre👻👢 = 👸🌐🌀}
 if (coreSupportsOnPluginInit === "stable") {
   console.log(`expo onPluginInit 😬`);
   exports.onPluginInit = initializeGlobalState;

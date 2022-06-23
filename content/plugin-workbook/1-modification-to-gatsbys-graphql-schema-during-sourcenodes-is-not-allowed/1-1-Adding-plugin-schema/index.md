@@ -1,5 +1,5 @@
 ---
-title: 1.1. Adding plugin schema
+title: 1.1. Adding plugin schema 🔌 🎶 #3
 author: "@OlaHolstVea"
 date: 2022-06-20
 ---
@@ -13,7 +13,7 @@ date: 2022-06-20
 
   // 1.2 return 😹.📖({
 
-    // 1.3  😹.🧶().®️().💁(`Enables`),
+    // 1.3  😹.🧶().®️().default(1000),
 
 
   //   })
@@ -28,25 +28,50 @@ npm i gatsby-plugin-utils
 
 ```
 
+
+
 ```js
 
-// gatsby-node.js
+// /gatsby-source-cloudinary/gatsby-node.js
 exports.pluginOptionsSchema = ({ Joi }) => {
   return Joi.object({
     cloudName: Joi.string().required(),
     apiKey: Joi.string().required(),
     apiSecret: Joi.string().required(),
-    resourceType: Joi.string().required(),
-    type: Joi.string().required(),
-    maxResults: Joi.string().required(),
-    tags: Joi.string().required(),
-    prefix: Joi.string().required(),
-    context: Joi.string().required(),
+    resourceType: Joi.string().default('image'),
+    type: Joi.string().default('all'),
+    maxResults: Joi.integer().default(10),
+    tags: Joi.boolean().default(false),
+    prefix: Joi.string(),
+    context: Joi.boolean(),
   });
 };
-
-
 ```
+
+```js
+// /gatsby-transformer-cloudinary/packages/gatsby-transformer-cloudinary/gatsby-node.js
+
+exports.pluginOptionsSchema = ({ Joi }) => {
+  return Joi.object({
+    cloudName: Joi.string(),
+    apiKey: Joi.string(),
+    apiSecret: Joi.string(),
+    uploadFolder: Joi.string(),
+    uploadSourceInstanceNames: Joi.array(),
+    fluidMaxWidth: Joi.integer().default(1000),
+    fluidMinWidth: Joi.integer().default(200),
+    createDerived: Joi.boolean().default(true),
+    breakpointsMaxImages: Joi.integer().default(5),
+    useCloudinaryBreakpoints: Joi.boolean().default(false),
+    overwriteExisting: Joi.boolean().default(false),
+    enableDefaultTransformations: Joi.boolean().default(false),
+    alwaysUseDefaultBase64: Joi.boolean().default(false),
+  });
+};
+```
+
+
+
 
 
 docs
