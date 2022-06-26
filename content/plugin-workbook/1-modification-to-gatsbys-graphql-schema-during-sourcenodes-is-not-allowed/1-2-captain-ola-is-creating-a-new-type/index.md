@@ -20,6 +20,28 @@ date: 2022-06-20
 
 ```
 
+
+```js
+
+// gatsby-source-cloudinary/gatsby-node.js
+
+exports.pluginOptionsSchema = ({ Joi }) => {
+  return Joi.object({
+    cloudName: Joi.string().required(),
+    apiKey: Joi.string().required(),
+    apiSecret: Joi.string().required(),
+    resourceType: Joi.string().default('image'),
+    type: Joi.string().default('all'),
+    maxResults: Joi.integer().default(10),
+    tags: Joi.boolean().default(false),
+    prefix: Joi.string(),
+    context: Joi.boolean(),
+  });
+};
+
+```
+
+
 ```js
 
 // gatsby-node.js

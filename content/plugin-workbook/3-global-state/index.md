@@ -143,32 +143,28 @@ try {
     coreSupportsOnPluginInit = "unstable";
   }
 } catch (error) {
-  console.error(`could not check`);
+  console.error(`Could not check if Gatsby supports onPluginInit lifecycle on🔌👸 🚴‍♀️`);
 }
 
 // 3.5.  🌐🔌Options
-let globalPluginOptions = {};
+//let globalPluginOptions = {};
 
 // 3.6.  👸🌐🌀
-const initializaGlobalState = ( newCloudinary, pluginOptions ) => {
-    // I a not sure if I am guessing right on how I am using newCloudinary && getResourceOptions
-  // and how do I test if this works?
-  const cloudinary = newCloudinary(options);
-  const resourceOptions = getResourceOptions(options);
-
-  return globalPluginOptions(cloudinary, resourceOptions);
+const initializeGlobalState = (newCloudinary, getResourceOptions) => {
+  newCloudinary;
+  getResourceOptions;
 };
 
 // 3.7 if (💩🐸On🔌👸 === 'stable') {} else if (💩🐸On🔌👸 === 'unstable') {} else {🤯.onPre👻👢 = 👸🌐🌀}
 if (coreSupportsOnPluginInit === "stable") {
-  console.log(`expo onPluginInit 😬`);
+  console.log(`exports onPluginInit on🔌👸 💀`);
   exports.onPluginInit = initializeGlobalState;
 } else if (coreSupportsOnPluginInit === "stable") {
-  console.log(`expo unst onPluginInit 😬`);
+  console.log(`exports unstable_onPluginInit 🌊_on🔌👸 💀`);
   exports.unstable_onPluginInit = initializeGlobalState;
 } else {
-  console.log(`onPlreInit 😬`);
-  exports.onPreInit = initializeGlobalState;
+  console.log(`exports onPrebootstrap onPre👻👢`);
+  exports.onPrebootstrap = initializeGlobalState;
 }
 
 let emojisRepresent = {

@@ -49,9 +49,68 @@ Docs
 
 ```js
 
-// packages/gatsby-transformer-cloudinary/gatsby-node.js
+// packages/gatsby-transformer-cloudinary/node-creation/create-asset-nodes-from-data.js
+//....
+exports.createAssetNodesFromData = ({
+  actions: { createNodeField },
+}) => {
+      createCloudinaryAssetNode({ createNodeField });
+};
+//....
+
+function createCloudinaryAssetNode({ createNodeField }) {
+//....
+
+  //Use createNodeField to store the id of the CloudinaryAsset node the Gatsby-v4-Way
+  let relationshipKey = `${assetDataPath || relationshipName}`;
+
+  createNodeField({
+    node: parentNode,
+    name: relationshipKey,
+    value: imageNode.id,
+  });
+
+  // Add relationship by mutating, does not work in Gatsby-v4
+  relationshipKey = `${assetDataPath || relationshipName}___NODE`;
+  set(parentNode, relationshipKey, imageNode.id);
+}
 
 ```
+
+
+
+
+
+```js
+
+// packages/gatsby-transformer-cloudinary/node-creation/create-remote-image-node.js
+//....
+exports.createRemoteImageNode = async ({ createNodeField }) => {
+      createCloudinaryAssetNode({ createNodeField });
+};
+//....
+
+
+//....
+
+  //Use createNodeField to store the id of the CloudinaryAsset node the Gatsby-v4-Way
+  let relationshipKey = `${relationshipName}`;
+
+  createNodeField({
+    node: parentNode,
+    name: relationshipKey,
+    value: imageNode.id,
+  });
+
+  // Add relationship by mutating, does not work in Gatsby-v4
+  relationshipKey = `${relationshipName}___NODE`;
+  parentNode[relationshipKey] = imageNode.id;
+  return imageNode;
+}
+
+```
+
+
 ```js
 //gatsby-transformer-cloudinary/packages/gatsby-transformer-cloudinary/gatsby-image/index.js
 
