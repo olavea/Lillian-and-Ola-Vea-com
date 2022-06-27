@@ -18,10 +18,19 @@ exports.pluginOptionsSchema = ({ Joi }) => {
   // return 😹.📖({
   return Joi.object({
     //api🔑:  😹.🧶().®️().💁(`Enables api🔑`),
-    cloudName: Joi.string().required().description(`Enobles`),
-    apiKey: Joi.string().required().description(`Enobles`),
-    apiSecret: Joi.string().required().description(`Enobles`),
-    somethingType: Joi.string().required().description(`Enobles`),
+    cloudName: Joi.string(),
+    apiKey: Joi.string(),
+    apiSecret: Joi.string(),
+    uploadFolder: Joi.string(),
+    uploadSourceInstanceNames: Joi.array().items(Joi.string()),
+    fluidMaxWidth: Joi.number().integer().positive().default(1000),
+    fluidMinWidth: Joi.number().integer().positive().default(200),
+    createDerived: Joi.boolean().default(true),
+    breakpointsMaxImages: Joi.number().integer().positive().default(5),
+    useCloudinaryBreakpoints: Joi.boolean().default(false),
+    overwriteExisting: Joi.boolean().default(false),
+    enableDefaultTransformations: Joi.boolean().default(false),
+    alwaysUseDefaultBase64: Joi.boolean().default(false),
   });
 };
 const getNodeData = (gatsby, media) => {
