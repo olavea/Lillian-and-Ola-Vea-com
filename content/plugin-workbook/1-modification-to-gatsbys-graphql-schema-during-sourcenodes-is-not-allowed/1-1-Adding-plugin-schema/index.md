@@ -9,12 +9,11 @@ date: 2022-06-20
 
 ```js
 // gatsby-node.js
-// 1.1 🤯. 🔌 ☑️ 🎶  = ({ 😹 }) => {
+// 1.1 🤯. 🔌 ☑️ s🎶  = ({ 🥳 }) => {
 
-  // 1.2 return 😹.📖({
+  // 1.2 return 🥳.📖({
 
     // 1.3  😹.🧶().®️().default(1000),
-
 
   //   })
 // }
@@ -40,7 +39,7 @@ exports.pluginOptionsSchema = ({ Joi }) => {
     apiSecret: Joi.string().required(),
     resourceType: Joi.string().default('image'),
     type: Joi.string().default('all'),
-    maxResults: Joi.integer().default(10),
+    maxResults: Joi.number().integer().positive().default(10),
     tags: Joi.boolean().default(false),
     prefix: Joi.string(),
     context: Joi.boolean(),
@@ -57,11 +56,11 @@ exports.pluginOptionsSchema = ({ Joi }) => {
     apiKey: Joi.string(),
     apiSecret: Joi.string(),
     uploadFolder: Joi.string(),
-    uploadSourceInstanceNames: Joi.array(),
-    fluidMaxWidth: Joi.integer().default(1000),
-    fluidMinWidth: Joi.integer().default(200),
+    uploadSourceInstanceNames: Joi.array().items(Joi.string()),
+    fluidMaxWidth: Joi.number().integer().positive().default(1000),
+    fluidMinWidth: Joi.number().integer().positive().default(200),
     createDerived: Joi.boolean().default(true),
-    breakpointsMaxImages: Joi.integer().default(5),
+    breakpointsMaxImages: Joi.number().integer().posititve().default(5),
     useCloudinaryBreakpoints: Joi.boolean().default(false),
     overwriteExisting: Joi.boolean().default(false),
     enableDefaultTransformations: Joi.boolean().default(false),
@@ -75,5 +74,7 @@ exports.pluginOptionsSchema = ({ Joi }) => {
 
 
 docs
+[https://joi.dev/api/?v=17.6.0#numberpositive](https://joi.dev/api/?v=17.6.0#numberpositive)
+[https://joi.dev/api/?v=17.6.0#arrayitemstypes](https://joi.dev/api/?v=17.6.0#arrayitemstypes)
 
 [How to validate plugin options](https://www.gatsbyjs.com/docs/how-to/plugins-and-themes/configuring-usage-with-plugin-options/#how-to-validate-plugin-options)
