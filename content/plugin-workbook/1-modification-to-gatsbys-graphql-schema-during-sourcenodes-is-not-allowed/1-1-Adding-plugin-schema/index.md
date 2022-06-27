@@ -9,12 +9,11 @@ date: 2022-06-20
 
 ```js
 // gatsby-node.js
-// 1.1 🤯. 🔌 ☑️ 🎶  = ({ 😹 }) => {
+// 1.1 🤯. 🔌 ☑️ s🎶  = ({ 🥳 }) => {
 
-  // 1.2 return 😹.📖({
+  // 1.2 return 🥳.📖({
 
     // 1.3  😹.🧶().®️().default(1000),
-
 
   //   })
 // }
@@ -75,5 +74,7 @@ exports.pluginOptionsSchema = ({ Joi }) => {
 
 
 docs
+[https://joi.dev/api/?v=17.6.0#numberpositive](https://joi.dev/api/?v=17.6.0#numberpositive)
+[https://joi.dev/api/?v=17.6.0#arrayitemstypes](https://joi.dev/api/?v=17.6.0#arrayitemstypes)
 
 [How to validate plugin options](https://www.gatsbyjs.com/docs/how-to/plugins-and-themes/configuring-usage-with-plugin-options/#how-to-validate-plugin-options)
