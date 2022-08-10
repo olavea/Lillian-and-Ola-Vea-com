@@ -1,4 +1,4 @@
-const { newCloudinary, getResourceOptions } = require("./utils");
+const { newCloudinary, getResourceOptions } = require('./utils');
 
 // Cap Ola is changing from old type to new type
 const type = `TobbieCloudinaryMedia`;
@@ -13,20 +13,20 @@ const type = `TobbieCloudinaryMedia`;
 // Now I only get results for the `const DEFAULT_TYPE = "upload";`
 //const type = `CloudinaryMedia`;
 
-// 🤯. 🔌 ☑️ 🎶  = ({ 😹 }) => {
+// 🤯. 🔌 ☑️ 🎶  = ({ 🥳 }) => {
 exports.pluginOptionsSchema = ({ Joi }) => {
-  // return 😹.📖({})
+  // return 🥳.📖({})
   return Joi.object({
-    //  😹.🧶().®️().💁(`Enables`),
+    //  🥳.🧶().®️().💁(`Enables`),
     cloudName: Joi.string().required(),
     apiKey: Joi.string().required(),
     apiSecret: Joi.string().required(),
-    resourceType: Joi.string().required(),
-    type: Joi.string().required(),
-    maxResults: Joi.integer().required(),
-    tags: Joi.boolean().required(),
-    prefix: Joi.string().required(),
-    context: Joi.boolean().required(),
+    resourceType: Joi.string().default('image'),
+    type: Joi.string().default('all'),
+    maxResults: Joi.number().integer().positive().default(10),
+    tags: Joi.boolean().default(false),
+    prefix: Joi.string(),
+    context: Joi.boolean(),
   });
 };
 
@@ -42,15 +42,15 @@ try {
 
   // 3.4. if 💩🐸On🔌👸 === "🏴‍☠️" or === "un🏴‍☠️"
   if (isGatsbyNodeLifecycleSupported(`onPluginInit`)) {
-    coreSupportsOnOluginInit = "stable";
+    coreSupportsOnOluginInit = 'stable';
     reporter.info(
-      `${REPORTER_PREFIX}: 🚴‍♀️ ${coreSupportsOnOluginInit} "stable"`
+      `${REPORTER_PREFIX}: 🚴‍♀️ ${coreSupportsOnOluginInit} "stable"`,
     );
     console.log(`🚴‍♀️"on🔌👸"`);
   } else if (isGatsbyNodeLifecycleSupported(`unstable_onPluginInit`)) {
-    coreSupportsOnOluginInit = "unstable";
+    coreSupportsOnOluginInit = 'unstable';
     reporter.info(
-      `${REPORTER_PREFIX}: 🚴‍♀️ ${coreSupportsOnOluginInit} "unstable"`
+      `${REPORTER_PREFIX}: 🚴‍♀️ ${coreSupportsOnOluginInit} "unstable"`,
     );
     console.log(`🚴‍♀️"unstable_on🔌👸"`);
   }
@@ -66,7 +66,7 @@ const initializaGlobalState = (
   newCloudinary,
   getResourceOptions,
   pluginOptions,
-  gatsbyUtils
+  gatsbyUtils,
 ) => {
   const { reporter } = gatsbyUtils;
 
@@ -74,7 +74,7 @@ const initializaGlobalState = (
   const resourceOptions = getResourceOptions(pluginOptions);
 
   reporter.info(
-    `${REPORTER_PREFIX}: Added ${resourceOptions} ${cloudinary} options`
+    `${REPORTER_PREFIX}: Added ${resourceOptions} ${cloudinary} options`,
   );
 
   return createCloudinaryNodes(gatsbyUtils, cloudinary, resourceOptions);
@@ -85,10 +85,10 @@ const initializaGlobalState = (
 };
 
 // 3.7 if (💩🐸On🔌👸 === 'stable') {} else if (💩🐸On🔌👸 === 'unstable') {} else {}
-if (coreSupportsOnOluginInit === "stable") {
+if (coreSupportsOnOluginInit === 'stable') {
   console.log(`"on🔌👸": onPluginInit,`);
   exports.onPluginInit = initializaGlobalState;
-} else if (coreSupportsOnOluginInit === "unstable") {
+} else if (coreSupportsOnOluginInit === 'unstable') {
   console.log(`"un🏴‍☠️": "unstable","on🔌👸": onPluginInit,`);
   exports.unstable_onPluginInit = initializaGlobalState;
 } else {
@@ -111,11 +111,11 @@ const getNodeData = (gatsby, media) => {
 
 const addTransformations = (resource, transformation, secure) => {
   const splitURL = secure
-    ? resource.secure_url.split("/")
-    : resource.url.split("/");
+    ? resource.secure_url.split('/')
+    : resource.url.split('/');
   splitURL.splice(6, 0, transformation);
 
-  const transformedURL = splitURL.join("/");
+  const transformedURL = splitURL.join('/');
   return transformedURL;
 };
 
@@ -124,7 +124,7 @@ const createCloudinaryNodes = async (
   gatsby,
   cloudinary,
   options,
-  { limit }
+  { limit },
 ) => {
   const { reporter } = gatsby;
   let nextCursor = null;
@@ -132,16 +132,16 @@ const createCloudinaryNodes = async (
   do {
     // added await
     const result = await cloudinary.api.resources({
-      resource_type: "image",
+      resource_type: 'image',
       max_results: limit < 10 ? limit : 10,
       next_cursor: nextCursor,
     });
     reporter.info(
-      `fetched 🌩️ Assets >>> ${result.resources.length} from ${nextCursor}`
+      `fetched 🌩️ Assets >>> ${result.resources.length} from ${nextCursor}`,
     );
 
     result.resources.forEach((resource) => {
-      const transformations = "q_auto,f_auto"; // Default CL transformations, todo: fetch base transformations from config maybe.
+      const transformations = 'q_auto,f_auto'; // Default CL transformations, todo: fetch base transformations from config maybe.
 
       resource.url = addTransformations(resource, transformations);
       resource.secure_url = addTransformations(resource, transformations, true);
