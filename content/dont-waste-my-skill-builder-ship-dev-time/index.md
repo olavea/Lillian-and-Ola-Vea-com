@@ -5,6 +5,7 @@ author: "@OlaHolstVea"
 date: 2022-07-31
 ---
 
+
 How a DX Engineer turned her Dev-Task into skill-builder-ship with two tiny techniques
 
 Book Titles:
@@ -36,7 +37,7 @@ town from our sea-side                      cabin.
 Children are pre-
 programmed for Skill-Builder-
 Ship, each with her own
-style. So meet ...
+style. So meet ...å
 OR
 Children are pre-
 programmed for Skill-Builder-
