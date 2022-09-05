@@ -30,70 +30,59 @@ exports.pluginOptionsSchema = ({ Joi }) => {
   });
 };
 
+const { setPluginOptions } = bleh;
+
 // 3.0. npm i gatsby-plugin-utils
 
 // 3.1. 💩🐸On🔌👸 is undefined;
-let coreSupportsOnOluginInit = undefined;
+let coreSupportsOnPluginInit = undefined;
 
-// 3.2. try {} catch
 try {
   // 3.3. is💜NodeLife🚴‍♀️🐸 from npm i gatsby-plugin-utils
   const { isGatsbyNodeLifecycleSupported } = require(`gatsby-plugin-utils`);
 
-  // 3.4. if 💩🐸On🔌👸 === "🏴‍☠️" or === "un🏴‍☠️"
+  // 3.4. if is💜NodeLife🚴‍♀️🐸(`on🐧👸`) {
+  //   💩🐸On🐧👸 = "🏴‍☠️⛵"
   if (isGatsbyNodeLifecycleSupported(`onPluginInit`)) {
-    coreSupportsOnOluginInit = 'stable';
-    reporter.info(
-      `${REPORTER_PREFIX}: 🚴‍♀️ ${coreSupportsOnOluginInit} "stable"`,
-    );
-    console.log(`🚴‍♀️"on🔌👸"`);
+    // reporter.info(
+    //   `${REPORTER_PREFIX}: 🚴‍♀️ ${coreSupportsOnOluginInit} "stable"`,
+    // );
+    coreSupportsOnPluginInit = 'stable';
   } else if (isGatsbyNodeLifecycleSupported(`unstable_onPluginInit`)) {
-    coreSupportsOnOluginInit = 'unstable';
-    reporter.info(
-      `${REPORTER_PREFIX}: 🚴‍♀️ ${coreSupportsOnOluginInit} "unstable"`,
-    );
-    console.log(`🚴‍♀️"unstable_on🔌👸"`);
+    // reporter.info(
+    //   `${REPORTER_PREFIX}: 🚴‍♀️ ${coreSupportsOnOluginInit} "unstable"`,
+    // );
+
+    coreSupportsOnPluginInit = 'unstable';
   }
 } catch (error) {
   console.error(`Could not ceck if Gatsby supports onPluginInit lifecycle 🚴‍♀️`);
 }
 
 // 3.5. const 🔌Options
-let globalPluginOptions = {};
+const options = {
+  cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+  apiKey: process.env.CLOUDINARY_API_KEY,
+  apiSecret: process.env.CLOUDINARY_API_SECRET,
+  uploadFolder: 'gatsby-cloudinary',
+  allowedMediaTypes: 'image/svg',
+};
 
 // 3.6.  👸🌐🌀
-const initializaGlobalState = (
-  newCloudinary,
-  getResourceOptions,
-  pluginOptions,
-  gatsbyUtils,
-) => {
-  const { reporter } = gatsbyUtils;
-
-  const cloudinary = newCloudinary(pluginOptions);
-  const resourceOptions = getResourceOptions(pluginOptions);
-
-  reporter.info(
-    `${REPORTER_PREFIX}: Added ${resourceOptions} ${cloudinary} options`,
-  );
-
-  return createCloudinaryNodes(gatsbyUtils, cloudinary, resourceOptions);
-  // newCloudinary(options);
-  // getResourceOptions(options);
-  // //return globalPluginOptions();
-  //  globalPluginOptions = newCloudinary && getResourceOptions;
+const initializeGlobalState = ({ reporter }, pluginOptions) => {
+  setPluginOptions({ reporter, pluginOptions });
 };
 
 // 3.7 if (💩🐸On🔌👸 === 'stable') {} else if (💩🐸On🔌👸 === 'unstable') {} else {}
-if (coreSupportsOnOluginInit === 'stable') {
+if (coreSupportsOnPluginInit === 'stable') {
   console.log(`"on🔌👸": onPluginInit,`);
-  exports.onPluginInit = initializaGlobalState;
-} else if (coreSupportsOnOluginInit === 'unstable') {
+  exports.onPluginInit = initializeGlobalState;
+} else if (coreSupportsOnPluginInit === 'unstable') {
   console.log(`"un🏴‍☠️": "unstable","on🔌👸": onPluginInit,`);
-  exports.unstable_onPluginInit = initializaGlobalState;
+  exports.unstable_onPluginInit = initializeGlobalState;
 } else {
   console.log(`onPre👢strap`);
-  exports.onPreBootstrap = initializaGlobalState;
+  exports.onPreBootstrap = initializeGlobalState;
 }
 
 const getNodeData = (gatsby, media) => {
