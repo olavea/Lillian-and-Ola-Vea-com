@@ -63,6 +63,45 @@ async function bakeMarkdownNodesIntoPages(gatsbyUtils) {
     reporter.info(`Created page for slug ${aromaNode.fields.slug}`);
   });
 }
+async function bakeCloudinary(gatsbyUtils) {
+  const { graphql, actions, reporter } = gatsbyUtils;
+
+  // 1. filter ☕ first
+  const { data } = await graphql(`
+    {
+      supplies: allCloudinaryMedia {
+        nodes {
+          secure_url
+          id
+        }
+      }
+    }
+  `);
+
+  // 2. bakingSong 🎵 🦢
+  const bakingSong = require.resolve("./src/templates/cloudTemplate.js");
+  // 3. aromaNode 🍰💰
+  // Loop over the supplies.nodes and
+  // for each aromaNode bake a page
+  data.supplies.nodes.forEach((aromaNode) => {
+    // console.log(aromaNode.fields.slug, "💀📄");
+    const aromaNodeSlug = aromaNode.id;
+    const aromaNodePath = aromaNodeSlug === "/index/" ? "/" : aromaNodeSlug;
+
+    actions.createPage({
+      // A. aromaNodePath 🍰.🍓.🐛
+      path: aromaNodePath,
+      // B. bakingSong 🎵 🙀
+      component: bakingSong,
+      // C. catsbyId 😼🆔
+      context: {
+        catsbyId: aromaNode.id,
+      },
+    });
+
+    reporter.info(`Created page for slug ${aromaNode.id}`);
+  });
+}
 
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
@@ -80,4 +119,5 @@ exports.onCreateNode = async (gatsbyUtils) => {
 
 exports.createPages = async (gatsbyUtils) => {
   await bakeMarkdownNodesIntoPages(gatsbyUtils);
+  await bakeCloudinary(gatsbyUtils);
 };

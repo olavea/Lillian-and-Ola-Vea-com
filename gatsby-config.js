@@ -99,8 +99,21 @@ module.exports = {
         apiKey: process.env.CLOUDINARY_API_KEY,
         apiSecret: process.env.CLOUDINARY_API_SECRET,
         resourceType: `image`,
+        context: true,
+        maxResults: 10,
+        prefix: "demo/animals",
+        // 10:58 in https://youtu.be/IicwkJCNy7k?t=658
         // type: `type Value`,
         // prefix: `abc-xyz/`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-cloudinary`,
+      options: {
+        transformTypes: ["CloudinaryMedia"],
+        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+        apiKey: process.env.CLOUDINARY_API_KEY,
+        apiSecret: process.env.CLOUDINARY_API_SECRET,
       },
     },
   ],

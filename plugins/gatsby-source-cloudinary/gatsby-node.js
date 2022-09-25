@@ -1,7 +1,7 @@
 const { newCloudinary, getResourceOptions } = require("./utils");
 
 // Cap Ola is changing from old type to new type
-const type = `TobbieCloudinaryMedia`;
+const type = `CloudinaryMedia`;
 // What is different from old type?
 // Looks like there is not much difference,
 //because it is mostly internal type maybe?
@@ -12,6 +12,9 @@ const type = `TobbieCloudinaryMedia`;
 // How do I test if the `result.type` is working? Do I need to add images to cloudinary in a different way
 // Now I only get results for the `const DEFAULT_TYPE = "upload";`
 //const type = `CloudinaryMedia`;
+
+const REPORTER_PREFIX = `gatsby-source-cloudinary`;
+const NODE_TYPE = `CloudinaryMedia`;
 
 // 🤯. 🔌 ☑️s🎶  = ({ 😹 }) => {
 exports.pluginOptionsSchema = ({ Joi }) => {
@@ -33,15 +36,23 @@ exports.pluginOptionsSchema = ({ Joi }) => {
     alwaysUseDefaultBase64: Joi.boolean().default(false),
   });
 };
-const getNodeData = (gatsby, media) => {
+
+const getNodeData = (gatsby, media, cloudName) => {
+  const { createNodeId, createContentDigest } = gatsby;
+
   return {
     ...media,
-    id: gatsby.createNodeId(`cloudinary-media-${media.public_id}`),
-    parent: null,
+    id: createNodeId(`cloudinary-media-${media.public_id}`),
+    originalHeight: media.height,
+    originalWidth: media.width,
+    originalFormat: media.format,
+    cloudName: cloudName,
+    publicId: media.public_id,
+    cloudinaryData: media,
     internal: {
-      type,
+      type: NODE_TYPE,
       content: JSON.stringify(media),
-      contentDigest: gatsby.createContentDigest(media),
+      contentDigest: createContentDigest(media),
     },
   };
 };
@@ -60,58 +71,67 @@ const addTransformations = (resource, transformation, secure) => {
 const createCloudinaryNodes = async (
   gatsby,
   cloudinary,
-  options,
-  { limit }
+  resourceOptions,
+  cloudName
+  // { limit }
 ) => {
-  const { reporter } = gatsby;
+  const { actions, reporter } = gatsby;
+  const { max_results, results_per_page } = resourceOptions;
+
   let nextCursor = null;
+  let limit = max_results;
+  let resultsPerPage = results_per_page;
 
   do {
-    // added await
-    const result = await cloudinary.api.resources({
-      resource_type: "image",
-      max_results: limit < 10 ? limit : 10,
-      next_cursor: nextCursor,
-    });
-    reporter.info(
-      `fetched 🌩️ Assets >>> ${result.resources.length} from ${nextCursor}`
-    );
+    try {
+      // added await
+      const result = await cloudinary.api.resources({
+        ...resourceOptions,
+        max_results: limit < results_per_page ? limit : resultsPerPage,
+        next_cursor: nextCursor,
+      });
 
-    result.resources.forEach((resource) => {
-      const transformations = "q_auto,f_auto"; // Default CL transformations, todo: fetch base transformations from config maybe.
+      result.resources.forEach((resource) => {
+        const transformations = "q_auto,f_auto"; // Default CL transformations, todo: fetch base transformations from config maybe.
 
-      resource.url = addTransformations(resource, transformations);
-      resource.secure_url = addTransformations(resource, transformations, true);
+        resource.url = addTransformations(resource, transformations);
+        resource.secure_url = addTransformations(
+          resource,
+          transformations,
+          true
+        );
 
-      const nodeData = getNodeData(gatsby, resource);
-      gatsby.actions.createNode(nodeData);
-    });
+        const nodeData = getNodeData(gatsby, resource, cloudName);
+        actions.createNode(nodeData);
+      });
 
-    nextCursor = result.next_cursor;
-    limit = limit - 10;
+      if (result.resources.length === 0) {
+        reporter.warn(
+          `${REPORTER_PREFIX}: No Cloudinary resources found. Try a different query?`
+        );
+      } else {
+        reporter.info(
+          `${REPORTER_PREFIX}: Added ${result.resources.length} ${NODE_TYPE} nodes(s)`
+        );
+      }
+
+      nextCursor = result.next_cursor;
+      limit = limit - result.resources.length;
+    } catch (error) {
+      reporter.error(
+        `${REPORTER_PREFIX}: Fetching Cloudinary resources failed.`,
+        error.error || error
+      );
+    }
   } while (nextCursor && limit > 0);
 };
 
-// Cap'n Ola is creating new type
+exports.sourceNodes = async (gatsby, pluginOptions) => {
+  const { cloudName } = pluginOptions;
+  const cloudinary = newCloudinary(pluginOptions);
+  const resourceOptions = getResourceOptions(pluginOptions);
 
-exports.createSchemaCustomization = ({ actions }) => {
-  const { createTypes } = actions;
-
-  createTypes(`
-    type TobbieCloudinaryMedia implements Node {
-      joinedAt: Date
-    }
-  `);
-  console.log("Cap Ola is creating a new type");
-};
-
-exports.sourceNodes = (gatsby, options) => {
-  const cloudinary = newCloudinary(options);
-  const resourceOptions = getResourceOptions(options);
-
-  return createCloudinaryNodes(gatsby, cloudinary, resourceOptions, {
-    limit: 27,
-  });
+  await createCloudinaryNodes(gatsby, cloudinary, resourceOptions, cloudName);
 };
 
 // Here is step 3. Global State of our Gatsby v4 plugin upgrade code with emojis
@@ -119,41 +139,54 @@ exports.sourceNodes = (gatsby, options) => {
 // gatsby-plugin-utils will help you keep backwards compatibility with Gatsby 3 while moving forward to a Gatsby 4 world
 
 // let
-let coreSupportsOnPluginInit = undefined;
+// let coreSupportsOnPluginInit = undefined;
 
-// 1. try {coreSupportsOnPluginInit = "🏴‍☠️👸" or "un🏴‍☠️👸"} catch
-try {
-  // 2.
-  const { isGatsbyNodeLifecycleSupported } = require(`gatsby-plugin-utils`);
+// // 1. try {coreSupportsOnPluginInit = "🏴‍☠️👸" or "un🏴‍☠️👸"} catch
+// try {
+//   // 2.
+//   const { isGatsbyNodeLifecycleSupported } = require(`gatsby-plugin-utils`);
 
-  // 3. else if
-  if (isGatsbyNodeLifecycleSupported(`onPlugInit`)) {
-    coreSupportsOnPluginInit = "stable";
-    console.log(`💩🐸On🔌👸 = 🏴‍☠️👸`);
-  } else if (isGatsbyNodeLifecycleSupported(`unstable_onPluginInit`)) {
-    coreSupportsOnPluginInit = "unstable";
-    console.log(`💩🐸On🔌👸 = un🏴‍☠️👸`);
-  }
-} catch (error) {
-  console.error(`Cannot check if Gatsby supports on🔌👸 🚴‍♀️`);
-}
+//   // 3. else if
+//   if (isGatsbyNodeLifecycleSupported(`onPlugInit`)) {
+//     coreSupportsOnPluginInit = "stable";
+//     console.log(`💩🐸On🔌👸 = 🏴‍☠️👸`);
+//   } else if (isGatsbyNodeLifecycleSupported(`unstable_onPluginInit`)) {
+//     coreSupportsOnPluginInit = "unstable";
+//     console.log(`💩🐸On🔌👸 = un🏴‍☠️👸`);
+//   }
+// } catch (error) {
+//   console.error(`Cannot check if Gatsby supports on🔌👸 🚴‍♀️`);
+// }
 
-// let
-//const {} = newCloudinary(options);
+// // let
+// //const {} = newCloudinary(options);
 
-// 4. const
-const initializaGlobalState = (options) => {
-  const cloudinary = newCloudinary(options);
-  const resourceOptions = getResourceOptions(options);
-  return cloudinary && resourceOptions;
-};
+// // 4. const
+// const initializaGlobalState = (options) => {
+//   const cloudinary = newCloudinary(options);
+//   const resourceOptions = getResourceOptions(options);
+//   return cloudinary && resourceOptions;
+// };
 
-// 5. else if
-if (coreSupportsOnPluginInit === "stable") {
-  exports.onPluginInit = initializaGlobalState;
-} else if (coreSupportsOnPluginInit === "unstable") {
-  exports.unstable_onPluginInit = initializaGlobalState;
-} else {
-  console.log(`💩🐸On🔌👸 = not on`);
-  exports.onPreBootstrap = initializaGlobalState;
-}
+// // 5. else if
+// if (coreSupportsOnPluginInit === "stable") {
+//   exports.onPluginInit = initializaGlobalState;
+// } else if (coreSupportsOnPluginInit === "unstable") {
+//   exports.unstable_onPluginInit = initializaGlobalState;
+// } else {
+//   console.log(`💩🐸On🔌👸 = not on`);
+//   exports.onPreBootstrap = initializaGlobalState;
+// }
+
+// Cap'n Ola is creating new type
+
+// exports.createSchemaCustomization = ({ actions }) => {
+//   const { createTypes } = actions;
+
+//   createTypes(`
+//     type CloudinaryMedia implements Node {
+//       joinedAt: Date
+//     }
+//   `);
+//   console.log("Cap Ola is creating a new type");
+// };
