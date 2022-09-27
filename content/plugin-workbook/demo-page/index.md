@@ -12,7 +12,7 @@ import { graphql } from "gatsby";
 export default function IndexPage({ data }) {
   return (
     <main>
-      {data.allCloudinaryMedia.nodes.map(({ media }) => {
+      {data.allCloudinaryMedia.nodes.map(({ secure_url }) => {
           <img
             style={{ margin: "1em" }}
             width="300"
