@@ -104,26 +104,23 @@ const type = `CloudinaryMedia`;
 const REPORTER_PREFIX = `gatsby-source-cloudinary`;
 const NODE_TYPE = `CloudinaryMedia`;
 
-// 🤯. 🔌 ☑️s🎶  = ({ 😹 }) => {
+// 1.1 🤯. 🔌 ☑️ s🎶  = ({ 🥳 }) => {
 exports.pluginOptionsSchema = ({ Joi }) => {
-  // return 😹.📖({
+  // 1.2 return 🥳.📖({
   return Joi.object({
-    //api🔑:  😹.🧶().®️().💁(`Enables api🔑`),
+    // 1.3  🥳.🧶().®️().default(1000),
     cloudName: Joi.string(),
     apiKey: Joi.string(),
     apiSecret: Joi.string(),
-    uploadFolder: Joi.string(),
-    uploadSourceInstanceNames: Joi.array().items(Joi.string()),
-    fluidMaxWidth: Joi.number().integer().positive().default(1000),
-    fluidMinWidth: Joi.number().integer().positive().default(200),
-    createDerived: Joi.boolean().default(true),
-    breakpointsMaxImages: Joi.number().integer().positive().default(5),
-    useCloudinaryBreakpoints: Joi.boolean().default(false),
-    overwriteExisting: Joi.boolean().default(false),
-    enableDefaultTransformations: Joi.boolean().default(false),
-    alwaysUseDefaultBase64: Joi.boolean().default(false),
+    resourceType: Joi.string().default('image'),
+    maxResults: Joi.number().integer().positive().default(10),
+    type: Joi.string().default('all'),
+    resultsPerPage: Joi.number().integer().positive().default(Joi.ref('maxResults')),
+    tags: Joi.boolean().default(false),
+    context: Joi.boolean(),
   });
 };
+
 
 const getNodeData = (gatsby, media, cloudName) => {
   const { createNodeId, createContentDigest } = gatsby;

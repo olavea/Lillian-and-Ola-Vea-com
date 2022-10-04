@@ -87,5 +87,6 @@ module.exports = {
     {
       resolve: `@raae/gatsby-theme-mui`,
     },
+    `local-source-youtube`,
   ],
 };
