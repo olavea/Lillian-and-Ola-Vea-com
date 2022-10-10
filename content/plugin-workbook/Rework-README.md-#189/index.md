@@ -1,10 +1,12 @@
 # 🦄 gatsby-transformer-cloudinary
 
-🖼️ Our gatsby-transformer-cloudinary plugin lets you upload local and remote images to [Cloudinary](https://cloudinary.com/) from within your Gatsby project.
+🏗️ Lets you upload local and remote images to [Cloudinary](https://cloudinary.com/) from within your Gatsby project.
 
-🖼️ Our plugin also lets you add [gatsby-plugin-image](https://www.gatsbyjs.com/plugins/gatsby-plugin-image/) support to sourced data on existing Cloudinary images as well as the uploaded images.
+🖼️ Lets you add [gatsby-plugin-image](https://www.gatsbyjs.com/plugins/gatsby-plugin-image/) support to those uploaded images and also to sourced data on existing Cloudinary images.
 
-## Upload Images to Cloudinary
+🦄 Automagically serves the most modern image format your user's browser can support on her device. Like AVIF or WebP!
+
+## Upload Images to Cloudinary 🏗️
 
 Upload images to Cloudinary in two ways:
 
@@ -112,7 +114,7 @@ module.exports = {
 
 ## 7. How to use 💅
 
-### Upload remote images
+### Upload remote images 🏗️
 
 To directly upload images to Cloudinary from remote sources, you can use the `createRemoteImageNode` function:
 
@@ -159,38 +161,7 @@ exports.createSchemaCustomization = (gatsbyUtils) => {
 };
 ```
 
-## Example usage
-
-Here's the plugin in action to fetch a fixed asset using the `useStaticQuery` API of Gatsby:
-
-```jsx
-import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-
-const SingleImage = () => {
-  const data = useStaticQuery(graphql`
-    query ExampleQuery {
-      cloudinaryAsset(publicId: { eq: "gatsby-cloudinary/jason" }) {
-        gatsbyImageData(width: 300, layout: FIXED)
-      }
-    }
-  `);
-
-  const image = getImage(data.cloudinaryAsset);
-
-  return (
-    <>
-      <GatsbyImage image={image} alt="banner" />
-    </>
-  );
-};
-
-export default SingleImage;
-```
-
-
-### Use images already on Cloudinary
+### Use images already on Cloudinary 🖼️
 
 To create GraphQL nodes for images that are already uploaded to Cloudinary, you need to create nodes containing data that describe the asset on Cloudinary.
 
@@ -257,6 +228,36 @@ No API calls to Cloudinary for base64 images will be made if your GraphQL querie
 
 The property `defaultTracedSVG` in the node above can be used by your CMS/backend to provide precomputed or cached SVG placeholders for your images. The provided string must comply with [RFC 2397](https://tools.ietf.org/html/rfc2397). It should also be encoded with something like JavaScript's `encodeURIComponent()`.
 
+## Example usage ⚙️ or 💄
+
+Here's the plugin in action to fetch a fixed asset using the `useStaticQuery` API of Gatsby:
+
+```jsx
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+
+const SingleImage = () => {
+  const data = useStaticQuery(graphql`
+    query ExampleQuery {
+      cloudinaryAsset(publicId: { eq: "gatsby-cloudinary/jason" }) {
+        gatsbyImageData(width: 300, layout: FIXED)
+      }
+    }
+  `);
+
+  const image = getImage(data.cloudinaryAsset);
+
+  return (
+    <>
+      <GatsbyImage image={image} alt="banner" />
+    </>
+  );
+};
+
+export default SingleImage;
+```
+
 ### Plugin options 🔌
 
 In `gatsby-config.js` the plugin accepts the following options:
@@ -276,7 +277,7 @@ The options `cloudName`, `apiKey`, and `apiSecret` are required if any images wi
 
 > Note: Each derived image created for a breakpoint will consume one Cloudinary transformation. Enable the `useCloudinaryBreakpoints` option with care. If the `createDerived` option is enabled, transformations will only be consumed when the images are first created. However, created images will consume Cloudinary storage space. If `overwriteExisting` is enabled, each image that you upload will consume one transformation each time your Gatsby cache gets cleared and the image gets re-uploaded. For this reason, it's recommended that you keep `overWriteExisting` disabled and instead set the `overwriteExisting` parameter of `createRemoteImageNode` on a per-image basis when you know that an image has actually been updated.
 
-## Gatsby Plugin Image API
+## Gatsby Plugin Image API 🖼️
 
 The plugin supports [gatsby-plugin-image](https://www.gatsbyjs.com/plugins/gatsby-plugin-image/) by adding a `gatsbyImageData` resolver to the configured GraphQL types.
 
@@ -342,7 +343,7 @@ Go to the [Gatsby Plugin Image Docs](https://www.gatsbyjs.com/docs/reference/bui
 
 Go to the [Gatsby Plugin Image Docs](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/#all-options) for information on `sizes`.
 
-## Running Tests
+## Running Tests 🧪
 
 Run the tests once:
 
@@ -356,7 +357,7 @@ Run the tests in watch mode:
 yarn workspace gatsby-transformer-cloudinary test:watch
 ```
 
-## Live demo
+## Live demo 🎦
 
 [Live demo](https://gatsby-transformer-cloudinary.netlify.com/) ([source](https://github.com/jlengstorf/gatsby-transformer-cloudinary))
 
