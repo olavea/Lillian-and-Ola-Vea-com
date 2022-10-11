@@ -39,20 +39,20 @@ npm install --save gatsby-plugin-image
 yarn add --save gatsby-plugin-image
 ```
 
-### 3. Cloudname, API key and API secret 🤫
+### 3. Get your cloudName, apiKey and apiSecret 🤫
 
 Cloudinary offers a generous free tier which is more than enough to bootstrap projects.
-Get your cloudname, API key and API secret from your [cloudinary console](https://cloudinary.com/console/) when you signup at [Cloudinary.com](https://cloudinary.com).
+Get your cloudName, apiKey and apiSecret from your [cloudinary console](https://cloudinary.com/console/) when you sign up at [Cloudinary.com](https://cloudinary.com).
 
 ### 4. Use .env.development 🔑
 
 Create a `.env.development` file in your project's root and add your `cloudName`, `apiKey` and `apiSecret`.
 
 
-```
-CLOUDINARY_API_KEY=INSERT API KEY HERE
-CLOUDINARY_API_SECRET=INSERT API SECRET HERE
-CLOUDINARY_CLOUD_NAME=INSERT CLOUDNAME HERE
+```js
+CLOUDINARY_API_KEY=INSERT `apiKey`
+CLOUDINARY_API_SECRET=INSERT `apiSecret`
+CLOUDINARY_CLOUD_NAME=INSERT `cloudName`
 ```
 
 Install `dotenv` in your project.
@@ -77,11 +77,11 @@ There are several options to configure `dotenv` to use different env files eithe
 
 Add your `.env.development` file to `.gitignore` so it's not committed.
 
-### 5. Configure your environment variables on deployment 🚀
+### 5. Configure your cloudName, apiKey and apiSecret on deployment 🚀
 
 ### 6. Include your plugin in `gatsby-config.js` 🦄
 
-In your `gatsby-config.js`, point `gatsby-source-filesystem` to images in your app, then set up `gatsby-transformer-cloudinary` with your cloudname, API key and API secret.
+In your `gatsby-config.js` set up `gatsby-transformer-cloudinary` with your cloudName, apiKey and apiSecret. Then point `gatsby-source-filesystem` to images in your app.
 
 ```js
 // Load the environment variables.
@@ -228,7 +228,7 @@ No API calls to Cloudinary for base64 images will be made if your GraphQL querie
 
 The property `defaultTracedSVG` in the node above can be used by your CMS/backend to provide precomputed or cached SVG placeholders for your images. The provided string must comply with [RFC 2397](https://tools.ietf.org/html/rfc2397). It should also be encoded with something like JavaScript's `encodeURIComponent()`.
 
-## Example usage ⚙️ or 💄
+## Example usage 💄
 
 Here's the plugin in action to fetch a fixed asset using the `useStaticQuery` API of Gatsby:
 
