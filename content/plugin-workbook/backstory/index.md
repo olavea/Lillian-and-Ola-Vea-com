@@ -11,15 +11,14 @@ Lance-Lotta (13) is programming on her illegal Gatsby plugin.
 
 «Sourcery! You KNOW how illegal Jamstack is under the city's new anti-witch craft laws.» Says Lizabeth
 
-[lance-lotta](lance-lotta-1.1.png)
+[lance-lotta](lance-lotta-1.1.png}
 
 «Relax, I'll never get caught....» Says Lance-Lotta
 
-«You'll never get caught?!» Interrupts Lizabeth.
+«You'll never get caught?! Like you didn't get caught....» Interrupts Lizabeth.
 
-«No, I'll never get caught.» Says Lance-Lotta.
 
-«Like you didn't get caught.... » Says Lizabeth.
+
 
 «Oh DO shut up or I'll make you cry.» Says Lance-Lotta.
 
