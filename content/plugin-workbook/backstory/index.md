@@ -1,7 +1,7 @@
 ---
 title: A long time ago, on a Bridge far, far away ....
 ---
-[a-long-time](a-long-time.png)
+[a-long-time](./a-long-time.png)
 
 Lance-Lotta (13) is programming on her illegal Gatsby plugin.
 
@@ -11,34 +11,59 @@ Lance-Lotta (13) is programming on her illegal Gatsby plugin.
 
 «Sourcery! You KNOW how illegal Jamstack is under the city's new anti-witch craft laws.» Says Lizabeth
 
-[lance-lotta](lance-lotta-1.1.png}
+[lance-lotta](./lance-lotta-1.1.png)
 
 «Relax, I'll never get caught....» Says Lance-Lotta
 
-«You'll never get caught?! Like you didn't get caught....» Interrupts Lizabeth.
+«You'll never get caught?! Like you didn't get caught last week when you "borrowed" Merlina's yellow submarine and crashed it into our bridge? Or like that time you....» Says Lizabeth.
+
+[sinking submarine](./sinking-submarine-1.png)
+
+«Oh DO shut up or else....» Says Lance-Lotta.
 
 
 
+«Say "or else" again and I'll make you cry.» Says Lizabeth
 
-«Oh DO shut up or I'll make you cry.» Says Lance-Lotta.
+«Oh yeah!? We'll see who CRIES. Or else!» Says Lance-Lotta and puts Lizabeth in a headlock. The two are rolling on the floor as the door opens.
 
-«No I'll make YOU cry. You whimp.» Says Lizabeth
+[or-else](./or-else-1.png)
 
-«Whimp is it?!» Says Lance-Lotta and puts Lizabeth in a headlock. The two are rolling on the flor as the door opens.
+«Stop it!» A hissed whisper. «Now!» Louder, and yeah that's me, Merlina, mentor of these two reckless rascals and teller of this tall tale.
 
-«Stop it!» A hissed whisper. «Now!» Yeah that's me, Merlina. I'm telling this tale and trying to keep these reckless young ladies outta jail.
+[stop-it](./stop-it-1.png)
+
+
+
 
 «Good don't you rascals hear the bells tolling?» Says Merlina.
 
+[bells-tolling](./bells-tolling-1.png)
+
 «Oh no! Not another fire?» Says Lizabeth.
 
-«No, worse. My source suspects it's one more of those peculiar pet-kidnappings.» Says Merlina
+«No, worse. My source suspects it's one more of those peculiar pet-kidnappings.» Says Merlina.
 
-«What your sources only ever gives us is a bite of information so tiny it's useless-on-it's-own.» Says Lizabeth.
+[pet](./pet.png)
 
-«Yeah a useless-on-it's-own sub-task is what you young rascals should be practicing.» Says Merlina.
+«Your sources keep giving us useless tip after useless tip.» Says Lance-Lotta.
+
+«No useless-on-it's-own is not the same as useless.» Says Merlina.
+
+[useless](./useless.png)
+
+«Really?!» Says Lance-Lotta.
+
+«And since day ONE I've been trying to get you two to practice a useless-on-it's-own sub-task.» Says Merlina.
+
+
 
 «Squeeck! Squaack! BEEP-bopp!» Screeches .... the parrot.
+
+
+
+[](./.png)
+
 
 «Shut up birdy!» Says Lance-Lotta.
 
