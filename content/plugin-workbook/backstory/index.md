@@ -58,31 +58,81 @@ Lance-Lotta (13) is programming on her illegal Gatsby plugin.
 
 
 
-«Squeeck! Squaack! BEEP-bopp!» Screeches .... the parrot.
+«Squeeck! Squaack! BEEP-bopp!» Screeches Props the parrot.
 
-
-
-[](./.png)
-
+[props-the-parrot](./props-the-parrot.png)
 
 «Shut up birdy!» Says Lance-Lotta.
 
-«No wait! He's trying to say "Pinky is coming!"» Says Merlina.
+«No wait! He's saying Mor-dred is coming!» Says Lizabeth.
 
-«Pinky who?» Says Lance-Lotta.
+«Mor-dred who?» Says Lance-Lotta.
 
-«Pinky Phoenix the witch huntress. Duh!» Says Lizabeth
+«The Witch Hunter Mor-dred. Duh!» Says Merlina.
 
-«» Says Lance-Lotta
+[mor-dred-is-coming](./mor-dred-is-coming.png)
+
+
+
+«So what?! When did anybody take that laughably un-funny clown Mor-dred seriously anyway?» Says Lance-Lotta.
+
+«Queen Mary took Mor-dred seriously yesterday.» Says Merlina.
+
+«Yeah last night Mary burned an actress at the stake.» Says Lizabeth.
+
+«Burned based on some REAL thin "evidence" Mor-dred showed bloody Mary of Jamstackian witchcraft.» Says Merlina.
+
+[at-the-stake](./at-the-stake.png)
+
+«I remember seeing Mor-Dred light his first fire, it was before he could even walk. He just couldn't take his eyes off those flames.» Says Lizabeth.
+
+«Yeah Mor-Dred and fire, love at first sight. AND he hated you from the start. You should leave town for a few weeks. Let things settle down.» Says Lance-Lotta.
+
+
+
+«What "things"?» Says Lizabeth.
+
+«I SMELL it! Mor-Dred is up to NO good this time» Says Merlina.
+
+«Where can I go anyway? No hole is deep and dark enough to be safe from my half sister Mary,» Says Lizabeth.
+
+«I know a deep & DARK hole ....» Says Lance-Lotta.
+
+
+
+«Sesam Sesam open up. Knock Knock it's burn o'clock!» Sings Mor-Dred.
+
+«Sssh! Pack yourselves and your witchy computer gear into the secret safe room. Be quiet as a mouse if Mor-Dred is in the house.» Says Merlina.
+
+«On my count blow down this door my little piggies. Three-two-one huff puff!» Sings Mor-Dred.
+
+«Kaa-Boom!»
+
+
+
+
+«You think Queen Mary is using Mor-Dred to get people burned?» Says Merlina.
+
+«Don't you? Who else is there? With that kind of clout?» Says Lizabeth.
+
+«Well, there's always Morgause....» Says Merlina.
+
+«Shit! No WAY! Not that witch.» Says Lance-Lotta.
+
+«Yes way» Says Merlina.
 
 – – – – – –
+«» Says Mor-Dred.
 
-«» Says Lance-Lotta
+«» Says Lance-Lotta.
 
-«» Says Lizabeth
+«» Says Lizabeth.
 
-«» Says Merlina
+«» Says Merlina.
 
+[](./.png)
+
+47-week-olamail
 
 P.S.
 
