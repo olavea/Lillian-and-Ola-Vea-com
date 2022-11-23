@@ -86,6 +86,9 @@ Lance-Lotta (13) is programming on her illegal Gatsby plugin.
 
 «I remember seeing Mor-Dred light his first fire, it was before he could even walk. He just couldn't take his eyes off those flames.» Says Lizabeth.
 
+[eyes-on-the-flames](./eyes-on-the-flames.png)
+
+
 «Yeah Mor-Dred and fire, love at first sight. AND he hated you from the start. You should leave town for a few weeks. Let things settle down.» Says Lance-Lotta.
 
 
@@ -98,9 +101,12 @@ Lance-Lotta (13) is programming on her illegal Gatsby plugin.
 
 «I know a deep & DARK hole ....» Says Lance-Lotta.
 
+[hole](./hole.png)
 
 
 «Sesam Sesam open up. Knock Knock it's burn o'clock!» Sings Mor-Dred.
+
+[knock-knock](./knock-knock.png)
 
 «Sssh! Pack yourselves and your witchy computer gear into the secret safe room. Be quiet as a mouse if Mor-Dred is in the house.» Says Merlina.
 
@@ -108,6 +114,19 @@ Lance-Lotta (13) is programming on her illegal Gatsby plugin.
 
 «Kaa-Boom!»
 
+[huff-puff](./huff-puff.png)
+
+«Sunny shiny and I feel okay
+'cause I'm burning Liz today
+I feel okaaay todaaay
+I brought computers, I brought my match
+and every evidence we need to catch....» Sings Mor-Dred.
+
+[match](./match.png)
+
+Mor-Dred lights up a pile of wood furniture and dance around the fire.
+
+«The Liz, The Liz, The Liz is on fire. We don't need no water let the hm-hmer burn. burn hm-hmer burn!» Sings Mor-Dred.
 
 
 
@@ -122,7 +141,7 @@ Lance-Lotta (13) is programming on her illegal Gatsby plugin.
 «Yes way» Says Merlina.
 
 – – – – – –
-«» Says Mor-Dred.
+«» Sings Mor-Dred.
 
 «» Says Lance-Lotta.
 

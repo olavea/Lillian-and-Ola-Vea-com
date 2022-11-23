@@ -46,42 +46,28 @@ I’m so sure that I can provide at least one piece of high-value advice that I 
 ### WAIT! DON’T TAKE MY WORD FOR IT...
 Here’s what other folks have said:
 
-All I need from you is your best email adress, so I can send you some emails with about how our work is going,
 
 
 
-tips and inspiration along the way
+### WHO ARE YOU, ANYWAY?
+Hi! I’m Captain Ola Vea and I was a ... ..... for the better part of ... years. I’ve ...., I am ...., and I have helped ..... (You can check out my web page for more info.)
+
+### Captain Ola Vea
+
+In my first year as a web dev, I doubled my .... by ditching .... for ..... I have over a decade of real-world experience successfully applying skill-building theories to my own programming practice and that of 1+ senior developer I have counseled. These days I routinely .....  ...... rate of .... per day.
+
+The unconscious acceptance of .... .... as the best and only option for practicing programming is a collective hallucination that literally keeps me up at night. In fact, I consider it my mission in life to rid the earth of ... .... . Care to join me? You’ll be glad you did. 🙂
+
+THIS IS YOUR LAST CHANCE
+You’re running out of web page! Don’t waste another year moving one inch in every direction. Apply for your 1-on-1 brainmapping session now:
+
+APPLY NOW »
+
+Still not sure? Shoot me an email at ola@lillylabs.com and we can set up a time to chat.
+
+My 100% Money-Back Guarantee: If you follow my advice and are disappointed by the results, I’ll refund your money in full.
+
+AVAILABILITY IS LIMITED
+I’m only available for a few live 1-on-1 roadmapping sessions per month. Scheduling is first come, first served. The sooner you apply, the sooner you will have the answers you need to get your programming practice unstuck.
 
 
-If you are in the Gatsby space (or was ever a part of the WP community) you probably have. In both cases there is a whole ocean of
-highly polished tall ship,
-but also mirages of yyy
-a and the stranded wreckage of a shipwreck, .
-What to do when you encounter a yyy or a shipwreck?
-Or can’t even find raft to get you where you need to go
-
-Titanic
-lørje holk wrecks derelict hulk, shipwreck, wreckage?
-##
-
-## Not sure how you can practice Dev-Tasks without wasting hours and hours?
-
-
-Is your dev-task preparation technique wrecking your practice sessions?
-Are you unsure how to Prepare a dev-task for practice
- need to do again later? Do you feel your practice techniques are unpiraty or even weak? Are you investing a lot of hours practicing dev-tasks, but feel like you might be wasting some of those hours?
-
-
-
- inside your brain
-not an hour wasted
-
-Imagine this – Imagine knowing exactly how to practice a dev-task you'll need to do again soon. Imagine using ONE piraty practice technique to nail down that ONE important dev-task into your dev-brain.
-
-Imagine knowing your dev-task will STAY nailed down inside your dev-brain until you need to do it again.
-
-## Get a personalized practice session plan from a seasoned coach of programming practice
-
-
-My Piraty Dev-Task Cheatsheet is your hammer and nail
-start rewriting your dev-task into many sub-task in 4 tiny steps
