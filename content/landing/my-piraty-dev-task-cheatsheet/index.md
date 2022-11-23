@@ -15,23 +15,20 @@ DOWNLOAD NOW »
 
 Don’t worry, there’s no risk or obligation.
 
-## Do wasting hours practicing dev-tasks that don't stick make you sick?
+## Sick of wasting hours practicing dev-tasks that don't stick?
 
-Are unprepared dev-tasks wasting your practice hours? Are you re-doing dev-tasks again and again, but those dev-tasks don't stick in your brain? Is your skill builder ship stranded on a reef and your programming practice goals an eternity away? Do you feel you're doing SOMETHING wrong, but unsure of how to stop wrecking your practice?
-h
+Are unprepared dev-tasks wasting your practice hours? Are you re-doing dev-tasks again and again, but those dev-tasks don't stick in your brain? Is your skill builder ship stranded on a reef and your programming practice goals are an eternity away? Do you feel you're doing SOMETHING wrong, but unsure of how to stop wrecking your practice?
+
 ## Imagine nailing your dev-task not ONE hour wasted
-Imagine not ONE hour wasted nailing your dev-task
-Imagine wasting no time and nailing your dev-tasks in your brain
 
-Imagine this – Imagine knowing exactly how you Prepare a dev-task to nail it inside your brain. Imagine re-doing a dev-task by HEART. Imagine your skill-builder-ship speeding towards your programming practice goals. Imagine knowing how to use ONE practice technique to avoid wrecking your practice for YOUR brain.
+Imagine this – Imagine knowing exactly how you prepare a dev-task to nail it inside your brain. Imagine re-doing a dev-task by HEART. Imagine your skill-builder-ship speeding towards your programming practice goals. Imagine knowing how to use ONE practice technique to avoid wrecking your practice for YOUR brain.
 
 ## Use the Dev-Task Prep Cheatsheet to stop wasting hours
 
-Get prepare – Craftswomen and craftsmen have practiced skills through known history. Those craftswomen knew how to prepare right and so can you. Stop wasting hours practicing unprepared. Learn exactly how to stop wrecking YOUR brain's practice. Use my Dev-Task Prep Cheatsheet to rewrite your dev-tasks for nailing. Why me?
+Get prepared – Craftswomen and craftsmen have practiced skills through known history. Those craftswomen knew how to prepare right and so can you. Stop wasting hours practicing unprepared. Learn exactly how to stop wrecking YOUR brain's practice. Use my Dev-Task Prep Cheatsheet to rewrite your dev-tasks for nailing. Why me?
 
 * I’ve practiced programming for more than a decade
 * I have coached devs just like you
-* I
 
 ### Here’s How It Works:
 
