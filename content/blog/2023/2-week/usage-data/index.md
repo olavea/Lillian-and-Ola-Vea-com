@@ -1,10 +1,10 @@
 ---
-title: How to Source useage data into a Gatsbyjs site? 💡
+title: How to Source Useage Data into a Gatsbyjs site? 💡
 author: "@OlaHolstVea"
 date: 2023-01-12
 ---
 
-On our Gatsby site we want to show useage data for our Twitter tool. I will soon tell you how we did it, but first:
+On our Gatsby site we show useage data for our Twitter tool. I will soon tell you how we did it, but first:
 -what is useage data and
 -why do we show useage data?
 
@@ -18,13 +18,13 @@ On our Gatsby site we show the little heads you can see in the screenshot below.
 ## Why do we show usage data? (on our Gatsbyjs website)
 (Gatsbyjs website)
 
-We show potential users "this tool will be okay", because Loads of people have already trusted our tool. Showing real usage data is my favorite "social proof", but if you do a google search you'll find other kinds of "social proof".
+We show potential users that "this tool will be okay", because Loads of people have already trusted our tool. Showing real usage data is my favorite "social proof", but if you do a google search you'll find other kinds of "social proof".
 
 ## How did we Source usage data into our Gatsby site?
 
 I assume you have used Gatsby before, so I'll skip the step of deconstructing `gatsbyUtils` and `actions`. You can find it in the code example below.
 
-Here are the four steps I took to source usage data and show it.
+The four steps we took to source usage data and show usage data.
 
 ```js
   // 1. Get the list of user from Xata ✅
