@@ -3,12 +3,12 @@ title: Your Gatsby Plugin Workbook - For a Gatsby-Plugin Pirate-Dev or a Dev Rel
 description: We show web devs how to get the most out of Learning By Doing through Gatsby-Plugins and rum-fueled treasure hunts in the sharky waters around the Gatsby islands. For a more piraty dev-life!`,
 
 sections:
-  - title: Take ownership of your Learning By Doing!
-    subtitle: Get to know your Learning By Doing without worrying about wasting time on distractions.
+  - title: Take Ownership of your Skill-Buildership!
+    subtitle: What if Skill-Buildership is the key to making your dev-life more worthwhile?
     cta:
       path: /signup
       label: Get started
-  - title: Plans & Pricing
+  - title: Why Skill-Buildership
     body: ./plans-pricing.md
     cta:
       path: /signup
