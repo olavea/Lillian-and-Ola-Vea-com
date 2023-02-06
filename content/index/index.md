@@ -1,20 +1,20 @@
 ---
-title: Your Gatsby Plugin Workbook - For a Gatsby-Plugin Pirate-Dev or a Dev Rel at a headless CMS
+title: stop wrecking your skill-builder-ship ⛵.
 description: We show web devs how to get the most out of Learning By Doing through Gatsby-Plugins and rum-fueled treasure hunts in the sharky waters around the Gatsby islands. For a more piraty dev-life!`,
 
 sections:
-  - title: Take Ownership of your Skill-Buildership!
-    subtitle: What if Skill-Buildership is the key to making your dev-life more worthwhile?
+  - title: Take Ownership of your Skill-Builder-Ship!
+    subtitle: What if Skill-Builder-Ship is the key to making your dev-life more worthwhile?
     cta:
       path: /signup
       label: Get started
-  - title: Why Skill-Buildership
+  - title: What is Skill-Builder-Ship?
     body: ./plans-pricing.md
     cta:
       path: /signup
       label: Get started
   - title: Not ready to sign up?
-    subtitle: Stay updated by subscribing to our newsletter, no menstruation experience needed ;)
+    subtitle: Stay updated by subscribing to our newsletter,
     form: newsletter
   - title: About us
     body: ./about.md
