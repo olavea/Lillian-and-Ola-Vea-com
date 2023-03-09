@@ -42,6 +42,7 @@ This lead me to get some more ideas
 - Bad data model
 - Data model devs
 
+!(twitter poll title)[title-4.png]
 
 So as you see, I went back and wrote down some more ideas for a few minutes. I did this several days straight. I also made a note if I randomly got a title idea right after I woke up or in the shower. I made sure to transfer that idea to my notebook that same day. This is how I build momentum with my Idea Collecting.
 
