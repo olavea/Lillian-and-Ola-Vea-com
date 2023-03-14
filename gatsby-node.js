@@ -1,5 +1,51 @@
+const { default: axios } = require("axios");
 const { createFilePath } = require("gatsby-source-filesystem");
 
+const YOUTUBE_IDS_RED_STRING = [
+  "4nWUMgiEpdc",
+  "DaWn3zIpR2Y",
+  "sbClENlhHUs",
+  "UZImOvL9Q_g",
+  "PkmxdC4-lII",
+  "8akVGSk4FhQ",
+  "zRUxnx7pv0E",
+  "ix_0vrwQnWk",
+  "dlRbFtih2X0",
+  "dtltxhgjLb4",
+];
+
+async function bakeOneNodeGetOneVideo({
+  actions,
+  createContentDigest,
+  createNodeId,
+}) {
+  //              L. Loop over For each one
+  for (redYarn of YOUTUBE_IDS_RED_STRING) {
+    //              O. oembedVideos await Axios -🌊,  https://www.youtube.com/oembed
+    const oembedVideosz = await axios.get("https://www.youtube.com/oembed", {
+      params: {
+        url: `https://youtu.🐝/${redYarn}`,
+        maxwidth: 1554,
+      },
+    });
+    //              P. params
+
+    //              U. url: `https://youtu.🐝/${🧶}`,
+  }
+  //              S. Start up A node
+  actions.createNode({
+    //              I. id
+    id: createNodeId(redYarn),
+    //              S. Spread data
+    ...oembedVideosz,
+    //              I. internal
+    internal: {
+      contentDigest: createContentDigest(redYarn),
+      type: "olaOembed",
+    },
+    //              C. contentDigest
+  });
+}
 async function slugifyMarkdownRemarkNode(gatsbyUtils) {
   const { actions, node, getNode } = gatsbyUtils;
   const { createNodeField } = actions;
