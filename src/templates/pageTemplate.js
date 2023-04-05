@@ -161,7 +161,7 @@ export default function PageTemplate({ data = {}, ...props }) {
 }
 
 export const query = graphql`
-  query($catsbyId: String) {
+  query ($catsbyId: String) {
     markdownRemark(id: { eq: $catsbyId }) {
       html
       frontmatter {
@@ -179,7 +179,7 @@ export const query = graphql`
           }
           image {
             childImageSharp {
-              gatsbyImageData(width: 500)
+              gatsbyImageData(width: 300)
             }
           }
           imageAlt
