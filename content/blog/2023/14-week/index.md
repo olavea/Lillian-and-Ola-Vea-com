@@ -20,4 +20,32 @@ date: 2022-04-06
 
 ![React-5](https://res.cloudinary.com/lilly-labs-consulting/image/upload/v1680703178/React-Pirates/React-5-9096-marker_vuq8wh.png)
 
+```js
+a.
+
+import Header from './Header'
+
+expot default function Page() {
+    return
+      <Header />
+}
+
+b.
+import Header from './Header'
+
+expot default function Page() {
+    return
+      <Header />
+}
+
+c.
+import Header from './Header'
+
+expot default function Page() {
+    return
+      <Header />
+}
+
+```
+
 ![React-7](https://res.cloudinary.com/lilly-labs-consulting/image/upload/v1680703178/React-Pirates/React-7-9098-marker_anw9ca.png)
