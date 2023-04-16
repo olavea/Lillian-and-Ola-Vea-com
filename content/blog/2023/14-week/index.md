@@ -49,3 +49,28 @@ expot default function Page() {
 ```
 
 ![React-7](https://res.cloudinary.com/lilly-labs-consulting/image/upload/v1680703178/React-Pirates/React-7-9098-marker_anw9ca.png)
+
+
+```js
+const { widthAuth } = createAuth({
+    listKey: 'user',
+    identityfield: 'email',
+    secretField: 'password',
+    initFirstItem: {
+        fields: ['name', 'email', 'password'],
+        // TODO: Add in initial roles here
+    }
+});
+
+export default widthAuth(config({}))
+
+
+// stop 2:50
+```
+
+
+
+```js
+
+
+```
