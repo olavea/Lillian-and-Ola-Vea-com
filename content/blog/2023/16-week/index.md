@@ -1,10 +1,23 @@
 ---
-title: Uploading Cloudinary Images Dev-Rel-Skills week 16 💡
+title:  Dev-Rel-Skills week 16 💡
 author: "@OlaHolstVea"
 date: 2022-04-16
 ---
 
-### _ _ _ + _ _ _
+## Two way relationships in keystone
+
+Day 17 #100daysofreact
+
+I created a Two way relationships in keystone
+
+![React-1](./two-way-rel.png)
+
+![React-1](./IMG_E9373.JPG)
+
+
+## Uploading Cloudinary Images
+
+Day 16 #100daysofreact
 
 - In my schemas folder I make a ProductImage.ts file
 - I make my `ProductImage`
