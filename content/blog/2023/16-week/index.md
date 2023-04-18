@@ -4,7 +4,70 @@ author: "@OlaHolstVea"
 date: 2022-04-16
 ---
 
-## Two way relationships in keystone
+## Two way data relationships in keystone
+
+Day 18 #100daysofreact
+
+![Two-way-data-relationships](https://pbs.twimg.com/media/Ft-1RcPXoAUaN5A?format=jpg&name=large)
+
+```js
+
+// BACKEND / schemas / Product.ts
+
+import { relationship, text } from '@keystone-next/fields';
+import { list } from '@keystone-next/keystone/schema';
+
+export const Product = list({
+  // TODO access
+  fields: {
+    name: text({ isRequired: true }),
+    description: text({
+      ui: {
+        displayMode: 'textarea',
+      },
+    }),
+    photo: relationship({
+      ref: 'ProductImage.product',
+    }),
+  },
+});
+
+// BACKEND / schemas / ProductImage.ts
+
+import { relationship, text } from '@keystone-next/fields';
+import { list } from '@keystone-next/keystone/schema';
+import { cloudinaryImage } from '@keystone-next/cloudinary';
+import 'dotenv/config';
+
+export const cloudinary = {
+  cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+  apiKey: process.env.CLOUDINARY_API_KEY,
+  apiSecret: process.env.CLOUDINARY_API_SECRET,
+  folder: 'bleh',
+};
+
+export const ProductImage = list({
+  fields: {
+    image: cloudinaryImage({
+      cloudinary,
+      label: 'Source',
+    }),
+    altText: text(),
+    product: relationship({
+      ref: 'Product.photo',
+    }),
+  },
+});
+
+
+```
+
+
+```js
+
+
+
+```
 
 Day 17 #100daysofreact
 
