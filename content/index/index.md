@@ -1,22 +1,21 @@
 ---
-title: Your Gatsby Plugin Workbook - For a Gatsby-Plugin Pirate-Dev or a Dev Rel at a headless CMS
-description: We show web devs how to get the most out of Learning By Doing through Gatsby-Plugins and rum-fueled treasure hunts in the sharky waters around the Gatsby islands. For a more piraty dev-life!`,
+title: Skill-Builder Cheatsheet - For a Dev-Rel or Pirate Princess 🏴‍☠️👸
 
 sections:
-  - title: Take Ownership of your Skill-Buildership!
-    subtitle: What if Skill-Buildership is the key to making your dev-life more worthwhile?
+  - title: Sick of Wasting Time Practicing a Dev-Skill That Don't Stick?
+    subtitle: What if Skill-Buildership is the key to making your dev-life more worthwhile? So your actually wasting your Life also.
     cta:
       path: /signup
       label: Get started
-  - title: Why Skill-Buildership
+  - title: Imagine Nailing Your Skill-Building
     body: ./plans-pricing.md
     cta:
       path: /signup
       label: Get started
-  - title: Not ready to sign up?
-    subtitle: Stay updated by subscribing to our newsletter, no menstruation experience needed ;)
+  - title: Your Personalized Skill-Building
+    subtitle: Find clever clues to Personalize Your Skill-Building. Trick the treacherous traps that trip up YOUR Skill-Building. Get started on a Skill-Building treasure hunt.
     form: newsletter
-  - title: About us
+  - title: Start Personalizing Your Skill-Builder Cheatsheet
     body: ./about.md
     image: ./../assets/pow-family.jpg
     imageAlt: Queen Raae, Cap'n Ola and Pirate Princess Lillian on the launch of POW!

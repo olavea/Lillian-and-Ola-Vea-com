@@ -4,6 +4,112 @@ author: "@OlaHolstVea"
 date: 2022-04-16
 ---
 
+## Fetching Data with hooks and Displaying it in our Front End
+Day 20 #100daysofreact
+
+```js
+// FRONTEND / pages / products.js
+
+import Products from '../components/Products';
+
+export default function OrderPage() {
+  return (
+    <div>
+      <Products />
+    </div>
+  );
+}
+
+
+// FRONTEND / components / Product.js
+
+import ItemStyles from './styles/ItemStyles';
+
+export default function Product() {
+  return (
+    <ItemStyles>
+      <img
+        src="https://pbs.twimg.com/media/FuJ-Sn7XsAIjTYs?format=jpg&name=large"
+        alt="yo"
+      />
+    </ItemStyles>
+  );
+}
+
+import Link from 'next/link';
+import formatMoney from '../lib/formatMoney';
+import ItemStyles from './styles/ItemStyles';
+import Title from './styles/Title';
+import PriceTag from './styles/PriceTag';
+
+export default function Product({ product }) {
+  return (
+    <ItemStyles>
+      <img
+        src={product?.photo?.image?.publicUrlTransformed}
+        alt={product.name}
+      />
+      <Title>
+        <Link href={`/product/${product.id}`}>{product.name}</Link>
+      </Title>
+      <PriceTag>{formatMoney(product.price)}</PriceTag>
+      <p>{product.description}</p>
+    </ItemStyles>
+  );
+}
+
+// FRONTEND / components / Products.js
+
+import { useQuery } from '@apollo/client';
+import gql from 'graphql-tag';
+import styled from 'styled-components';
+import Product from './Product';
+
+const AI_PRODUCTS_QUERY = gql`
+  query ALL_PRODUCTS_QUERY {
+    allProducts {
+      id
+      name
+      price
+      description
+      photo {
+        id
+        image {
+          publicUrlTransformed
+        }
+      }
+    }
+  }
+`;
+
+const ProductsListStyles = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 60px;
+`;
+
+export default function Products() {
+  const { data, error, loading } = useQuery(AI_PRODUCTS_QUERY);
+  console.log(data, error, loading);
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+  return (
+    <div>
+      <ProductsListStyles>
+        {data.allProducts.map((product) => (
+          <
+            Product key={product.id}
+            product={product} />
+        ))}
+      </ProductsListStyles>
+    </div>
+  );
+}
+
+
+
+```
+
 ## Two way data relationships in keystone
 
 Day 18 #100daysofreact
@@ -114,3 +220,84 @@ export const ProductImage = list({
 
 ![React-1]()
 ![React-1]()
+
+
+9
+Fixing Styled Components Flicker on Server Render06:30
+0%
+
+MODULE #4
+Server Side GraphQL Development
+
+10
+Setting up MongoDB13:02
+91%
+
+11
+An Intro to GraphQL06:51
+0%
+
+12
+Setting up Keystone and Typescript11:28
+83%
+
+13
+Creating our first User data type05:49
+100%
+
+14
+Adding Auth to our Application08:09
+0%
+
+15
+Creating our Products Data Type07:33
+91%
+
+16
+Uploading Product Images07:59
+3%
+
+17
+Creating two way data relationships in Keystone06:39
+0%
+
+18
+Inserting Seed Data07:39
+46%
+
+MODULE #5
+Client Side React + GraphQL Development
+
+19
+Setting up Apollo Client18:35
+0%
+
+Fetching Data with hooks and Displaying it in our Front End29:53
+2%
+
+21
+Fixing and Styling the Nav02:00
+0%
+
+22
+A real good lesson in React Forms and Custom Hooks24:13
+52%
+
+23
+Hooking up our File input and Form Styles10:41
+0%
+
+24
+Creating Products via our Mutations17:29
+0%
+
+25
+Refetching Queries after a Successful Mutation05:17
+0%
+
+26
+Programmatically Changing the Page after product creation02:37
+0%
+
+27
+Displaying Single Items, Routing and SEO25:57
