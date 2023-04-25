@@ -1,3 +1,16 @@
+
+Imagine this – Imagine your confidence practicing a dev-task in a way you KNOW will nail that dev-task into your brain. Imagine KNOWING what YOUR brain needs to Build a Skill.
+Imagine
+
+
+
+
+
+
+<!-- Imagine Nailing Your Skill-Building
+
+
+
 I've been working on my dev skill-buildership since 2015 and at some point I got a sneaking suspicion that my whole life was getting better because my skill-building was improving. And wouldn't you know it! Skill-building is rewarding your brain.
 
 AND I am not the only one feeling Like my life gets better with better skill-building. More about my fellow skill-building experimenters later, but first: how can you get started making your skill-buildership more piraty. There's not an hour to waste!
@@ -22,4 +35,4 @@ There are two doors you need to unlock:
 2. Break off a useless-on-it's-own sub-task from that dev-task
 3. Mak sure your sub-task is can-do-with-effort
 4. Decide to automate your sub-task into your dev-brain
-
+ -->
