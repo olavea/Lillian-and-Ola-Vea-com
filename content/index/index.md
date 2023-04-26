@@ -1,22 +1,24 @@
 ---
-title: Skill-Builder Cheatsheet - For a Dev-Rel or Pirate Princess 🏴‍☠️👸
+title: Skill-Builder Cheatsheet - For a Dev-Rel-Apprentice or Pirate Princess 🏴‍☠️👸
 
 sections:
-  - title: Sick of Wasting Time Practicing a Dev-Skill That Don't Stick?
-    subtitle: What if Skill-Buildership is the key to making your dev-life more worthwhile? So your actually wasting your Life also.
-    cta:
-      path: /signup
-      label: Get started
-  - title: Imagine Nailing Your Skill-Building
+  - title: Sick of Wasting Hours Practicing a Dev-Rel-Skill That Don't Stick?
+    subtitle:
+    body: ./sick.md
+  - title: Imagine Nailing Your Skill-Building, No Hours Wasted
     body: ./plans-pricing.md
     cta:
       path: /signup
       label: Get started
-  - title: Your Personalized Skill-Building
-    subtitle: Find clever clues to Personalize Your Skill-Building. Trick the treacherous traps that trip up YOUR Skill-Building. Get started on a Skill-Building treasure hunt.
+  - title: Use Our Cheatsheet to Prepare Each Session for Skill-Building, No Hours Wasted
+    subtitle: A Skill is just a large set of tiny tasks you have automated into your brain.
+    body: ./the-talk.md
     form: newsletter
-  - title: Start Personalizing Your Skill-Builder Cheatsheet
+  - title: Start Using Our Cheatsheet
     body: ./about.md
+    cta:
+      path: /signup
+      label: Get started
     image: ./../assets/pow-family.jpg
     imageAlt: Queen Raae, Cap'n Ola and Pirate Princess Lillian on the launch of POW!
   - subtitle: Check out these videos over on Queen Raae's channel to get to know us better 👇👇👇
