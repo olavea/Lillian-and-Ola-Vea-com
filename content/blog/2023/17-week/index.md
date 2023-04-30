@@ -4,6 +4,47 @@ author: "@OlaHolstVea"
 date: 2022-04-26
 ---
 
+```js
+// pages / product/[id].js
+
+// You can only query single items based on unique fields
+
+
+```
+
+
+
+```js
+
+import Router from 'next/router';  // Add this
+
+export default function CreateProduct() {
+
+  const [createProduct, { loading, error, data }] = useMutation(
+    CREATE_PRODUCT_MUTATION,
+    {
+      variables: inputs,
+    }
+  );
+
+  return (
+    <Form
+      onSubmit={async (e) => {
+        e.preventDefault();
+        // Submit the inputfields to the backend:
+        const res = await createProduct();
+        clearForm();
+        // Go to that product's page
+        Router.push({  // Add this
+          pathname: `/product/${res.data.createProduct.id}`,  // Add this
+        });
+      }}
+    >
+}
+```
+
+
+
 
 
 ```js

@@ -1,6 +1,6 @@
 
-Imagine this – Imagine your confidence practicing a dev-rel-task in a way you KNOW will nail that dev-rel-task into your brain. Imagine KNOWING what YOUR brain needs to Build a Skill.
-Imagine
+Imagine this – Imagine building your skill session by session. Imagine your confidence practicing a dev-rel-task in a way you KNOW will nail that dev-rel-task into your brain. Imagine KNOWING what YOUR brain needs to Build a Skill.
+
 
 
 
