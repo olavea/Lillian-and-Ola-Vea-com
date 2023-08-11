@@ -11,7 +11,7 @@ Making a choice is not always easy, but it's an important life-skill for a Dev-R
 ## Practice Making Choices With a Kid
 We watched my favourite Robin Hood movie yesterday. The Pirate Princess and me. And the way we found that movie is today's tip for a more skillful Dev-Rel-Life.
 
-(My favourite Robin Hood movie is Disney's animated Robin Hood from 1973.)[https://twitter.com/OlaHolstVea/status/1689885143538827264/photo/1]
+![Robin Hood](./Rob-3.png)
 
 ## Five Steps Towards Making a Choice About What Movie to Watch With a Kid
 
