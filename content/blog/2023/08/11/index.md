@@ -20,5 +20,12 @@ Five steps towards making a choice about _ _ _ _ _
 
 I remember watching that Robin Hood movie in the cinema with my dad. MAN I loved that movie. I drew Robin Hood EVERY day for months in day care. And I drew that hypnist snake Hiss also. I drew Hiss with his spiralling eyes. I wish I had some of those drawings today to show The Pirate Princess.
 
+Here are today's drawings, not even half as imbued with passion and hero worship.
 
+(Robin Hood)[https://twitter.com/OlaHolstVea/status/1689949433461346304/photo/2]
 
+(Robin Hood)[https://pbs.twimg.com/media/F3PoDDIXYAE-wov?format=webp&name=small]
+
+(Robin Hood)[https://pbs.twimg.com/media/F3PoDDPXYAA6wfK?format=webp&name=small]
+
+(Robin Hood)[https://pbs.twimg.com/media/F3PoDDJWYAA47gD?format=webp&name=small]
