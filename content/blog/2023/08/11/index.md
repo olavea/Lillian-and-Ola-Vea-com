@@ -27,8 +27,6 @@ I remember watching that Robin Hood movie in the cinema with my dad. MAN I loved
 
 Here are today's drawings, not even half as imbued with passion and hero worship.
 
-![Robin Hood](https://twitter.com/OlaHolstVea/status/1689949433461346304/photo/2)
-
 ![Robin Hood](https://pbs.twimg.com/media/F3PoDDIXYAE-wov?format=webp&name=small)
 
 ![Robin Hood](https://pbs.twimg.com/media/F3PoDDPXYAA6wfK?format=webp&name=small)
