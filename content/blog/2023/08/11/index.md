@@ -1,16 +1,19 @@
 ---
-title: Saying "NO" is the first step Towards saying "yes", according to Robin Hood 💡
+title: Five Easy Steps Towards Making a Choice as a Dev-Rel-Pirate
 author: "@OlaHolstVea"
 date: 2023-08-11
 ---
 
+# Saying "NO" is the First Step Towards Saying "yes", According to Robin Hood 💡
+
 Making a choice is not always easy, but it's an important life-skill for a Dev-Rel-Pirate. And like every, skill the way to get better is deliberate practice.
 
+## Practice Making Choices With a Kid
 We watched my favourite Robin Hood movie yesterday. The Pirate Princess and me. And the way we found that movie is today's tip for a more skillful Dev-Rel-Life.
 
 (My favourite Robin Hood movie is Disney's animated Robin Hood from 1973.)[https://twitter.com/OlaHolstVea/status/1689885143538827264/photo/1]
 
-Five steps towards making a choice about _ _ _ _ _
+## Five Steps Towards Making a Choice About What Movie to Watch With a Kid
 
 1. I deleted all the movies from the wish list. (Inside Disney Plus)
 2. I asked the Pirate Princess to watch trailers and add 4 movies to the wish list. (The Pirate Princess loves trailers)
