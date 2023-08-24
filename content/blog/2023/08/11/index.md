@@ -6,7 +6,7 @@ date: 2023-08-11
 
 # Saying "NO" is the First Step Towards Saying "yes", According to Robin Hood 💡
 
-Making a choice is not always easy, but it's an important life-skill for a Dev-Rel-Pirate. And like every, skill the way to get better is deliberate practice.
+Making a choice is not always easy, but it's always an important life-skill for a Dev-Rel-Pirate. And like every skill, the way to get better at choices is deliberate practice.
 
 ## Practice Making Choices With a Kid
 We watched my favourite Robin Hood movie yesterday. The Pirate Princess and me. And the way we found that movie is today's tip for a more skillful Dev-Rel-Life.
