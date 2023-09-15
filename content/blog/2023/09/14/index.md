@@ -36,6 +36,9 @@ So let's start removing one bite at the time. I Lillian started with time.
 - Give an even lower price for buying 4 cups of lemonade
 - Give an even lower price for buying 5 cups of lemonade
 
+![Lillian Makes less Lemonade for her stand](https://pbs.twimg.com/media/F5luuH7XgAAI6gb?format=webp&name=900x900)
+
+
 How does Lillian's list translate to your coding?
 
 Lillian's Lemonade stand on Sunday
@@ -46,7 +49,7 @@ Lillian's Lemonade stand on Sunday
 
 More photos Lillian's Lemonade stand
 
-![Lillian's Lemonade stand](https://pbs.twimg.com/media/F5luuH7XgAAI6gb?format=webp&name=900x900)
+
 
 
 ![Lillian's Lemonade stand](https://pbs.twimg.com/media/F5kO8k1WkAAF44c?format=webp&name=900x900)
