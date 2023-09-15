@@ -24,6 +24,24 @@ Your side-project is just like Lillian's Lemonade stand on Sunday. So let's star
 
 Making your side-project Tiny is harder than it looks. You have to remove EVERYTHING except the bare necessities.
 
+So let's start removing one bite at the time. I Lillian started with time.
+
+## Bite 1: Remove Time Selling the Lemonade
+
+- Make less lemonade, sell less lemonade
+- Move to a better location than last year
+- Lower the lemonade price from last year
+- Give an even lower price for buying 2 cups of lemonade
+- Give an even lower price for buying 3 cups of lemonade
+- Give an even lower price for buying 4 cups of lemonade
+- Give an even lower price for buying 5 cups of lemonade
+
+How does Lillian's list translate to your coding?
+
+Lillian's Lemonade stand on Sunday
+
+
+
 ![bear necessities](./Boring.jpeg)
 
 More photos Lillian's Lemonade stand
