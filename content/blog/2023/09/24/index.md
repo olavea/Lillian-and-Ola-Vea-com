@@ -1,19 +1,28 @@
 ---
 title: What is the Tech Stack of Unleash?
 author: "@OlaHolstVea"
-date: 2023-09-22
+date: 2023-09-26
 ---
 
+## The Unleash Tech Stack
 
-Delight is What we seek with MixPod
+Before we get into your experience with data modeling for Unleash, could you quickly run through your tech stack? Says [Captain Ola](https://twitter.com/OlaHolstVea).
 
 
-To inspire Delight in using one part of each sponsor's product.
+Yes, so Unleash is mostly written in TypeScript- the API, the frontend is written in React.
 
-To inspire Delight in a dev already considering using that part in her side-project.
+We use a UI tool called Material UI to build our components, UI components. For, but then that's the Unleash service itself and then to really use feature flagging in your system and in your application, we also build SDKs for all the major programming languages. And these SDKs would obviously be written in Python, in Ruby and Java in dot net, whatever.
 
-MixPod let's you put together a playlist of podcast episodes for a friend, just like a mixtape in the good old days.
+And also obviously for the front end, like Android, iOS, Swift, of course, and also JavaScript, pure JavaScript and React wrappers on top of that and yada, yada, yada. So we do a lot of programming languages at Unleash. Says [Ivar](https://twitter.com/ivarconr).
 
+You said the application was a React application, but for the front end and what's the back end, what kind of database and that kind of thing is? Says [Queen Raae](https://twitter.com/raae).
+
+ Yeah, sure, TypeScript, we use Express for simplicity, and we use Postgres. To connect to Postgres we use a very easy kind of... mapping layer called Kinect. So it's not an ORM or anything like that, but it just simplifies building your queries basically. Says [Ivar](https://twitter.com/ivarconr).
+
+Here is the video it's not released yet, because it's not DONE yet:
+[https://share.descript.com/view/ma4Vcg2VaOo](https://share.descript.com/view/ma4Vcg2VaOo)
+
+ ​
 
 
 
