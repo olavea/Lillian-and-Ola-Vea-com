@@ -6,7 +6,7 @@ date: 2023-09-27
 
 ## I Bought a Badass Bunch of Books Sunday
 
-While the Pirate Princess sold lemonade I bought books. They were used. They were children's books. I hope Lillian (8) will read some books by herself, but most I will read for her before bed. We need to finish the Harry Potter series first.
+While [the Pirate Princess sold lemonade](https://twitter.com/OlaHolstVea/status/1702334528570941633) I bought books. They were used. They were children's books. I hope Lillian (8) will read some books by herself, but most I will read for her before bed. We need to finish the Harry Potter series first.
 
 ## Harry Potter and The Goblet of Fire
 
