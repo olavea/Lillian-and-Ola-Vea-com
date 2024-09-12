@@ -30,6 +30,7 @@
     "gatsby-remark-images": "^6.13.0",
     "gatsby-remark-prismjs": "6.11.0",
     "gatsby-source-filesystem": "^4.11.0",
+    "gatsby-transformer-cloudinary": "^2.2.4",
     "gatsby-transformer-remark": "^5.11.0",
     "gatsby-transformer-sharp": "4.11.0",
     "playwright-aws-lambda": "0.7.0",

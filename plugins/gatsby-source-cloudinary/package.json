@@ -1,0 +1,24 @@
+{
+  "name": "gatsby-source-cloudinary",
+  "version": "0.1.14",
+  "description": "Gatsby source plugin to fetch files from Cloudinary into Gatsby.",
+  "main": "gatsby-node.js",
+  "repository": "https://github.com/Chuloo/gatsby-source-cloudinary.git",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "cloudinary",
+    "gatsby-source-cloudinary"
+  ],
+  "author": "Ola Vea",
+  "license": "MIT",
+  "dependencies": {
+    "cloudinary": "^1.11.0",
+    "gatsby": "^4.16.0",
+    "gatsby-plugin-utils": "^3.10.0",
+    "lodash.snakecase": "^4.1.1"
+  }
+}
