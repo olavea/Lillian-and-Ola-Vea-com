@@ -5,6 +5,7 @@ author: "@OlaHolstVea"
 date: 2022-07-31
 ---
 
+
 How a DX Engineer turned her Dev-Task into skill-builder-ship with two tiny techniques
 
 Book Titles:
@@ -12,10 +13,12 @@ dont waste my dev-time
 The Dev-Brain a user's manual
 Sub-Task
 
+just cheatsheet
+
+
 
 <minus  :>
 <plus .>
-
 
 
 ## What Can Skill-Builder-                  Ship Be Like?
@@ -27,7 +30,15 @@ town from our sea-side                      cabin.
 
 <plus your 👁️‍🗨️>
 <plus * or not?>
+<What's Lillian got to do with you?>
+<My opinion>
 
+
+Children are pre-
+programmed for Skill-Builder-
+Ship, each with her own
+style. So meet ...å
+OR
 Children are pre-
 programmed for Skill-Builder-
 Ship, each with her own
@@ -48,7 +59,7 @@ Builder-Style.
 
 ## Lillian Raae-Vea,                        Lillian
 Junior DX                                   has her
-Engine                                      own Dev-
+Engine-                                     own Dev-
 eer. @                                      Skill-
 Lilly                                       Builder-
 Labs                                        Style.
@@ -58,6 +69,7 @@ Labs                                        Style.
 
 <minus  :>
 
+<text>
 
 ## How can YOU Find Your own                Dev-Skill
 ## Answer                                   Building
@@ -65,11 +77,11 @@ You Do focused      Sub-                    Style?
 experiments on      Task
 your Dev-Brain      Cheat-
 using ->            sheet
-
+<The>
 
 
 <minus  1>
-
+<text>                                          <sketchnote>
 
 ## Your Dev-Brain Experiment                Engine Example
 Look at a Dev-Task you did                  Engine
@@ -79,7 +91,7 @@ egg-clock to 96 minutes,                    part of boat-
 do you tiny-task again and again.           steering for Lillian
 
 
-
+<plus Let's start with Tiny-Task, the B quadrant of the Cheatsheet>
 
 So tiny-a-task it
 
@@ -88,6 +100,8 @@ into your                                   Tiny- - []
                                             Task = Your
 ## Brain                                    Brain
 
+
+<your>
 
 ## Question B1
 Is my dev-task
@@ -98,7 +112,8 @@ No.         ->                              Probably.
 
 
 <reliable at doing
-your dev-task>
+your dev-task. >
+<What is automate?>
 
 ## Question B2
 Can you get 96%
@@ -183,13 +198,13 @@ AGain
 and AGain?
 
 
-
+<text>
 ## Your Sub-Task Session                    and keep
 During your session                         doing your
 thoughts and emotions                       sub-task.
 will enter your Dev-                        Again and
 Brain uninvited. Simply                     again until
-label each  "distraction"                   your clock goes "ARRR!"
+label each "distraction"                    your clock goes "ARRR!"
 
 
 

@@ -4,6 +4,18 @@ author: "@OlaHolstVea"
 date: 2022-07-31
 ---
 
+```js
+
+
+```
+
+```js
+
+
+```
+
+
+
 
 ```js
 
@@ -43,6 +55,34 @@ exports.createRemoteImageNode = async ({
   parentNode[relationshipKey] = imageNode.id;
   return imageNode;
 };
+
+
+```
+
+```js
+// https://github.com/raae/gatsby-source-cloudinary/pull/3/commits/ad267c23905920ec4ed929e1b8e4056ba16577fa
+// gatsby-node.js
+// 1.1 🤯. 🐧 ☑️s 🎶  = ({ 🥳 }) => {
+exports.pluginOptionsSchema = ({ Joi }) => {
+
+
+  // 1.2 return 🥳.🏋️‍♀️({
+  return Joi.object({
+    // 1.3  🥳.🧶().®️().default(1000),
+    cloudName: Joi.string().required(),
+    apiKey: Joi.string().required(),
+    apiSecret: Joi.string().required(),
+    resourceType: Joi.string().default('image'),
+    type: Joi.string().default('all'),
+    maxResult: Joi.number().integer().positive().default(10),
+    tags: Joi.boolean().default(false),
+    prefix: Joi.string(),
+    context: Joi.boolean(),
+    })
+}
+🥳
+// next
+// https://github.com/raae/gatsby-transformer-cloudinary/pull/5
 
 
 ```
