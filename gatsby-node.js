@@ -63,6 +63,31 @@ async function bakeMarkdownNodesIntoPages(gatsbyUtils) {
     reporter.info(`Created page for slug ${aromaNode.fields.slug}`);
   });
 }
+import { createRemoteImageNode } from "gatsby-transformer-cloudinary";
+
+// This example assumes "post" nodes are created in a `sourceNodes` function.
+const POST_NODE_TYPE = "post";
+
+export async function onCreateNode({
+  node,
+  actions: { createNode },
+  createNodeId,
+  createContentDigest,
+  reporter,
+}) {
+  // In this example, "post" nodes sometimes have a "cover_photo_url" that's a link to an image.
+  if (node.internal.type === POST_NODE_TYPE && node.cover_photo_url) {
+    await createRemoteImageNode({
+      url: node.cover_photo_url,
+      parentNode: node,
+      relationshipName: "coverPhoto",
+      createNode,
+      createNodeId,
+      createContentDigest,
+      reporter,
+    });
+  }
+}
 
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
