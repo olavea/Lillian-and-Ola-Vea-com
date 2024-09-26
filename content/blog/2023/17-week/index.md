@@ -1,8 +1,86 @@
 ---
 title:  Dev-Rel-Skills week 17 💡
 author: "@OlaHolstVea"
-date: 2022-04-26
+date: 2022-04-29
 ---
+
+## Sub-Task:
+
+The useEffect function runs when the things we are watching change
+    - initial value comes in we set it to state
+    - triggers a change, setInputs
+    - updates state and again infinite
+    - we need something to watch
+
+![useEffect](./29-Using-useEffect-to-deal-with-a-tricky-loading-state-issue.png)
+
+![useEffect](./useEffect-1.png)
+
+![useEffect](./useEffect-2.png)
+
+
+### Solution below
+
+```js
+// lib / useForm.js
+
+import { useEffect, useState } from 'react';
+
+export default function useForm(initial = {}) {
+  // create a state object for our inputs
+  const [inputs, setInputs] = useState(initial);
+  const initialValues = Object.values(initial).join('');
+
+  useEffect(() => {
+    // This function runs when the things we are watching change
+    // initial value comes in we set it to state
+    // triggers a change, setInputs
+    // updates state and again infinite
+    // we need something to watch, the actual values on the object
+    setInputs(initial);
+  }, [initialValues]);
+  // {
+  //     name: 'wes',
+  //     description: 'nice boots',
+  //     price: 3333
+  // }
+  function handleChange(e) {
+    let { value, name, type } = e.target;
+    if (type === 'number') {
+      value = parseInt(value);
+    }
+    if (type === 'file') {
+      [value] = e.target.files;
+    }
+    setInputs({
+      // copy the existing state
+      ...inputs,
+      [name]: value,
+    });
+  }
+  function resetForm() {
+    setInputs(initial);
+  }
+
+  function clearForm() {
+    const blankState = Object.fromEntries(
+      Object.entries(inputs).map(([key, value]) => [key, ''])
+    );
+    setInputs(blankState);
+  }
+  // return the things we want to surface from this custom hook
+  return {
+    inputs,
+    handleChange,
+    resetForm,
+    clearForm,
+  };
+}
+
+
+```
+
+
 
 ```js
 // pages / product/[id].js
