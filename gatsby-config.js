@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 const deployUrl =
   process.env.NODE_ENV === "development"
     ? "http://localhost:8000"
@@ -86,6 +90,21 @@ module.exports = {
     },
     {
       resolve: `@raae/gatsby-theme-mui`,
+    },
+    {
+      resolve: "gatsby-source-cloudinary",
+      options: {
+        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+        apiKey: process.env.CLOUDINARY_API_KEY,
+        apiSecret: process.env.CLOUDINARY_API_SECRET,
+        resourceType: `image`,
+        context: true,
+        maxResults: 10,
+        prefix: "demo/animals",
+        // 10:58 in https://youtu.be/IicwkJCNy7k?t=658
+        // type: `type Value`,
+        // prefix: `abc-xyz/`,
+      },
     },
   ],
 };
